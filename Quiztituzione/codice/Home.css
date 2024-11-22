@@ -20,7 +20,7 @@ p {
     margin: 10px 0 20px;
 }
 
-.emblem {
+.logo{
     position: absolute;
     top: 3%; /* Spostato più in alto */
     left: 50%;
@@ -30,23 +30,26 @@ p {
 
 .flag-container {
     position: fixed;
-    bottom: 5%; /* Spostato più in alto rispetto al bordo inferiore */
+    bottom: 5%; 
     left: 0;
     width: 100%;
-    height: 140px; /* Ridotta altezza della bandiera */
-    background: url('../Immagini/bandiera2RM.png') no-repeat center center;
-    background-size: cover;
+    height: 30%;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 30px; /* Distanza tra i pulsanti */
+}
+.flag-container img{
+    position:fixed;
+    height: 100%;
+    width: 130%;
 }
 
 .flag-container button {
+    position: absolute;
     width: 20%; /* Dimensione adatta per PC */
-    max-width: 200px;
+    max-width: 12.5rem;
     font-size: 1.5rem;
-    padding: 15px;
+    padding: 0.9rem;
     border: none;
     cursor: pointer;
     border-radius: 10px;
@@ -54,8 +57,18 @@ p {
     color: black;
     font-weight: bold;
 }
+.login{
+    left:35%;
+    bottom: 30%;
+
+}
+.signin{
+    right:25%;
+    bottom:30%;
+}
 
 .flag-container button:hover {
     background-color: #555;
     color: white;
+    position: absolute;
 }
