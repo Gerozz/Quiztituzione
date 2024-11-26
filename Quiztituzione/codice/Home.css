@@ -1,0 +1,74 @@
+body {
+    margin: 0;
+    font-family: "Source Serif Pro", serif;
+    background: url('../Immagini/SfondoColosseo.png');
+    background-size: cover;
+    text-align: center;
+}
+
+.container {
+    padding-top: 8%; /* Ridotto per alzare il contenitore principale */
+}
+
+h1 {
+    font-size: 4rem;
+    margin: 0;
+}
+
+p {
+    font-size: 1.8rem;
+    margin: 10px 0 20px;
+}
+
+.logo{
+    position: absolute;
+    top: 3%; /* Spostato più in alto */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 230px; /* Ridotta leggermente la dimensione */
+}
+
+.flag-container {
+    position: fixed;
+    bottom: 5%; 
+    left: 0;
+    width: 100%;
+    height: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.flag-container img{
+    position:fixed;
+    height: 100%;
+    width: 130%;
+}
+
+.flag-container button {
+    position: absolute;
+    width: 20%; /* Dimensione adatta per PC */
+    max-width: 12.5rem;
+    font-size: 1.5rem;
+    padding: 0.9rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    background-color: gray;
+    color: black;
+    font-weight: bold;
+}
+.login{
+    left:35%;
+    bottom: 30%;
+
+}
+.signin{
+    right:25%;
+    bottom:30%;
+}
+
+.flag-container button:hover {
+    background-color: #555;
+    color: white;
+    position: absolute;
+}
