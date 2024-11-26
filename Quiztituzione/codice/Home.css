@@ -5,13 +5,19 @@ body {
     background-size: cover;
     text-align: center;
 }
-
+#colonna{
+    max-width: 60rem;
+    margin: 0 auto;
+    background: rgba(0,0,0,0.2);
+    padding: 0.5rem;
+}
 .container {
     padding-top: 8%; /* Ridotto per alzare il contenitore principale */
 }
 
 h1 {
     font-size: 4rem;
+    
     margin: 0;
 }
 
@@ -29,6 +35,9 @@ p {
 }
 
 .flag-container {
+    background-image: url("../Immagini/bandiera2RM.png");
+    background-size: cover;
+    background-attachment: fixed;
     position: fixed;
     bottom: 5%; 
     left: 0;
@@ -37,11 +46,6 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-.flag-container img{
-    position:fixed;
-    height: 100%;
-    width: 130%;
 }
 
 .flag-container button {
