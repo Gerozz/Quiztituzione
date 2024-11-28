@@ -1,0 +1,86 @@
+body {
+    margin: 0;
+    font-family: "Source Serif Pro", serif;
+    background: #dbdbdb;
+    background-size: cover;
+    text-align: center;
+    min-width: 20rem;
+}
+
+.container {
+    padding-top: 15%; /* Ridotto per alzare il contenitore principale */
+    background: rgb(0, 102, 255);
+    align-items: center;
+}
+
+h1 {
+    font-size: 4rem;
+    margin: 0;
+}
+
+p {
+    font-size: 1.8rem;
+    margin: 0.5rem 0 1.5rem;
+}
+
+.logo{
+    position: absolute;
+    top: 3%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 15rem;
+}
+
+.flag-container {
+    background-size: cover;
+    background-attachment: fixed;
+    position: fixed;
+    bottom: 0.5%; 
+    left: 0;
+    right: auto;
+    width: 100%;
+    height: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flag-container button {
+    position: fixed;
+    background-attachment: fixed;
+    width: 12rem;
+    min-width: 7rem;
+    font-size: 1.5rem;
+    padding: 0.9rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 1rem;
+    background-color: #BABABA;
+    color: black;
+    font-weight: bold;
+    align-items: center;
+}
+
+.testFinale{
+    left:0 auto;
+    bottom: 10rem;
+    display: inline-block;
+}
+.preparazione{
+    right:0 auto;
+    bottom: 5rem;
+    display: inline-block;
+}
+
+.flag-container button:hover {
+    background-color: #0066FF;
+    color: white;
+    position: absolute;
+}
+
+
+#lowBar{
+    padding-bottom: 0;
+    background: rgb(0, 102, 255);
+    bottom: 0rem;
+}
