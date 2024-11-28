@@ -5,12 +5,7 @@ body {
     background-size: cover;
     text-align: center;
 }
-#colonna{
-    max-width: 60rem;
-    margin: 0 auto;
-    background: rgba(0,102,255);
-    padding: 0.5rem;
-}
+
 .container {
     padding-top: 15%; /* Ridotto per alzare il contenitore principale */
     background: rgb(0, 102, 255);
