@@ -13,6 +13,7 @@ body {
     background: rgb(0, 102, 255);
     padding-bottom: 0;
     align-items: center;
+    display: inline-block;
 }
 
 .PrimaParte img{
@@ -46,48 +47,63 @@ p {
     width: 15rem; /* Ridotta leggermente la dimensione */
 }
 
-.flag-container {
-    
+.SecondaParte {
+    height: 50%;
+    margin-top: 25%; 
+    align-content: center;
+    display: inline-block;
+}
+.SecondaParte img{
+    width:100%;
+    max-width: 30rem;
+    display:block;
+    margin: 0 auto; 
+}
+
+.TerzaParte{
+    background: rgb(0, 102, 255);
     background-size: cover;
     background-attachment: fixed;
     position: fixed;
     bottom: 0.5%; 
-    left: 0;
+    left: auto;
     right: auto;
     width: 100%;
     height: 30%;
     display: flex;
     justify-content: center;
-    align-items: center;
-    gap:10px;
+    align-content: center;
+    gap:3px;
 }
 
-.flag-container button {
+.TerzaParte button {
     position: absolute;
-    width: 20%; /* Dimensione adatta per PC */
+    width: 20%;
     max-width: 12.5rem;
     font-size: 1.5rem;
     padding: 0.9rem;
-    border: none;
+    border: 1px solid black;
     cursor: pointer;
     border-radius: 10px;
     background-color: #BABABA;
     color: black;
     font-weight: bold;
     align-items: center;
+    
 }
 .login{
     left:35%;
     bottom: 30%;
-    
+    display: inline-block;
 }
 .signin{
     right:25%;
     bottom:30%;
+    display: inline-block;
 }
 
-.flag-container button:hover {
-    background-color: #0066FF;
-    color: white;
+.TerzaParte button:hover {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
     position: absolute;
 }
