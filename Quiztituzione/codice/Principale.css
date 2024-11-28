@@ -4,28 +4,37 @@ body {
     background: #dbdbdb;
     background-size: cover;
     text-align: center;
+    
 }
-#colonna{
-    max-width: 60rem;
-    margin: 0 auto;
-    background: rgba(0,102,255);
-    padding: 0.5rem;
-}
-.container {
-    padding-top: 15%; /* Ridotto per alzare il contenitore principale */
+
+.PrimaParte {
+    position: absolute;
+    top:0;left:0;right:0;bottom:65%;
     background: rgb(0, 102, 255);
+    padding-bottom: 0;
     align-items: center;
+}
+
+.PrimaParte img{
+    margin-top: auto;
+}
+
+.container{
+    text-align: center;
+    margin: 7rem auto;
+    padding: 0;
+    min-width: min-content;
 }
 
 h1 {
     font-size: 4rem;
-
-    margin: 0;
+    margin-bottom: 0.5rem;
+    
 }
 
 p {
+    margin-top: 0.3rem;
     font-size: 1.8rem;
-    margin: 0.5rem 0 1.5rem;
 }
 
 .logo{
@@ -49,6 +58,7 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
+    gap:10px;
 }
 
 .flag-container button {
