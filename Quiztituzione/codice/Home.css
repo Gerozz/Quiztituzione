@@ -4,25 +4,39 @@ body {
     background: #dbdbdb;
     background-size: cover;
     text-align: center;
-    min-width: 20rem;
+    
 }
 
-.container {
-    padding-top: 15%; /* Ridotto per alzare il contenitore principale */
+.PrimaParte {
+    position: absolute;
+    top:0;left:0;right:0;bottom:65%;
     background: rgb(0, 102, 255);
+    padding-bottom: 0;
     align-items: center;
 }
 
-h1 {
+.PrimaParte img{
+    margin-top: auto;
+}
+
+.container{
+    text-align: center;
+    margin: 7rem auto;
+    padding: 0;
+    min-width: min-content;
+    
+}
+
+.container h1 {
     font-size: 4rem;
-    margin: 0;
+    margin-bottom: 0.5rem;
+    
 }
 
-p {
+.container p {
+    margin-top: 0.3rem;
     font-size: 1.8rem;
-    margin: 0.5rem 0 1.5rem;
 }
-
 .logo{
     position: absolute;
     top: 3%;
@@ -48,8 +62,7 @@ p {
 .flag-container button {
     position: fixed;
     background-attachment: fixed;
-    width: 12rem;
-    min-width: 7rem;
+    min-width: 5rem;
     font-size: 1.5rem;
     padding: 0.9rem;
     border: none;
@@ -63,12 +76,37 @@ p {
 
 .testFinale{
     left:0 auto;
-    bottom: 10rem;
+    width: 18rem;
+    min-width: 15rem;
+    bottom: 17rem;
     display: inline-block;
 }
 .preparazione{
     right:0 auto;
-    bottom: 5rem;
+    width: 18rem;
+    min-width: 15rem;
+    bottom: 13rem;
+    display: inline-block;
+}
+.cultura{
+    align-items: left;
+    width: 14rem;
+    min-width: 15rem;
+    bottom: 9rem;
+    display: inline-block;
+}
+.SCultura{
+    align-items: left;
+    width: 14rem;
+    min-width: 5rem;
+    bottom: 6rem;
+    display: inline-block;
+}
+.QCultura{
+    align-items: left;
+    width: 10.5rem;
+    min-width: 5rem;
+    bottom: 1rem;
     display: inline-block;
 }
 
