@@ -87,6 +87,7 @@ body {
     min-width: 15rem;
     bottom: 13rem;
     display: inline-block;
+    border: 1px solid black;
 }
 .cultura{
     align-items: left;
