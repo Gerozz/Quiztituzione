@@ -13,7 +13,7 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    height:10rem; 
+    height:12rem; 
     background: #0066FF; 
     z-index: 999;
     width: 100%;
@@ -51,8 +51,9 @@ body {
 .menu {
     padding: 1rem;
     border-radius: 0.3rem;
-    position: fixed;
+    position: center;
     top: 10rem; 
+    width: 40rem;
     right: 2rem;
     left: 2rem;
 }
@@ -122,4 +123,9 @@ button{
 	background: none;
 	border: none;
 	cursor: pointer;
+}
+
+.barrieraT {
+    clear: both;
+    height: 5rem;
 }
