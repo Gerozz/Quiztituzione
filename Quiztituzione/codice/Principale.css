@@ -1,44 +1,53 @@
 body {
     margin: 0;
-    font-family: "Source Serif Pro", serif;
-    background: #dbdbdb;
-    background-size: cover;
-    text-align: center;
+    font-family: Arial, sans-serif;
+    background-color: #DBDBDB;
+    color: black;
     display: flex;
-    flex-direction: column;
-    min-height: 100vh; 
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
 .PrimaParte {
-    position: relative; 
-    background: rgb(0, 102, 255);
-    padding-bottom: 0;
-    align-items: center;
-    display: block; 
-    color: #dbdbdb;
-    z-index: 1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 12rem; /* Altezza totale della PrimaParte */
+    background: #0066FF;
+    z-index: 999;
+    display: flex; /* Attiva Flexbox per gestire allineamento */
+    flex-direction: column; /* Disposizione verticale: logo sopra, titolo sotto */
+    justify-content: center; /* Centra verticalmente */
+    align-items: center; /* Centra orizzontalmente */
+    padding: 0.5rem;
 }
 
 .PrimaParte img {
-    margin-top: auto;
+    width: 13rem; /* Larghezza logo */
+    margin-bottom: 0.5rem; /* Distanza tra logo e titolo */
 }
 
 .container {
     text-align: center;
-    margin: 1rem auto;
-    padding-top: 3rem;
-    min-width: min-content;
+    padding-top:4rem;
 }
 
-h1 {
-    font-size: 4rem;
-    margin-bottom: 0.5rem;
+.container h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    color: rgb(255, 255, 255);
+    font-family: "semimono";
 }
 
-p {
-    margin-top: 0.3rem;
-    font-size: 1.8rem;
+.container p {
+    margin: 0.1rem 0 0;
+    font-size: 1rem;
+    color: rgb(255, 255, 255);
+    font-family: "semimono";
 }
+
 
 .logo {
     position: absolute;
@@ -48,36 +57,46 @@ p {
     width: 15rem;
 }
 
-.SecondaParte{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: calc(100vh - 15% - 20%); 
-    width: 100%;
-    margin: 0;
-    padding: 0;
+.barrieraT {
+    clear: both;
+    height: 5rem;
+}
+
+.SecondaParte {
+    display: flex; /* Attiva Flexbox */
+    justify-content: center; /* Centra l'immagine orizzontalmente */
+    align-items: center; /* Centra l'immagine verticalmente */
+    flex-direction: column;
+    position: absolute; /* Posizionamento assoluto */
+    top: 12rem; /* Spazio appena sotto la PrimaParte */
+    bottom: 5rem; /* Spazio appena sopra la TerzaParte */
+    left: 0;
+    right: 0;
+    padding: 1rem;
+    margin: 0 auto;
+    box-sizing: border-box; /* Calcolo accurato di larghezza/altezza */
 }
 
 .SecondaParte img {
-    max-width: 90%;
-    max-height: 90%;
-    padding-top: 5%;
+    width: 50%; /* Puoi regolare il valore */
+    max-width: 25rem; /* Massima larghezza per schermi grandi */
+    height: auto; /* Mantieni proporzioni */
+    margin: 0 auto;
 }
 
+
+
+
 .TerzaParte {
-    background: rgb(0, 102, 255);
-    background-size: cover;
-    background-attachment: fixed;
     position: fixed;
-    bottom: 0;
+    bottom: 0rem;
     left: 0;
-    width: 100%;
-    height: 15%;
+    right: 0;
+    background-color: #0066FF;
+    padding: 1rem;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 8rem;
-    z-index: 2; 
+    justify-content: space-around;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Effetto ombra per la barra inferiore */
 }
 
 .TerzaParte button {
@@ -97,4 +116,7 @@ p {
     background-color: #ffffff;
     color: rgb(0, 0, 0);
 }
-
+@font-face{
+	font-family: "Semimono";
+	src: url('../Font/Alfredino\ Semimono.ttf');
+}
