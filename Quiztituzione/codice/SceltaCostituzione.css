@@ -94,35 +94,32 @@ body {
 }
 
 #Costituzione{
-    top: 0 auto;
-    left:0;
-    width: 18rem;
+    width: 20rem;
     min-width: 15rem;
     bottom: 17rem;
     display: inline-block;
 }
 #Suddivisione{
-    right:0;
-    width: 18rem;
+    width: 20rem;
     min-width: 15rem;
     bottom: 13rem;
     display: inline-block;
 }
 
 #Elezioni{
-    width: 18rem;
+    width: 20rem;
     min-width: 15rem;
     bottom: 9rem;
     display: inline-block;
 }
 #Votazione{
-    width: 18rem;
+    width: 20rem;
     min-width: 15rem;
     bottom: 6rem;
     display: inline-block;
 }
 #Cittadinanza{
-    width: 18rem;
+    width: 20rem;
     min-width: 15rem;
     bottom: 1rem;
     display: inline-block;
@@ -166,7 +163,7 @@ button{
 
 .barriera{
     clear: both;
-    height: 15rem;
+    height: 13rem;
 }
 
 .barriera2{
