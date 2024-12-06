@@ -22,7 +22,7 @@ body {
 }
 
 .PrimaParte img {
-    width: 13rem; /* Larghezza logo */
+    width: 8.5rem; /* Larghezza logo */
     margin-bottom: 0.5rem; /* Distanza tra logo e titolo */
 }
 
@@ -39,6 +39,7 @@ body {
 }
 
 .container h1 {
+    margin-top: 0 auto;
     margin-top: 5rem;
     font-size: 2.5rem;
 }
@@ -152,7 +153,7 @@ button{
 
 .barriera{
     clear: both;
-    height: 13rem;
+    height: 18rem;
 }
 
 .barriera2{
