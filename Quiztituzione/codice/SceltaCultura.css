@@ -94,37 +94,26 @@ body {
     width: 15rem;
 }
 
-#Costituzione{
+#Storia{
     width: 20rem;
     min-width: 15rem;
     bottom: 17rem;
     display: inline-block;
 }
-#Suddivisione{
+#Grammatica{
     width: 20rem;
     min-width: 15rem;
     bottom: 13rem;
     display: inline-block;
 }
 
-#Elezioni{
+#Letteratura{
     width: 20rem;
     min-width: 15rem;
     bottom: 9rem;
     display: inline-block;
 }
-#Votazione{
-    width: 20rem;
-    min-width: 15rem;
-    bottom: 6rem;
-    display: inline-block;
-}
-#Cittadinanza{
-    width: 20rem;
-    min-width: 15rem;
-    bottom: 1rem;
-    display: inline-block;
-}
+
 
 .barra2{
     position: fixed;
@@ -164,7 +153,7 @@ button{
 
 .barriera{
     clear: both;
-    height: 13rem;
+    height: 18rem;
 }
 
 .barriera2{
