@@ -37,14 +37,14 @@ body {
     margin: 0;
     font-size: 2.5rem;
     color: black;
-	font-family: "semimono";
+	font-family: "J-Ax";
 }
 
 #barra p {
     margin: 0.1rem 0 0;
     font-size: 1rem;
     color: black;
-	font-family: "semimono";
+	font-family: "J-Ax";
 }
 
 
@@ -119,9 +119,14 @@ body {
 	src: url('../Font/Alfredino\ Semimono.ttf');
 }
 
+@font-face{
+	font-family: "J-Ax";
+	src: url('../Font/JacquesFrancois-Regular.ttf');
+}
+
 button{
-	background: none;
-	border: none;
+	background-color: #BABABA;
+	border-radius: 3rem;
 	cursor: pointer;
 }
 
