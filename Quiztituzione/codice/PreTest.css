@@ -1,0 +1,141 @@
+body {
+    margin: 0;
+    font-family: "Source Serif Pro", serif;
+    background: #dbdbdb;
+    background-size: cover;
+    text-align: center;
+}
+.PrimaParte {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 12rem;
+    background: #0066FF;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+    margin-bottom: 4rem;
+    min-height: fit-content;
+}
+
+.PrimaParte img {
+    width: 9rem;
+    margin-bottom: 2rem;
+}
+
+.container {
+    text-align: center;
+    padding-top: 4rem;
+}
+
+.container h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    color: rgb(255, 255, 255);
+    font-family: "semimono";
+}
+
+.container p {
+    margin: 0.1rem 0 0;
+    font-size: 1rem;
+    color: rgb(255, 255, 255);
+    font-family: "semimono";
+}
+
+.logo {
+    position: absolute;
+    top: 3%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 15rem;
+}
+
+.flag-container {
+    background-size: cover;
+    background-attachment: fixed;
+    width: 100%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding-top: 0;
+}
+
+.flag-container button {
+    min-width: 5rem;
+    font-size: 1.5rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 1rem;
+    background-color: #BABABA;
+    color: black;
+    font-weight: bold;
+    bottom:5%;
+    height: 10%;
+}
+
+.flag-container button:hover {
+    background-color: #0066FF;
+    color: white;
+}
+
+
+#Accetto{
+    width: 20rem;
+    min-width: 15rem;
+    display: inline-block;
+    position:relative;
+    height: 3rem;
+    bottom:0;
+    left: 0;
+}
+
+.barra2{
+    position: fixed;
+    left: 0;right: 0;bottom:0;
+    height: 6rem;
+    padding: 0;
+    background: rgb(0, 102, 255);
+    padding-bottom: 0;
+    align-items: center;
+}
+
+.lowBar{
+    position: fixed;
+    bottom: 1rem;
+    background-color: #BABABA;
+    left: 5rem;
+    right: 5rem;
+    padding: 1rem;
+    border-radius: 2rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+
+.item img{
+    align-items: center;
+    margin-inline: 1.5rem;
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.low{
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin: 0 auto;
+}
+
+.barriera{
+    clear: both;
+    height: 13rem;
+}
+
+.bar2{
+    clear: both;
+    height:6rem;
+}
