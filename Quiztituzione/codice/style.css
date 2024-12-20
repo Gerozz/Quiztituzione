@@ -1,0 +1,228 @@
+div.slide.visible{
+    opacity: 1;
+    z-index: 1;
+}
+.hidden {
+    display: none;
+}
+
+.visible {
+    display: block;
+}
+
+
+*{
+    -webkit-user-drag: none;
+}
+
+
+body {
+    margin: 0;
+    font-family: "Source Serif Pro", serif;
+    background: #dbdbdb;
+    background-size: cover;
+    text-align: center;
+}
+
+.PrimaParte {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 12rem; /* Altezza totale della PrimaParte */
+    background: #0066FF;
+    z-index: 999;
+    display: flex; /* Attiva Flexbox per gestire allineamento */
+    flex-direction: column; /* Disposizione verticale: logo sopra, titolo sotto */
+    justify-content: center; /* Centra verticalmente */
+    align-items: center; /* Centra orizzontalmente */
+    padding: 0.5rem;
+}
+
+.PrimaParte img {
+    width: 8.5rem; /* Larghezza logo */
+    margin-bottom: 0.5rem; /* Distanza tra logo e titolo */
+}
+.flag-container {
+    background-size: cover;
+    background-attachment: fixed;
+    width: 100%;
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 0;   /* Rimuove padding aggiuntivo */
+}
+
+.container h1 {
+    margin-top: 0 auto;
+    margin-top: 5rem;
+    font-size: 2.5rem;
+}
+
+.container p {
+    margin-top: 0 auto;
+    margin: 0.1rem 0 0;
+    font-size: 1rem;
+}
+
+.flag-container button {
+    min-width: 5rem;
+    font-size: 1.5rem;
+    padding: 0.9rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 1rem;
+    background-color: #BABABA;
+    color: black;
+    font-weight: bold;
+    margin: 0.5rem 0;
+}
+
+.flag-container button:hover {
+    background-color: #0066FF;
+    color: white;
+}
+
+.container{
+    text-align: center;
+    margin: 7rem auto;
+    padding: 0;
+    min-width: min-content;
+}
+
+.container h1 {
+    font-size: 4rem;
+    margin-bottom: 0.5rem;
+    
+}
+
+.container p {
+    margin-top: 0.3rem;
+    font-size: 1.8rem;
+}
+
+.logo{
+    position: absolute;
+    top: 3%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 15rem;
+}
+
+/*scelta principale*/
+
+#testFinale{
+    left:0;
+    width: 18rem;
+    min-width: 18rem;
+    bottom: 17rem;
+    display: inline-block;
+}
+#preparazione{
+    right:0;
+    width: 18rem;
+    min-width: 15rem;
+    bottom: 13rem;
+    display: inline-block;
+}
+#cultura{
+    right: 5rem;
+    width: 18rem;
+    min-width: 12rem;
+    bottom: 9rem;
+    display: inline-block;
+}
+#SCultura{
+    width: 18rem;
+    min-width: 5rem;
+    bottom: 6rem;
+    display: inline-block;
+}
+#QCultura{
+    align-items: left;
+    width: 18rem;
+    min-width: 5rem;
+    bottom: 1rem;
+    display: inline-block;
+}
+#Costituzione{
+    align-items: left;
+    width: 18rem;
+    min-width: 12rem;
+    bottom: 9rem;
+    display: inline-block;
+}
+#SCostituzione{
+    align-items: left;
+    width: 18rem;
+    min-width: 5rem;
+    bottom: 6rem;
+    display: inline-block;
+}
+#CQuiz{
+    align-items: left;
+    width: 18rem;
+    min-width: 5rem;
+    bottom: 6rem;
+    display: inline-block;
+}
+
+/*costituzione*/
+#Costituzione2{
+    width: 20rem;
+    min-width: 15rem;
+    bottom: 17rem;
+    display: inline-block;
+}
+#Suddivisione{
+    width: 20rem;
+    min-width: 15rem;
+    bottom: 13rem;
+    display: inline-block;
+}
+#Elezioni{
+    width: 20rem;
+    min-width: 15rem;
+    bottom: 9rem;
+    display: inline-block;
+}
+#Votazione{
+    width: 20rem;
+    min-width: 15rem;
+    bottom: 6rem;
+    display: inline-block;
+}
+#Cittadinanza{
+    width: 20rem;
+    min-width: 15rem;
+    bottom: 1rem;
+    display: inline-block;
+}
+
+/*cultura*/
+#Storia{
+    width: 20rem;
+    min-width: 15rem;
+    bottom: 17rem;
+    display: inline-block;
+}
+#Grammatica{
+    width: 20rem;
+    min-width: 15rem;
+    bottom: 13rem;
+    display: inline-block;
+}
+#Letteratura{
+    width: 20rem;
+    min-width: 15rem;
+    bottom: 9rem;
+    display: inline-block;
+}
+
+
+.barriera{
+    clear: both;
+    height: 13rem;
+}

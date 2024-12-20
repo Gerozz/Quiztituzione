@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Cucina Italiana</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        
+    </head>
+    <body>
+        <!--Barra sopra di tutto blu con logo-->
+        <div class="PrimaParte">
+            <img src="../Immagini/italia.png" class="logo">
+            <div class="container">
+                <h1>Quiztituzione</h1>
+                <p>Articoli in gioco</p>
+            </div>
+        </div>
+        <div class="barriera"></div>
+        
+        
+        <!--Prima parte in cui c'è la possibilità di scegliere cosa fare-->
+        <div class="slide visible" id="sceltaPrincipale">
+            <div class="flag-container">   
+                <button id="testFinale">Test Finale</button>
+                <button id="preparazione">Preparazione</button>
+                <button id="cultura">Cultura Generale</button>
+                <button id="SCultura">Spiegazione</button>
+                <button id="QCultura">Quiz</button>
+                <button id="Costituzione">Costituzione</button>
+                <button id="SCostituzione">Spiegazione</button>
+                <button id="CQuiz">Quiz</button>
+            </div>    
+            <button onclick="toSlide('costituzione')">Vai alla costituzione</button>
+            <button onclick="toSlide('cultura')">Vai alla cultura</button>
+        </div>
+        <!--Parte in cui ho la scelta relativa alla costituzione-->
+        <div class="slide hidden" id="costituzione">
+            <div class="flag-container">
+                <button id="Costituzione2">Costituzione (articoli)</button>
+                <button id="Suddivisione">Suddivisione camere</button>
+                <button id="Elezioni">Elezioni</button>
+                <button id="Votazione">Eta' votazione</button>
+                <button id="Cittadinanza">Come avere la cittadinanza</button>
+            </div>
+            <button onclick="toSlide('cultura')">Vai alla cultura</button>
+            <button onclick="toSlide('sceltaPrincipale')">Vai alla scelta principale</button>
+        </div>
+        <!--Parte in cui ho la scelta relativa alla cultura-->
+        <div class="slide hidden" id="cultura">
+            <div class="flag-container">
+                <button id="Storia">Storia italiana</button>
+                <button id="Grammatica">Grammatica italiana</button>
+                <button id="Letteratura">Letteratura</button>
+            </div>
+            <button onclick="toSlide('costituzione')">Vai alla costituzione</button>
+            <button onclick="toSlide('sceltaPrincipale')">Vai alla scelta principale</button>
+        </div>
+        <!--Collegamento con javascript-->
+        <script type="text/javascript" src="app.js"></script>
+    </body>
+</html>
