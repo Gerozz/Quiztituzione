@@ -1,3 +1,21 @@
+div.slide.visible{
+    opacity: 1;
+    z-index: 1;
+}
+.hidden {
+    display: none;
+}
+
+.visible {
+    display: block;
+}
+
+
+*{
+    -webkit-user-drag: none;
+}
+
+
 body {
     margin: 0;
     font-family: "Source Serif Pro", serif;
@@ -22,23 +40,23 @@ body {
 }
 
 .PrimaParte img {
-    width: 9rem;
-    margin-bottom: 2rem;
+    width: 8.5rem; /* Larghezza logo */
+    margin-bottom: 0.5rem; /* Distanza tra logo e titolo */
 }
-
 .flag-container {
     background-size: cover;
     background-attachment: fixed;
     width: 100%;
-    height: calc(100vh - 19rem);
+    height: 30%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    padding-top: 0; 
-    overflow: auto;
+    padding-top: 0;   /* Rimuove padding aggiuntivo */
 }
+
 .container h1 {
+    margin-top: 0 auto;
     margin-top: 5rem;
     font-size: 2.5rem;
 }
@@ -60,10 +78,7 @@ body {
     color: black;
     font-weight: bold;
     margin: 0.5rem 0;
-    display: block;
-    justify-content: center;
 }
-
 
 .flag-container button:hover {
     background-color: #0066FF;
@@ -75,7 +90,6 @@ body {
     margin: 7rem auto;
     padding: 0;
     min-width: min-content;
-    
 }
 
 .container h1 {
@@ -97,37 +111,7 @@ body {
     width: 15rem;
 }
 
-.slide{
-    position:fixed;
-    top:0; left:0; bottom:0; right:0;
-    overflow-y:auto;
-    opacity:0;
-    transition:opacity 0.5s;
-    z-index:-1;
-    background-size: cover;
-    background-attachment: fixed;
-    width: 100%;
-    height: calc(100vh - 19rem);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding-top: 0; 
-    overflow: auto;
-}
-
-div.slide.visible{
-    opacity:1;
-    z-index:0;
-}
-
-#Costituzione{
-    display:none;
-}
-
-#Cultura{
-    opacity:none;
-}
+/*scelta principale*/
 
 #testFinale{
     left:0;
@@ -135,7 +119,6 @@ div.slide.visible{
     min-width: 18rem;
     bottom: 17rem;
     display: inline-block;
-
 }
 #preparazione{
     right:0;
@@ -144,68 +127,102 @@ div.slide.visible{
     bottom: 13rem;
     display: inline-block;
 }
-
-.new-button {
-      margin-left: 30px; 
-      display: block; 
-}
-
-.sub-button {
-    margin-left: 5rem;
-    margin-top: 10px;
-    display: block;
-
-  }
-
-.dynamic-move-up {
-    transform: translateY(+10%);
-    transition: all 0.5s ease; 
-}
-
-.barra2{
-    position: fixed;
-    left: 0;right: 0;bottom:0;
-    height: 6rem;
-    padding: 0;
-    background: rgb(0, 102, 255);
-    padding-bottom: 0;
-    align-items: center;
-}
-
-
-
-.lowBar{
-    position: fixed;
-    bottom: 1rem;
-    background-color: #BABABA;
-    left: 5rem;
+#cultura{
     right: 5rem;
-    padding: 1rem;
-    border-radius: 2rem;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    width: 18rem;
+    min-width: 12rem;
+    bottom: 9rem;
+    display: inline-block;
+}
+#SCultura{
+    width: 18rem;
+    min-width: 5rem;
+    bottom: 6rem;
+    display: inline-block;
+}
+#QCultura{
+    align-items: left;
+    width: 18rem;
+    min-width: 5rem;
+    bottom: 1rem;
+    display: inline-block;
+}
+#Costituzione{
+    align-items: left;
+    width: 18rem;
+    min-width: 12rem;
+    bottom: 9rem;
+    display: inline-block;
+}
+#SCostituzione{
+    align-items: left;
+    width: 18rem;
+    min-width: 5rem;
+    bottom: 6rem;
+    display: inline-block;
+}
+#CQuiz{
+    align-items: left;
+    width: 18rem;
+    min-width: 5rem;
+    bottom: 6rem;
+    display: inline-block;
 }
 
-
-.item img{
-    align-items: center;
-    margin-inline: 1.5rem;
-    width: 1.5rem;
-    height: 1.5rem;
+/*costituzione*/
+#Costituzione2{
+    width: 20rem;
+    min-width: 15rem;
+    bottom: 17rem;
+    display: inline-block;
+}
+#Suddivisione{
+    width: 20rem;
+    min-width: 15rem;
+    bottom: 13rem;
+    display: inline-block;
+}
+#Elezioni{
+    width: 20rem;
+    min-width: 15rem;
+    bottom: 9rem;
+    display: inline-block;
+}
+#Votazione{
+    width: 20rem;
+    min-width: 15rem;
+    bottom: 6rem;
+    display: inline-block;
+}
+#Cittadinanza{
+    width: 20rem;
+    min-width: 15rem;
+    bottom: 1rem;
+    display: inline-block;
 }
 
-button{
-    background: none;
-    border: none;
-    cursor: pointer;
-    margin: 0 auto;
+/*cultura*/
+#Storia{
+    width: 20rem;
+    min-width: 15rem;
+    bottom: 17rem;
+    display: inline-block;
 }
+#Grammatica{
+    width: 20rem;
+    min-width: 15rem;
+    bottom: 13rem;
+    display: inline-block;
+}
+#Letteratura{
+    width: 20rem;
+    min-width: 15rem;
+    bottom: 9rem;
+    display: inline-block;
+}
+
 
 .barriera{
     clear: both;
     height: 13rem;
-}
-
-.barriera2{
-    clear: both;
-    height:6rem;
 }
