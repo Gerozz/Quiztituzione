@@ -81,20 +81,6 @@ body {
     margin-right: 0.6rem;
 }
 
-/* Pulsante Indietro */
-.back {
-    margin-top: 1.25rem;
-    background-color: #d3d3d3;
-    color: black;
-    border: none;
-    padding: 0.9rem 1.25rem;
-    font-size: 0.8rem;
-    cursor: pointer;
-    border-radius: 0.3rem;
-    width: 100%;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Effetto ombra */
-}
-
 /* Barra di navigazione inferiore */
 .navbar {
     position: fixed;

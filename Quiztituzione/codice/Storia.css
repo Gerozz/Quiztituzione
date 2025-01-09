@@ -61,7 +61,7 @@ h1{
     flex: 1;
 }
 
-h1{
+#storia h1{
     font-size: 2rem;
     margin-bottom: 0.3rem;
     color: #4B61D1;
@@ -72,7 +72,7 @@ h1{
 }
 
 
-p{
+#storia p{
     font-size: 1.1rem;
     text-align: justify;
     line-height: 1.5rem;
@@ -81,52 +81,8 @@ p{
 }
 
 
-a{
+#storia a{
     color: #00ffcc;
     text-decoration: none;
 }
 
-
-.barra2{
-    position: fixed;
-    left: 0;right: 0;bottom:0;
-    height: 6rem;
-    padding: 0;
-    background: rgb(0, 102, 255);
-    padding-bottom: 0;
-    align-items: center;
-}
-
-.lowBar {
-    position: fixed;
-    bottom: 1rem;
-    background-color: #BABABA;
-    left: 5rem;
-    right: 5rem;
-    padding: 1rem;
-    border-radius: 2rem;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-
-    display: flex; 
-    justify-content: center; 
-    align-items: center;
-    gap: 3rem; 
-}
-
-.item img {
-    width: 2rem; 
-    height: 2rem;
-    margin-inline: 2rem;
-}
-
-button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    margin: 0 auto;
-}
-
-.barrieraT{
-    clear:both;
-    height: 4.5rem;
-}
