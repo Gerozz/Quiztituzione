@@ -1,19 +1,15 @@
 function toSlide(dest){
-    document.querySelectorAll(".slide.visible").forEach((e)=>{
-        e.classList.remove("visible")
-        e.querySelectorAll("*").forEach((x)=>{
-            x.tabIndex=-1
-        })
-    })
-    let destSlide=document.getElementById(dest)
-    destSlide.classList.add("visible")
-    destSlide.querySelectorAll("*").forEach((x)=>{
-        delete(x.tabIndex)
-    })
-    document.getElementById("menu").querySelectorAll("*").forEach((e)=>{
-        e.classList.remove("selected")
-    });
-    let menuItem=document.getElementById("menu_"+dest).classList.add("selected")
+  document.querySelectorAll(".slide.visible").forEach((e)=>{
+      e.classList.remove("visible")
+      e.querySelectorAll("*").forEach((x)=>{
+          x.tabIndex=-1
+      })
+  })
+  dest=document.getElementById(dest)
+  dest.classList.add("visible")
+  dest.querySelectorAll("*").forEach((x)=>{
+      delete(x.tabIndex)
+  })
 }
 
 let buttonsVisible = false;
@@ -67,6 +63,14 @@ function toggleSubButtons(container, parentButton) {
     subButton2.textContent = "Spiegazione";
     subButton1.className = "button sub-button";
     subButton2.className = "button sub-button";
+
+    subButton2.addEventListener("click",()=>{
+          if(parentButton.textContent==="Cultura Generale"){
+            toSlide('Cultura')
+          }else{
+            toSlide('Costituzione')
+          }
+    });
 
     container.insertBefore(subButton1, parentButton.nextSibling);
     container.insertBefore(subButton2, subButton1.nextSibling);
