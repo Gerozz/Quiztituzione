@@ -26,18 +26,6 @@ body {
     margin-bottom: 2rem;
 }
 
-.flag-container {
-    background-size: cover;
-    background-attachment: fixed;
-    width: 100%;
-    height: calc(100vh - 19rem);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding-top: 0; 
-    overflow: auto;
-}
 .container h1 {
     margin-top: 5rem;
     font-size: 2.5rem;
@@ -112,6 +100,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top:12rem;
     padding-top: 0; 
     overflow: auto;
 }
@@ -209,3 +198,115 @@ button{
     clear: both;
     height:6rem;
 }
+
+/* ----- da qui css per la pagina costituzione---*/
+
+
+#Costituzione{
+    width: 20rem;
+    min-width: 15rem;
+    bottom: 17rem;
+}
+#Suddivisione{
+    width: 20rem;
+    min-width: 15rem;
+    bottom: 13rem;
+}
+
+#Elezioni{
+    width: 20rem;
+    min-width: 15rem;
+    bottom: 9rem;
+}
+#Votazione{
+    width: 20rem;
+    min-width: 15rem;
+    bottom: 6rem;
+}
+#Cittadinanza{
+    width: 20rem;
+    min-width: 15rem;
+    bottom: 1rem;
+}
+
+/*----parte per la storia---*/
+
+#contenitore {
+    max-width: 800px;
+    margin: 5rem auto 2rem auto;
+    padding: 2rem;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+}
+
+
+.sezione-con-img {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.sezione-con-img .testo {
+    flex: 1;
+}
+
+#storiaP h1{
+    font-size: 2rem;
+    margin-bottom: 0.3rem;
+    color: #4B61D1;
+    border-bottom: 2px solid #4B61D1;
+    padding-bottom: 0.3rem;
+	font-family:"Martian";
+	
+}
+
+
+#storiaP p{
+    font-size: 1.1rem;
+    text-align: justify;
+    line-height: 1.5rem;
+    margin: 0 0 1rem 0;
+	word-spacing: -0.1rem;
+}
+
+
+#storiaP a{
+    color: #00ffcc;
+    text-decoration: none;
+}
+
+
+/*------parte per la impostazione-----*/
+#Impo {
+    padding: 1rem;
+    border-radius: 0.3rem;
+    position: center;
+    top: 10rem; 
+    width: 40rem;
+    right: 2rem;
+    left: 2rem;
+}
+
+#Impo button {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: #d3d3d3;
+    color: black;
+    border: 0.5rem;
+    padding: 0.9rem 1.25rem;
+    margin: 0.4rem 0;
+    width: 100%;
+    font-size: 1.3rem;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    font-family: Arial, sans-serif;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); 
+}
+
+#Impo button img {
+    width: 2rem;
+    height: 2rem;
+    margin-right: 0.6rem;
+}
+
