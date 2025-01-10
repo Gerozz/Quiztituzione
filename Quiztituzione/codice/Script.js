@@ -68,9 +68,17 @@ function toggleSubButtons(container, parentButton) {
           if(parentButton.textContent==="Cultura Generale"){
             toSlide('Cultura')
           }else{
-            toSlide('Costituzione')
+            toSlide('CostituzioneP')
           }
     });
+    subButton1.addEventListener("click",()=>{
+          if(parentButton.textContent==="Cultura Generale"){
+            toSlide('QuizCG')
+          }else{
+            toSlide('QuizC')
+          }
+    });
+
 
     container.insertBefore(subButton1, parentButton.nextSibling);
     container.insertBefore(subButton2, subButton1.nextSibling);
