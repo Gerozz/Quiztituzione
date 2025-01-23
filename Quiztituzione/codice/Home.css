@@ -11,7 +11,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    height: 12rem; /* Altezza totale della PrimaParte */
+    height: 13rem; /* Altezza totale della PrimaParte */
     background: #0066FF;
     z-index: 999;
     display: flex; /* Attiva Flexbox per gestire allineamento */
@@ -21,13 +21,29 @@ body {
     padding: 0.5rem;
 }
 
+.PrimaParte button{
+    width: 20rem;
+    min-width: 15rem;
+    font-size: 1.5rem;
+    padding: 0.9rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 1rem;
+    background-color: #BABABA;
+    color: black;
+    font-weight: bold;
+    margin: 0.5rem 0;
+    display: block;
+    justify-content: center;
+}
+
 .PrimaParte img {
     width: 9rem;
     margin-bottom: 2rem;
 }
 
 .container h1 {
-    margin-top: 5rem;
+    margin-top: 6rem;
     font-size: 2.5rem;
 }
 
@@ -38,7 +54,8 @@ body {
 }
 
 .flag-container button {
-    min-width: 5rem;
+    width: 18rem;
+    min-width: 15rem;
     font-size: 1.5rem;
     padding: 0.9rem;
     border: none;
@@ -63,7 +80,7 @@ body {
     margin: 7rem auto;
     padding: 0;
     min-width: min-content;
-    
+
 }
 
 .container h1 {
@@ -285,37 +302,40 @@ button{
 
 /*------parte per la impostazione-----*/
 #Impo {
-    padding: 1rem;
     border-radius: 0.3rem;
     position: center;
-    top: 10rem; 
-    width: 40rem;
-    right: 2rem;
-    left: 2rem;
+    font-size: 1rem;
+    padding-top: 5rem;
+    padding-bottom: 8rem;
+    margin-bottom: 6rem;
+    }
+/*
+#Impo button {
+    min-width: 5rem;
+    font-size: 1.5rem;
+    padding: 0.9rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 1rem;
+    background-color: #BABABA;
+    color: black;
+    font-weight: bold;
+    margin: 0.5rem 0;
+    display: block;
+    justify-content: center;
 }
 
-#Impo button {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    background-color: #d3d3d3;
-    color: black;
-    border: 0.5rem;
-    padding: 0.9rem 1.25rem;
-    margin: 0.4rem 0;
-    width: 100%;
-    font-size: 1.3rem;
-    cursor: pointer;
-    border-radius: 0.5rem;
-    font-family: Arial, sans-serif;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); 
-}
+#Impo button:hover {
+    background-color: #0066FF;
+    color: white;
+}*/
 
 #Impo button img {
     width: 2rem;
     height: 2rem;
     margin-right: 0.6rem;
 }
+
 
 /*-----css per la pagine del pre-test -----*/
 #Accetto {
