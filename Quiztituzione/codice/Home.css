@@ -228,6 +228,7 @@ button{
 .barriera2{
     clear: both;
     height:6rem;
+    color: white;
 }
 
 /* ----- da qui css per la pagina costituzione---*/
@@ -424,30 +425,55 @@ button{
     text-align: justify;
 }
 
-#QuizCG{
-    background-color: #dbdbdb;
-    padding: 1rem;
-    display: flex;
-    justify-content: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    gap:8rem;
+
+@media (max-width: 37.5rem) {
+    body {
+        font-size: 0.9rem;
+    }
+
+    .PrimaParte {
+        height: 10rem;
+    }
+
+    .PrimaParte img {
+        width: 6rem;
+        margin-bottom: 1rem;
+    }
+
+    .container h1 {
+        font-size: 2rem;
+    }
+
+    .container p {
+        font-size: 0.9rem;
+    }
+
+    .flag-container button {
+        font-size: 1.2rem;
+        padding: 0.6rem;
+        margin: 0.3rem 0;
+    }
+
+    .navbar {
+        padding: 0.5rem;
+    }
+
+    .nav-item img {
+        width: 1.2rem;
+        height: 1.2rem;
+    }
+
+    #contenitore {
+        margin: 2rem auto;
+        padding: 1rem;
+    }
+
+    .sezione-con-img {
+        flex-direction: column;
+    }
+
+    .sezione-con-img .testo {
+        text-align: center;
+    }
 }
 
-
-#QuizCG button {
-    min-width: 5rem;
-    width: 12.5rem;
-    font-size: 1.5rem;
-    padding: 0.9rem;
-    border: 1px solid black;
-    cursor: pointer;
-    border-radius: 10px;
-    background-color: #BABABA;
-    color: black;
-    font-weight: bold;
-}
-
-#quizCG button:hover {
-    background-color: #ffffff;
-    color: rgb(0, 0, 0);
-}
