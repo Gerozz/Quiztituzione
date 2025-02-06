@@ -180,7 +180,7 @@ div.slide.visible{
     left: 0;right: 0;bottom:0;
     height: 6rem;
     padding: 0;
-    background: rgb(0, 102, 255);
+    background: #0066ff;
     padding-bottom: 0;
     align-items: center;
 }
@@ -287,11 +287,12 @@ button{
 /*----parte per la storia---*/
 
 #contenitore {
-    max-width: 800px;
-    margin: 5rem auto 2rem auto;
+    max-width: 50rem;
+    width: 30rem;
     padding: 2rem;
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 8px;
+    margin-bottom: 5rem;
+    background: rgb(138, 138, 138);
+    border-radius: 1rem;
 }
 
 
@@ -305,18 +306,22 @@ button{
     flex: 1;
 }
 
-#storiaP h1{
+#StoriaP{
+    margin-top: 17rem;
+    margin-bottom: 5rem;
+}
+
+#StoriaP h1{
     font-size: 2rem;
     margin-bottom: 0.3rem;
-    color: #4B61D1;
+    color: #0066FF;
     border-bottom: 2px solid #4B61D1;
     padding-bottom: 0.3rem;
-	font-family:"Martian";
-	
+	font-family:"Martian";	
 }
 
 
-#storiaP p{
+#StoriaP p{
     font-size: 1.1rem;
     text-align: justify;
     line-height: 1.5rem;
@@ -325,19 +330,13 @@ button{
 }
 
 
-#storiaP a{
-    color: #00ffcc;
-    text-decoration: none;
-}
-
-
 /*------parte per la impostazione-----*/
 #Impo {
     border-radius: 0.3rem;
     position: fixed; 
     font-size: 1rem;
-    padding-top: 13rem;
-    padding-bottom: 5rem;
+    padding-top: 20rem;
+    padding-bottom: 3rem;
     overflow-y: auto;
     top: 0;
     bottom: 5rem; 
@@ -393,6 +392,7 @@ button{
 }
 
 .introTest{
+    margin-top: 5rem;
     margin-left: 3rem;
     margin-right: 3rem;
     text-align: justify;

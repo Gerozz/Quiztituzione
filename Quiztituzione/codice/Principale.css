@@ -1,7 +1,7 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #DBDBDB;
+    background-color: rgb(219, 219, 219);
     color: black;
     display: flex;
     justify-content: center;
@@ -14,14 +14,13 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    height: 12rem;
+    height: 13rem; /* Altezza totale della PrimaParte */
     background: #0066FF;
-    z-index: 999;
+    z-index: 5; /* Assicurarsi che sia sotto il frame */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 0.5rem;
 }
 
 .PrimaParte img {
@@ -37,14 +36,14 @@ body {
 .container h1 {
     margin: 0;
     font-size: 2.5rem;
-    color: rgb(255, 255, 255);
+    color: #ffffff;
     font-family: "semimono";
 }
 
 .container p {
     margin: 0.1rem 0 0;
     font-size: 1rem;
-    color: rgb(255, 255, 255);
+    color: #ffffff;
     font-family: "semimono";
 }
 
@@ -73,39 +72,43 @@ body {
     right: 0;
     padding: 1rem;
     margin: 0 auto;
-    box-sizing: border-box;
 }
+/*
+.SecondaParte .tema{
+    background-color: #bababa00;
+}*/
 
 .SecondaParte img {
-    width: 50%;
+    width: 15rem;
     max-width: 25rem;
-    height: auto;
-    margin: 0 auto;
 }
 
 .TerzaParte {
     position: fixed;
-    bottom: 0rem;
-    left: 0;
-    right: 0;
-    background-color: #0066FF;
-    padding: 1rem;
+    left: 0;right: 0;bottom:0;
+    height: 6rem;
+    padding: 0;
+    background: #0066ff;
+    padding-bottom: 0;
+    align-items: center;
     display: flex;
-    justify-content: space-around;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .TerzaParte button {
-    min-width: 5rem;
-    width: 12.5rem;
+    width: 15rem;
+    min-width: 4rem;
     font-size: 1.5rem;
+    border: none;
     padding: 0.9rem;
-    border: 1px solid black;
     cursor: pointer;
-    border-radius: 10px;
+    border-radius: 1rem;
     background-color: #BABABA;
     color: black;
     font-weight: bold;
+    margin: 0.5rem 0;
+    display: block;
+    justify-content: center;
+    margin: 0.5rem;
 }
 
 .TerzaParte button:hover {
@@ -116,4 +119,140 @@ body {
 @font-face {
     font-family: "Semimono";
     src: url('../Font/Alfredino\ Semimono.ttf');
+}
+
+
+/* Stile per il frame nascosto */
+.frame {
+    z-index: 5; /* Valore più alto per sovrapporsi a tutto */
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40rem;
+    height: 30rem;
+    background: #969696;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    padding: 1rem;
+    text-align: center;
+    border-radius: 2rem;
+}
+
+/*frame registrati*/
+/*#frameR {
+    width: 40rem;
+    height: 35rem;
+}
+/*frame cambia tema*/
+/*#frameT {
+    width: 40rem;
+    height: 10rem;
+}*/
+
+.frame button {
+    display: block;
+    margin: 0.5rem auto; /* Centra orizzontalmente */
+    width: 15rem;
+    min-width: 4rem;
+    font-size: 1.5rem;
+    border: none;
+    padding: 0.9rem;
+    cursor: pointer;
+    border-radius: 1rem;
+    background-color: #CACACA;
+    color: black;
+    font-weight: bold;
+}
+
+.frame button:hover {
+    background-color: #0066ff;
+    color: white;
+}
+
+.frame input{
+    width: 20rem;
+    height: 3rem;
+    margin: 1rem;
+    border-radius: 1rem;
+    border: none;
+}
+
+.frame img{
+    width: 30%;
+    margin: 1rem;
+}
+
+/* Sfondo scuro quando il frame è attivo */
+.overlay {
+    z-index: 5; /* Un livello sotto il frame */
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.738);
+}
+
+/* Media query per schermi con larghezza massima di 768px */
+@media (max-width: 48rem) {
+    .frame {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        height: 50%; /* Occupa metà della pagina */
+        padding: 1rem;
+        box-sizing: border-box;
+        overflow-y: auto; /* Aggiunge lo scroll se il contenuto è troppo alto */
+    }
+
+    .frame input {
+        width: 15rem;
+        height: 2.5rem;
+        margin: 0.5rem;
+    }
+
+    .frame img {
+        width: 20%;
+        margin: 0.5rem;
+    }
+
+    .frame button:hover {
+        background-color: #0055cc;
+        color: white;
+    }
+}
+
+/* Media query per schermi con larghezza massima di 480px */
+@media (max-width: 30rem) {
+    .frame {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        height: 50%; /* Occupa metà della pagina */
+        padding: 1rem;
+        box-sizing: border-box;
+        overflow-y: auto; /* Aggiunge lo scroll se il contenuto è troppo alto */
+    }
+
+    .frame input {
+        width: 10rem;
+        height: 2rem;
+        margin: 0.5rem;
+    }
+
+    .frame img {
+        width: 70%;
+        margin: 0.5rem;
+    }
+
+    .frame button:hover {
+        background-color: #0044aa;
+        color: white;
+    }
 }
