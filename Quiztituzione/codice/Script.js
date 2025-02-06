@@ -115,34 +115,7 @@ function toggleSubButtons(container, parentButton) {
     }
   }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //PARTE PER I FRAME
-function toSlide(dest){
-  document.querySelectorAll(".slide.visible").forEach((e)=>{
-      e.classList.remove("visible")
-      e.querySelectorAll("*").forEach((x)=>{
-          x.tabIndex=-1
-      })
-  })
-  dest=document.getElementById(dest)
-  dest.classList.add("visible")
-  dest.querySelectorAll("*").forEach((x)=>{
-      delete(x.tabIndex)
-  })
-}
 
 function Accedi() {
   let frame = document.getElementById("frame");
@@ -237,7 +210,7 @@ function profilo() {
   }
 }
 
-
+//caricamento dei json
 let domandeC=[]
 let domandeCG = []
 
