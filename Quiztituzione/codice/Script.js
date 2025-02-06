@@ -114,3 +114,130 @@ function toggleSubButtons(container, parentButton) {
       container.removeChild(parentButton.nextSibling);
     }
   }
+
+let domandeC=[]
+let domandeCG = []
+
+function caricaDomandeCG() {
+    let xhr = new XMLHttpRequest();
+    
+    xhr.onload = function () {
+        try {
+          let dati = JSON.parse(xhr.responseText);
+          for (let categoria in dati) {
+            dati[categoria].forEach(domandaObj => {
+                domandeCG.push({
+                    categoria: categoria,
+                    domanda: domandaObj.domanda,
+                    risposta_corretta: domandaObj.risposta_corretta
+                });
+            });
+        }
+            console.log(domandeCG);
+        } catch (e) {
+            console.error("Caricamento fallito", e);
+        }
+    };
+
+    xhr.onerror = function () {
+        console.error("Errore di comunicazione");
+    };
+
+    xhr.open("GET", "domandeCultura.json");
+    xhr.send();
+}
+
+function caricaDomandeC(){
+  let xhr = new XMLHttpRequest();
+    
+  xhr.onload = function () {
+      try {
+          let dati = JSON.parse(xhr.responseText);
+
+          for (let categoria in dati) {
+            dati[categoria].forEach(domandaObj => {
+                domandeC.push({
+                    categoria: categoria,
+                    domanda: domandaObj.domanda,
+                    risposta_corretta: domandaObj.risposta_corretta
+                });
+            });
+        }
+
+          console.log(domandeC);
+      } catch (e) {
+          console.error("Caricamento fallito", e);
+      }
+  };
+
+  xhr.onerror = function () {
+      console.error("Errore di comunicazione");
+  };
+
+  xhr.open("GET", "domandeCostituzione.json");
+  xhr.send();
+}
+
+function carica(){
+  caricaDomandeC();
+  caricaDomandeCG();
+  toSlide('intro');
+}
+
+function caricaRisposteC(){
+  let xhr = new XMLHttpRequest();
+    
+  xhr.onload = function () {
+      try {
+          let d = JSON.parse(xhr.responseText);
+          risposteC = []; 
+
+
+          Object.values(d).forEach(categoria => {
+              categoria.forEach(item => {
+                  risposteC.push(item.risposta_corretta);
+              });
+          });
+
+          console.log(risposteC);
+      } catch (e) {
+          console.error("Caricamento fallito", e);
+      }
+  };
+
+  xhr.onerror = function () {
+      console.error("Errore di comunicazione");
+  };
+
+  xhr.open("GET", "domandeCostituzione.json");
+  xhr.send();
+}
+
+function caricaRisposteCG(){
+  let xhr = new XMLHttpRequest();
+    
+  xhr.onload = function () {
+      try {
+          let d = JSON.parse(xhr.responseText);
+          risposteC = []; 
+
+
+          Object.values(d).forEach(categoria => {
+              categoria.forEach(item => {
+                  risposteCG.push(item.risposta_corretta);
+              });
+          });
+
+          console.log(risposteCG);
+      } catch (e) {
+          console.error("Caricamento fallito", e);
+      }
+  };
+
+  xhr.onerror = function () {
+      console.error("Errore di comunicazione");
+  };
+
+  xhr.open("GET", "domandeCultura.json");
+  xhr.send();
+}
