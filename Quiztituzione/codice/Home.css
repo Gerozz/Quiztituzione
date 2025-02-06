@@ -207,6 +207,29 @@ div.slide.visible{
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Effetto ombra per la barra inferiore */
 }
 
+.lowslide{
+    position:fixed;
+    opacity:0;
+    transition:opacity 0.2s;
+    z-index:-1;
+}
+
+.lowslide.visible{
+    opacity:1;
+    z-index:0;
+}
+
+#Quiz{
+    position: fixed;
+    bottom: 0.5rem;
+    left: 5rem;
+    right: 5rem;
+    bottom: 1rem;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-around;
+}
+
 .nav-item img {
     width: 1.5rem;
     height: 1.5rem;
@@ -425,6 +448,26 @@ button{
     text-align: justify;
 }
 
+/*------css per i bottoni del quiz------*/
+#Quiz button {
+    width: 10rem;
+    min-width: 7rem;
+    padding: 0.5rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 1rem;
+    background-color: #BABABA;
+    color: black;
+    font-weight: bold;
+    margin: 0.5rem 0;
+    display: block;
+    justify-content: center;
+}
+
+#Quiz button:hover {
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+}
 
 @media (max-width: 37.5rem) {
     body {
