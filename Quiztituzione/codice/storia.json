@@ -1,0 +1,32 @@
+{
+    "Storia": [
+        {
+            "anno": "Introduzione",
+            "descrizione": "L'unità d'Italia è il processo che ha portato alla creazione di uno stato italiano unificato nel 19° secolo. Prima di questo, l'Italia era divisa in vari stati e regni spesso sotto controllo straniero. Le fasi principali sono:"
+        },
+        {
+            "anno": "1848-49",
+            "descrizione": "Moti rivoluzionari e Prima Guerra d'Indipendenza, che falliscono nel tentativo di liberare l'Italia dal dominio austriaco."
+        },
+        {
+            "anno": "1859",
+            "descrizione": "Seconda Guerra d'Indipendenza; il Regno di Sardegna, con l'aiuto della Francia, libera la Lombardia dall'Austria."
+        },
+        {
+            "anno": "1860",
+            "descrizione": "Giuseppe Garibaldi guida la Spedizione dei Mille, conquistando il Regno delle Due Sicilie e unificando il sud Italia con il nord."
+        },
+        {
+            "anno": "1861",
+            "descrizione": "Proclamazione del Regno d'Italia il 17 marzo, con Vittorio Emanuele II come re, unendo gran parte della penisola."
+        },
+        {
+            "anno": "1866",
+            "descrizione": "Annessione del Veneto dopo la Terza Guerra d'Indipendenza contro l'Austria."
+        },
+        {
+            "anno": "1870",
+            "descrizione": "Annessione di Roma, che diventa la capitale del nuovo regno, completando l'unificazione italiana."
+        }
+    ]
+}

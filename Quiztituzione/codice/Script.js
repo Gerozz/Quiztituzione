@@ -10,6 +10,31 @@ function toSlide(dest){
   dest.querySelectorAll("*").forEach((x)=>{
       delete(x.tabIndex)
   })
+  if(dest.id === "QuizC" || dest.id === "QuizCG"){
+    document.querySelectorAll(".lowslide.visible").forEach((e)=>{
+      e.classList.remove("visible")
+      e.querySelectorAll("*").forEach((x)=>{
+          x.tabIndex=-1
+      })
+  })
+    dest=document.getElementById("Quiz")
+    dest.classList.add("visible")
+    dest.querySelectorAll("*").forEach((x)=>{
+      delete(x.tabIndex)
+  })
+  }else{
+    document.querySelectorAll(".lowslide.visible").forEach((e)=>{
+      e.classList.remove("visible")
+      e.querySelectorAll("*").forEach((x)=>{
+          x.tabIndex=-1
+      })
+  })
+    dest=document.getElementById("lowB")
+    dest.classList.add("visible")
+    dest.querySelectorAll("*").forEach((x)=>{
+      delete(x.tabIndex)
+  })
+  }
 }
 
 let buttonsVisible = false;

@@ -27,9 +27,17 @@
                     <p>Benvenuto nel test finale, schiacciando il tasto entrerai nel test, che una volta finito, 
                         se superato otterrai un badge*. Assicurati di essere pronto prima di procedere.</p>
                 </div>
-                <button id="Accetto">Procedi</button>
+                <button id="Accetto" onclick="toSlide('testF')">Procedi</button>
                 <div class="precisazione">
                     <p>*Questo badge non rilascia la cittadinanza, bensì riconosce il fatto che sei pronto/a per conseguirla</p>
+                </div>
+            </div>
+            <div class="flag-container slide" id="testF">   
+                <div class="SecondaParte">
+                    <div class="barriera">
+                    </div>
+                    <p>L’ unità d’Italia è stata proclamata il 17 Marzo del 1861</p>
+                    </div>
                 </div>
             </div>
         <div class="flag-container slide" id="QuizCG">   
@@ -124,7 +132,6 @@
                         <p>Dante è considerato il &quot;padre della lingua italiana&quot; per la sua opera La Divina Commedia. In
                             questo poema, ha usato il volgare, cioè il linguaggio parlato dal popolo, anziché il latino.
                             Raccontando un viaggio immaginario attraverso Inferno, Purgatorio e Paradiso, Dante ha
-                            
                             reso accessibili a tutti temi come la fede, la giustizia e la ricerca di significato, fissando le
                             basi della lingua e della cultura italiana.</p>
                     </div>
@@ -178,7 +185,7 @@
         </div>
         <div class="barriera2"></div>
         <div class="barra2">
-            <div class="lowBar">
+            <div class="lowslide visible" id="lowB">
                 <div class="navbar">
                     <div class="nav-item">
                     <button><a href="https://www.senato.it/istituzione/la-costituzione" target="_blank"><img src="../Immagini/collegamento.webp" alt="Link"></a></button>
@@ -190,13 +197,13 @@
                         <button onclick="toSlide('Impo')"><img src="../Immagini/impostazioni.webp" alt="Impostazioni"></button>
                     </div>
                 </div>
-                
-            </div>
             
-        </div>
-        <div class="slide" id="QuizCG">
+            </div>
+            <div class="lowslide" id="Quiz">
                     <button class="true">Vero</button>
                     <button class="false">Falso</button>
+            </div>
         </div>
+        
     </body>
 </html>

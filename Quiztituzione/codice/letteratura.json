@@ -1,0 +1,20 @@
+{
+    "Letteratura": [
+        {
+            "autore": "Dante Alighieri",
+            "descrizione": "Dante è considerato il 'padre della lingua italiana' per la sua opera La Divina Commedia. In questo poema, ha usato il volgare, cioè il linguaggio parlato dal popolo, anziché il latino. Raccontando un viaggio immaginario attraverso Inferno, Purgatorio e Paradiso, Dante ha reso accessibili a tutti temi come la fede, la giustizia e la ricerca di significato, fissando le basi della lingua e della cultura italiana."
+        },
+        {
+            "autore": "Alessandro Manzoni",
+            "descrizione": "Manzoni è importante perché, con il suo romanzo I promessi sposi, ha contribuito a unificare l’Italia anche sul piano linguistico. Scrisse il romanzo in un italiano accessibile e moderno, che aiutò a diffondere la lingua italiana in tutta la penisola. La storia di Renzo e Lucia, due giovani ostacolati da ingiustizie e disgrazie, riflette temi sociali e morali, diventando un modello di narrativa per il Paese."
+        },
+        {
+            "autore": "Giacomo Leopardi",
+            "descrizione": "Leopardi è uno dei poeti italiani più profondi e influenti. Nei suoi Canti, esplora temi come il dolore, la bellezza della natura e la ricerca di significato in un mondo difficile. La sua visione pessimista sulla vita e sulla condizione umana ha lasciato un'impronta forte nella poesia italiana, facendo riflettere sui grandi temi esistenziali."
+        },
+        {
+            "autore": "Giovanni Verga",
+            "descrizione": "Verga è il maggiore rappresentante del Verismo, un movimento che voleva raccontare la realtà in modo autentico. Nel suo romanzo I Malavoglia, descrive le dure condizioni di vita dei pescatori siciliani, senza idealizzare la povertà e le difficoltà. Con la sua scrittura, Verga ha dato voce alle classi più umili, rappresentando la vita quotidiana con una crudezza e una dignità che hanno arricchito la letteratura italiana."
+        }
+    ]
+}
