@@ -89,3 +89,125 @@ function toggleSubButtons(container, parentButton) {
       container.removeChild(parentButton.nextSibling);
     }
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//PARTE PER I FRAME
+function toSlide(dest){
+  document.querySelectorAll(".slide.visible").forEach((e)=>{
+      e.classList.remove("visible")
+      e.querySelectorAll("*").forEach((x)=>{
+          x.tabIndex=-1
+      })
+  })
+  dest=document.getElementById(dest)
+  dest.classList.add("visible")
+  dest.querySelectorAll("*").forEach((x)=>{
+      delete(x.tabIndex)
+  })
+}
+
+function Accedi() {
+  let frame = document.getElementById("frame");
+  let overlay = document.getElementById("overlay");
+
+  if (frame.style.display === "none" || frame.style.display === "") {
+      frame.style.display = "block";
+      overlay.style.display = "block";
+  } else {
+      frame.style.display = "none";
+      overlay.style.display = "none";
+  }
+}
+
+
+function Registrati() {
+  let frame = document.getElementById("frameR");
+  let overlay = document.getElementById("overlayR");
+
+  if (frame.style.display === "none" || frame.style.display === "") {
+      frame.style.display = "block";
+      overlay.style.display = "block";
+  } else {
+      frame.style.display = "none";
+      overlay.style.display = "none";
+  }
+}
+
+function OverTema() {
+  let frame = document.getElementById("frameT");
+  let overlay = document.getElementById("overlayT");
+
+  if (frame.style.display === "none" || frame.style.display === "") {
+      frame.style.display = "block";
+      overlay.style.display = "block";
+  } else {
+      frame.style.display = "none";
+      overlay.style.display = "none";
+  }
+}
+
+function contatti() {
+  let frame = document.getElementById("frameC");
+  let overlay = document.getElementById("overlayC");
+
+  if (frame.style.display === "none" || frame.style.display === "") {
+      frame.style.display = "block";
+      overlay.style.display = "block";
+  } else {
+      frame.style.display = "none";
+      overlay.style.display = "none";
+  }
+}
+
+function cambiatema() {
+  let a = document.getElementById("tema");
+  if (!a.style.backgroundColor) {
+      a.style.backgroundColor = "rgb(219, 219, 219)";
+  }
+  let currentColor = window.getComputedStyle(a).backgroundColor;
+  if (currentColor === "rgb(219, 219, 219)") {
+      a.style.backgroundColor = "rgb(27, 27, 27)";
+  } else {
+      a.style.backgroundColor = "rgb(219, 219, 219)";
+  }
+}
+
+
+function lingua() {
+  let frame = document.getElementById("frameL");
+  let overlay = document.getElementById("overlayL");
+
+  if (frame.style.display === "none" || frame.style.display === "") {
+      frame.style.display = "block";
+      overlay.style.display = "block";
+  } else {
+      frame.style.display = "none";
+      overlay.style.display = "none";
+  }
+}
+
+function profilo() {
+  let frame = document.getElementById("frameP");
+  let overlay = document.getElementById("overlayP");
+
+  if (frame.style.display === "none" || frame.style.display === "") {
+      frame.style.display = "block";
+      overlay.style.display = "block";
+  } else {
+      frame.style.display = "none";
+      overlay.style.display = "none";
+  }
+}

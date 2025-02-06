@@ -180,7 +180,7 @@ div.slide.visible{
     left: 0;right: 0;bottom:0;
     height: 6rem;
     padding: 0;
-    background: rgb(0, 102, 255);
+    background: #0066ff;
     padding-bottom: 0;
     align-items: center;
 }
