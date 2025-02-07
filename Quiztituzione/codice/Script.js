@@ -210,6 +210,19 @@ function profilo() {
   }
 }
 
+//funzione che permette di scaricare un file
+function downloadFile() {
+  const fileUrl = "../certificato/certificato.pdf";
+  const fileName = "certificato.pdf";
+
+  const a = document.createElement("a");
+  a.href = fileUrl;
+  a.download = fileName;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+}
+
 //caricamento dei json
 let domandeC=[]
 let domandeCG = []
