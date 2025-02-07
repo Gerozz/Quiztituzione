@@ -360,6 +360,7 @@ function carica(){
 const miniQuiz=10;
 let quizCount=0;
 const QuizF=30;
+let final=false;
 let domande=[]
 
 function domandaQuiz(question){
@@ -371,7 +372,7 @@ function domandaQuiz(question){
 }
 
 function preparazioneQuiz(categoria,limite){
-  for(i=0;i<limite;i++){
+  for(let i=0;i<limite;i++){
     domande.push(domandaCasuale(categoria))
   }
   domandaQuiz(domande[0])
@@ -388,17 +389,39 @@ function domandaCasuale(categoria) {
 
 function next(){
   quizCount++
-  if(quizCount<miniQuiz){
-    domandaQuiz(domande[quizCount])
+  if(final){
+    if(quizCount<QuizF){
+      domandaQuiz(domande[quizCount])
+    }else{
+      quizCount=0
+      final=false
+      while (domande.length > 0) {
+        domande.pop();
+    }
+      toSlide("intro")
+    }
   }else{
-    quizCount=0
-    while (domande.length > 0) {
-      domande.pop();
-  }
-    toSlide("intro")
+    if(quizCount<miniQuiz){
+      domandaQuiz(domande[quizCount])
+    }else{
+      quizCount=0
+      while (domande.length > 0) {
+        domande.pop();
+    }
+      toSlide("intro")
+    }
   }
 }
 
 function finalTest(){
-  toSlide('testF')
+  for(let i=0;i<QuizF;i++){
+    if(Math.random() < 0.5){
+      domande.push(domandaCasuale("Costituzione"))
+    }else{
+      domande.push(domandaCasuale("Cultura Generale"))
+    }
+  }
+  final=true
+  domandaQuiz(domande[0])
+  toSlide('Quiz')
 }
