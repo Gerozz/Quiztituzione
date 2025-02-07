@@ -274,8 +274,74 @@ function caricaDomandeC(){
   xhr.send();
 }
 
+function caricaL(){
+  let xhr=new XMLHttpRequest()
+  xhr.onload=function(){
+      try{
+          let elenco=document.getElementById("cLet")
+          elenco.innerHTML=""
+          let d=JSON.parse(xhr.responseText)
+          d.forEach((e)=>{
+              let p=document.createElement("section")
+              p.className="sezione-con-img"
+              let t=document.createElement("div")
+              t.className="testo"
+              p.appendChild(t)
+              t=document.createElement("h1")
+              t.innerText=e.autore
+              p.appendChild(t)
+              t=document.createElement("p")
+              t.innerText=e.descrizione
+              p.appendChild(t)
+              elenco.appendChild(p)
+          })
+      }catch(e){
+          document.getElementById("cLet").innerText="Caricamento fallito"
+      }
+  }
+  xhr.onerror=function(){
+      document.getElementById("cLet").innerText="Errore di comunicazione"
+  }
+  xhr.open("GET","letteratura.json")
+  xhr.send()
+}
+
+function caricaS(){
+  let xhr=new XMLHttpRequest()
+  xhr.onload=function(){
+      try{
+          let elenco=document.getElementById("cSto")
+          elenco.innerHTML=""
+          let d=JSON.parse(xhr.responseText)
+          d.forEach((e)=>{
+              let p=document.createElement("section")
+              p.className="sezione-con-img"
+              let t=document.createElement("div")
+              t.className="testo"
+              p.appendChild(t)
+              t=document.createElement("h1")
+              t.innerText=e.anno
+              p.appendChild(t)
+              t=document.createElement("p")
+              t.innerText=e.descrizione
+              p.appendChild(t)
+              elenco.appendChild(p)
+          })
+      }catch(e){
+          document.getElementById("cSto").innerText="Caricamento fallito"
+      }
+  }
+  xhr.onerror=function(){
+      document.getElementById("cSto").innerText="Errore di comunicazione"
+  }
+  xhr.open("GET","storia.json")
+  xhr.send()
+}
+
 function carica(){
   caricaDomandeC();
   caricaDomandeCG();
+  caricaL();
+  caricaS();
   toSlide('intro');
 }

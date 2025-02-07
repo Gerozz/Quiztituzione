@@ -8,38 +8,49 @@
         <link rel="stylesheet" href="Home.css">
         <script type="text/javascript" src="Script.js"></script>
     </head>
-    <body onload="carica()">
-            <div class="PrimaParte" >
+    <body onload="carica()">    <!--funzione che carica le domande e carica la pagina intro-->
+        
+        <!--header della pagina con logo e scritta-->
+        <div class="PrimaParte" >
                 <img src="../Immagini/libro.png" class="logo">
                 <div class="container">
                     <h1>Quiztituzione</h1>
                     <p>Articoli in gioco</p>
                 </div>
-            </div>
-            <div class="barriera"></div>
-            <div class="flag-container slide" id="intro">   
-                <button id="testFinale" onclick="toSlide('Pretest')">Test Finale</button>
-                <button onclick="showHide()" id="preparazione">Preparazione</button>
-                <div id="newButtons"></div>
-            </div>
-            <div class="flag-container slide" id="Pretest">   
-                <div class="introTest">
-                    <p>Benvenuto nel test finale, schiacciando il tasto entrerai nel test, che una volta finito, 
+        </div>
+
+        <div class="barriera"></div>
+
+        <!--slide iniziale con bottoni-->
+        <div class="flag-container slide" id="intro">   
+            <button id="testFinale" onclick="toSlide('Pretest')">Test Finale</button>
+            <button onclick="showHide()" id="preparazione">Preparazione</button>
+            <div id="newButtons"></div>
+        </div>
+
+         <!--slide di avvertenza prima del test finale-->
+         <div class="flag-container slide" id="Pretest">   
+            <div class="introTest">
+                <p>Benvenuto nel test finale, schiacciando il tasto entrerai nel test, che una volta finito, 
                         se superato otterrai un badge*. Assicurati di essere pronto prima di procedere.</p>
-                </div>
-                <button id="Accetto" onclick="toSlide('testF')">Procedi</button>
-                <div class="precisazione">
-                    <p>*Questo badge non rilascia la cittadinanza, bensì riconosce il fatto che sei pronto/a per conseguirla</p>
-                </div>
             </div>
-            <div class="flag-container slide" id="testF">   
-                <div class="SecondaParte">
-                    <div class="barriera">
-                    </div>
-                    <p>L’ unità d’Italia è stata proclamata il 17 Marzo del 1861</p>
-                    </div>
-                </div>
+            <button id="Accetto" onclick="toSlide('testF')">Procedi</button>
+            <div class="precisazione">
+                <p>*Questo badge non rilascia la cittadinanza, bensì riconosce il fatto che sei pronto/a per conseguirla</p>
             </div>
+        </div>
+
+        <!--Slide del test finale-->
+        <div class="flag-container slide" id="testF">   
+            <div class="SecondaParte">
+
+                <div class="barriera"></div>
+                
+                <p>L’ unità d’Italia è stata proclamata il 17 Marzo del 1861</p>
+            </div>
+        </div>
+
+        <!--slide per i quiz -->
         <div class="flag-container slide" id="QuizCG">   
             <div class="SecondaParte">
                 <div class="barriera">
@@ -56,12 +67,15 @@
                 <p>L’italia è una repubblica democratica fondata sul lavoro</p>
                 </div>
             </div>
-            
+
+        <!--slide opzioni cultura bottoni-->
         <div class="flag-container slide" id="Cultura">
             <button id="Storia" onclick="toSlide('StoriaP')">Storia italiana</button>
             <button id="Grammatica">Grammatica italiana</button>
             <button id="Letteratura" onclick="toSlide('LetteraturaP')">Letteratura</button>
         </div>
+
+        <!--slide opzioni costituzione bottoni-->
         <div class="flag-container slide" id="CostituzioneP">   
             <button id="Costituzione">Costituzione (articoli)</button>
             <button id="Suddivisione">Suddivisione camere</button>
@@ -69,113 +83,18 @@
             <button id="Votazione">Età votazione</button>
             <button id="Cittadinanza">Come avere la cittadinanza</button>
         </div>
+
+        <!---slide di spiegazione di storia-->
         <div class="flag-container slide" id="StoriaP">
-            <div id="contenitore">
-                <section id="prova" class="sezione-con-img">
-                    <div class="testo">
-                        <h1>Introduzione</h1>
-                        <p>L'unità d'Italia è il processo che ha portato alla creazione di uno stato italiano unificato nel 19° secolo. Prima di questo, l'Italia era divisa in vari stati e regni spesso sotto controllo straniero. Le fasi principali sono:</p>
-                    </div>
-                </section>
-                <section id="prova" class="sezione-con-img">
-                    <div class="testo">
-                        <h1>1848-49</h1>
-                        <p>Moti rivoluzionari e Prima Guerra d'Indipendenza, che falliscono nel tentativo di liberare l'Italia dal dominio austriaco.
-                        </p>
-                    </div>
-                </section>
-            
-                <section id="prova" class="sezione-con-img">
-                    <div class="testo">
-                        <h1>1859</h1>
-                        <p>Seconda Guerra d'Indipendenza; il Regno di Sardegna, con l'aiuto della Francia, libera la Lombardia dall'Austria.</p>
-                        </p>
-                    </div>
-                </section> 
-                
-                <section id="prova" class="sezione-con-img">
-                    <div class="testo">
-                        <h1>1860</h1>
-                        <p>Giuseppe Garibaldi guida la Spedizione dei Mille, conquistando il Regno delle Due Sicilie e unificando il sud Italia con il nord.
-                        </p>
-                    </div>
-                </section> 
-    
-                <section id="prova" class="sezione-con-img">
-                    <div class="testo">
-                        <h1>1861</h1>
-                        <p>Proclamazione del Regno d'Italia il 17 marzo, con Vittorio Emanuele II come re, unendo gran parte della penisola.</p>
-                    </div>
-                </section> 
-    
-                <section id="prova" class="sezione-con-img">
-                    <div class="testo">
-                        <h1>1866</h1>
-                        <p>Annessione del Veneto dopo la Terza Guerra d'Indipendenza contro l'Austria.</p>
-                    </div>
-                </section> 
-    
-                <section id="prova" class="sezione-con-img">
-                    <div class="testo">
-                        <h1>1870</h1>
-                        <p>Annessione di Roma, che diventa la capitale del nuovo regno, completando l'unificazione italiana.</p>
-                    </div>
-                </section>
-            </div>
+            <div id="cSto" class="contenitore"></div>
         </div>
+
         <!---parte di letteratura--->
         <div class="flag-container slide" id="LetteraturaP" >
-            <div id="contenitore">
-                <section id="prova" class="sezione-con-img">
-                    <div class="testo">
-                        <h1>Dante Alighieri (1265-1321)</h1>
-                        <p>Dante è considerato il &quot;padre della lingua italiana&quot; per la sua opera La Divina Commedia. In
-                            questo poema, ha usato il volgare, cioè il linguaggio parlato dal popolo, anziché il latino.
-                            Raccontando un viaggio immaginario attraverso Inferno, Purgatorio e Paradiso, Dante ha
-                            reso accessibili a tutti temi come la fede, la giustizia e la ricerca di significato, fissando le
-                            basi della lingua e della cultura italiana.</p>
-                    </div>
-                </section>
-    
-                <section id="prova" class="sezione-con-img">
-                    <div class="testo">
-                        <h1>Alessandro Manzoni (1785-1873)</h1>
-                        <p>
-                            Manzoni è importante perché, con il suo romanzo I promessi sposi, ha contribuito a unificare
-                            l’Italia anche sul piano linguistico. Scrisse il romanzo in un italiano accessibile e moderno,
-                            che aiutò a diffondere la lingua italiana in tutta la penisola. La storia di Renzo e Lucia, due
-                            giovani ostacolati da ingiustizie e disgrazie, riflette temi sociali e morali, diventando un
-                            modello di narrativa per il Paese.
-                        </p>
-                    </div>
-                </section>
-            
-                <section id="prova" class="sezione-con-img">
-                    <div class="testo">
-                        <h1>Giacomo Leopardi (1798-1837)</h1>
-                        <p>Leopardi è uno dei poeti italiani più profondi e influenti. Nei suoi Canti, esplora temi come il
-                            dolore, la bellezza della natura e la ricerca di significato in un mondo difficile. La sua visione
-                            pessimista sulla vita e sulla condizione umana ha lasciato un'impronta forte nella poesia
-                            italiana, facendo riflettere sui grandi temi esistenziali.</p>
-                        </p>
-                    </div>
-                </section> 
-                
-                <section id="prova" class="sezione-con-img">
-                    <div class="testo">
-                        <h1>Giovanni Verga (1840-1922)</h1>
-                        <p>
-                            Verga è il maggiore rappresentante del Verismo, un movimento che voleva raccontare la
-                            realtà in modo autentico. Nel suo romanzo I Malavoglia, descrive le dure condizioni di vita
-                            dei pescatori siciliani, senza idealizzare la povertà e le difficoltà. Con la sua scrittura, Verga
-                            ha dato voce alle classi più umili, rappresentando la vita quotidiana con una crudezza e una
-                            dignità che hanno arricchito la letteratura italiana.
-                        </p>
-                    </div>
-                </section> 
-     
-            </div>
+            <div id="cLet" class="contenitore"></div>
         </div>
+
+         <!--slide per le impostazioni-->
         <div class="flag-container slide"  id="Impo">
             <button><img src="../Immagini/profilo.webp" alt="Profilo"> Profilo</button>
             <button><img src="../Immagini/bandieraItalia.webp" alt="Lingua"> Lingua</button>
@@ -183,8 +102,13 @@
             <button><a href="https://www.senato.it/istituzione/la-costituzione" target="_blank"><img src="../Immagini/collegamento.webp" alt="Link costituzione"></a> Link costituzione</button>
             <button><img src="../Immagini/assistenza.webp" alt="Assistenza"> Assistenza</button>
         </div>
+
         <div class="barriera2"></div>
+
+        <!---Barra in basso-->
         <div class="barra2">
+
+            <!--lowbar di base-->
             <div class="lowslide visible" id="lowB">
                 <div class="navbar">
                     <div class="nav-item">
@@ -197,8 +121,9 @@
                         <button onclick="toSlide('Impo')"><img src="../Immagini/impostazioni.webp" alt="Impostazioni"></button>
                     </div>
                 </div>
-            
             </div>
+
+            <!-- lowbar per i quiz -->
             <div class="lowslide" id="Quiz">
                     <button class="true">Vero</button>
                     <button class="false">Falso</button>

@@ -286,7 +286,7 @@ button{
 
 /*----parte per la storia---*/
 
-#contenitore {
+.contenitore {
     max-width: 50rem;
     width: 30rem;
     padding: 2rem;
@@ -506,7 +506,7 @@ button{
         height: 1.2rem;
     }
 
-    #contenitore {
+    .contenitore{
         margin: 2rem auto;
         padding: 1rem;
     }
