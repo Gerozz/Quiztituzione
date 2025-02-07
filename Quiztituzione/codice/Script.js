@@ -10,14 +10,14 @@ function toSlide(dest){
   dest.querySelectorAll("*").forEach((x)=>{
       delete(x.tabIndex)
   })
-  if(dest.id === "QuizC" || dest.id === "QuizCG"){
+  if(dest.id === "Quiz"){
     document.querySelectorAll(".lowslide.visible").forEach((e)=>{
       e.classList.remove("visible")
       e.querySelectorAll("*").forEach((x)=>{
           x.tabIndex=-1
       })
   })
-    dest=document.getElementById("Quiz")
+    dest=document.getElementById("vf")
     dest.classList.add("visible")
     dest.querySelectorAll("*").forEach((x)=>{
       delete(x.tabIndex)
@@ -98,9 +98,9 @@ function toggleSubButtons(container, parentButton) {
     });
     subButton1.addEventListener("click",()=>{
           if(parentButton.textContent==="Cultura Generale"){
-            toSlide('QuizCG')
+            preparazioneQuiz("Cultura Generale",miniQuiz)
           }else{
-            toSlide('QuizC')
+            preparazioneQuiz("Costituzione",miniQuiz)
           }
     });
 
@@ -229,7 +229,6 @@ function caricaDomandeCG() {
                 });
             });
         }
-            console.log(domandeCG);
         } catch (e) {
             console.error("Caricamento fallito", e);
         }
@@ -260,7 +259,6 @@ function caricaDomandeC(){
             });
         }
 
-          console.log(domandeC);
       } catch (e) {
           console.error("Caricamento fallito", e);
       }
@@ -344,4 +342,50 @@ function carica(){
   caricaL();
   caricaS();
   toSlide('intro');
+}
+
+const miniQuiz=10;
+let quizCount=0;
+const QuizF=30;
+let domande=[]
+
+function domandaQuiz(question){
+  let d=document.getElementById("domanda")
+  d.innerHTML=""
+  let p=document.createElement("p")
+  p.innerText=question.domanda
+  d.appendChild(p)
+}
+
+function preparazioneQuiz(categoria,limite){
+  for(i=0;i<limite;i++){
+    domande.push(domandaCasuale(categoria))
+  }
+  domandaQuiz(domande[0])
+  toSlide('Quiz')
+}
+
+function domandaCasuale(categoria) {
+  if(categoria==="Costituzione"){
+    return domandeC[Math.floor(Math.random() * domandeC.length)];
+  }else{
+    return domandeCG[Math.floor(Math.random() * domandeCG.length)];
+  }
+}
+
+function next(){
+  quizCount++
+  if(quizCount<miniQuiz){
+    domandaQuiz(domande[quizCount])
+  }else{
+    quizCount=0
+    while (domande.length > 0) {
+      domande.pop();
+  }
+    toSlide("intro")
+  }
+}
+
+function finalTest(){
+  toSlide('testF')
 }
