@@ -4,8 +4,9 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Quiztituzione</title>
-        <link rel="icon" type="image/x-icon" href="../Immagini/libro.png">
+        <link rel="icon" type="image/x-icon" href="libro.png">
         <link rel="stylesheet" href="Principale.css">
+        <script type="text/javascript" src="Script.js"></script>
     </head>
     <body>
         <div contenuto>
@@ -16,15 +17,73 @@
                     <p>Articoli in gioco</p>
                 </div>
             </div>
-            <div class="SecondaParte">
+            <div class="SecondaParte" id="tema">
                 <div class="barriera">
                 </div>
                 <img src="../Immagini/libro.png">
             </div>
         </div>
         <div class="TerzaParte">   
-                    <button class="login" onclick="Accedi()">Accedi</button>
-                    <button class="signin" onclick="Registrati()">Registrati</button>
+            <button class="login" onclick="Accedi()">Accedi</button>
+            <button class="signin" onclick="Registrati()">Registrati</button>
+            <button class="tema1" onclick="OverTema()">Cambia tema</button>
+            <button class="contatti" onclick="contatti()">Contatti</button>
+            <button class="lingua" onclick="lingua()">Lingua</button>
+            <button class="profilo" onclick="profilo()">Profilo</button>
+            <script src="script.js"></script>
         </div> 
+        <!--frame per accedere-->
+        <div class="overlay" id="overlay" onclick="Accedi()"></div>
+            <div class="frame" id="frame">
+                <img src="/italia.png"><br>
+                <input type="text" placeholder="Inserire mail"><br>
+                <input type="password" placeholder="Inserire password">
+                <button onclick="Accedi()">Accedi</button>
+                <p>Non hai un account? Registrati</p>
+        </div>
+        <!--frame per registrarsi-->
+        <div class="overlay" id="overlayR" onclick="Registrati()"></div>
+            <div class="frame" id="frameR">
+                <img src="/italia.png"><br>
+                <input type="text" placeholder="Inserire mail"><br>
+                <input type="password" placeholder="Inserire password">
+                <input type="password" placeholder="Conferma password">
+                <button onclick="Registrati()">Registrati</button>
+                <p>Hai già un account? Accedi</p>
+        </div>
+        <!--frame per cambiare tema-->
+        <div class="overlay" id="overlayT" onclick="OverTema()"></div>
+            <div class="frame" id="frameT">
+            <button onclick="cambiatema()">Cambia tema</button>
+            <img src="italia.png">
+        </div>
+        <!--frame per i contatti-->
+        <div class="overlay" id="overlayC" onclick="contatti()"></div>
+            <div class="frame" id="frameC">
+            <a href="mailto:teamquiztituzione@gmail.com"><button>teamquiztituzione</button></a>
+            <a href="mailto:teamquiztituzione@gmail.com"><button>Carrera Salomè</button></a>
+            <a href="mailto:teamquiztituzione@gmail.com"><button>Cicchetti Filippo</button></a>
+            <a href="mailto:teamquiztituzione@gmail.com"><button>Geroli Paolo</button></a>
+            <a href="mailto:teamquiztituzione@gmail.com"><button>Rodini Michele</button></a>
+            <a href="mailto:teamquiztituzione@gmail.com"><button>Mail Galilei</button></a>
+            <a href="mailto:teamquiztituzione@gmail.com"><button>Mail comune crema</button></a>
+        </div>
+        <!--frame per cambiare lingua-->
+        <div class="overlay" id="overlayL" onclick="lingua()"></div>
+            <div class="frame" id="frameL">
+            <button onclick="lingua()">Cambia lingua</button>
+            <p>Attualmente è disponibile sono la lingua italiana</p>
+            <img src="italia.png">
+        </div>
+
+        <!--frame per il profilo-->
+        <div class="overlay" id="overlayP" onclick="profilo()"></div>
+            <div class="frame" id="frameP">
+            <img src="utenteRM.png" width="10%" height="30%">
+            <button>Nome utente</button>
+            <button>Cognome utente</button>
+            <button onclick="logout()">Logout</button>
+            
+        </div>
     </body>
 </html>

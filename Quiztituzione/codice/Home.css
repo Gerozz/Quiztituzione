@@ -180,7 +180,7 @@ div.slide.visible{
     left: 0;right: 0;bottom:0;
     height: 6rem;
     padding: 0;
-    background: rgb(0, 102, 255);
+    background: #0066ff;
     padding-bottom: 0;
     align-items: center;
 }
@@ -205,6 +205,29 @@ div.slide.visible{
     justify-content: space-around;
     border-radius: 1rem;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Effetto ombra per la barra inferiore */
+}
+
+.lowslide{
+    position:fixed;
+    opacity:0;
+    transition:opacity 0.2s;
+    z-index:-1;
+}
+
+.lowslide.visible{
+    opacity:1;
+    z-index:0;
+}
+
+#Quiz{
+    position: fixed;
+    bottom: 0.5rem;
+    left: 5rem;
+    right: 5rem;
+    bottom: 1rem;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-around;
 }
 
 .nav-item img {
@@ -263,12 +286,13 @@ button{
 
 /*----parte per la storia---*/
 
-#contenitore {
-    max-width: 800px;
-    margin: 5rem auto 2rem auto;
+.contenitore {
+    max-width: 50rem;
+    width: 30rem;
     padding: 2rem;
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 8px;
+    margin-bottom: 5rem;
+    background: rgb(138, 138, 138);
+    border-radius: 1rem;
 }
 
 
@@ -282,18 +306,22 @@ button{
     flex: 1;
 }
 
-#storiaP h1{
+#StoriaP{
+    margin-top: 17rem;
+    margin-bottom: 5rem;
+}
+
+#StoriaP h1{
     font-size: 2rem;
     margin-bottom: 0.3rem;
-    color: #4B61D1;
+    color: #0066FF;
     border-bottom: 2px solid #4B61D1;
     padding-bottom: 0.3rem;
-	font-family:"Martian";
-	
+	font-family:"Martian";	
 }
 
 
-#storiaP p{
+#StoriaP p{
     font-size: 1.1rem;
     text-align: justify;
     line-height: 1.5rem;
@@ -302,19 +330,13 @@ button{
 }
 
 
-#storiaP a{
-    color: #00ffcc;
-    text-decoration: none;
-}
-
-
 /*------parte per la impostazione-----*/
 #Impo {
     border-radius: 0.3rem;
     position: fixed; 
     font-size: 1rem;
-    padding-top: 13rem;
-    padding-bottom: 5rem;
+    padding-top: 20rem;
+    padding-bottom: 3rem;
     overflow-y: auto;
     top: 0;
     bottom: 5rem; 
@@ -370,6 +392,7 @@ button{
 }
 
 .introTest{
+    margin-top: 5rem;
     margin-left: 3rem;
     margin-right: 3rem;
     text-align: justify;
@@ -425,6 +448,26 @@ button{
     text-align: justify;
 }
 
+/*------css per i bottoni del quiz------*/
+#Quiz button {
+    width: 10rem;
+    min-width: 7rem;
+    padding: 0.5rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 1rem;
+    background-color: #BABABA;
+    color: black;
+    font-weight: bold;
+    margin: 0.5rem 0;
+    display: block;
+    justify-content: center;
+}
+
+#Quiz button:hover {
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+}
 
 @media (max-width: 37.5rem) {
     body {
@@ -463,7 +506,7 @@ button{
         height: 1.2rem;
     }
 
-    #contenitore {
+    .contenitore{
         margin: 2rem auto;
         padding: 1rem;
     }
