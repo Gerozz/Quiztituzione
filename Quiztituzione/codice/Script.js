@@ -372,8 +372,13 @@ function domandaQuiz(question){
 }
 
 function preparazioneQuiz(categoria,limite){
+  let q
   for(let i=0;i<limite;i++){
-    domande.push(domandaCasuale(categoria))
+    do{
+      q=domandaCasuale(categoria)
+      
+    }while(controlloDoppioni(q))
+    domande.push(q)
   }
   domandaQuiz(domande[0])
   toSlide('Quiz')
@@ -414,11 +419,18 @@ function next(){
 }
 
 function finalTest(){
+  let q
   for(let i=0;i<QuizF;i++){
     if(Math.random() < 0.5){
-      domande.push(domandaCasuale("Costituzione"))
+      do{
+         q=domandaCasuale("Costituzione")
+      }while(controlloDoppioni(q))
+      domande.push(q)
     }else{
-      domande.push(domandaCasuale("Cultura Generale"))
+      do{
+         q=domandaCasuale("Cultura Generale")
+      }while(controlloDoppioni(q))
+      domande.push(q)
     }
   }
   final=true
@@ -443,4 +455,12 @@ function indietro() {
       });
     }
   }
+}
+function controlloDoppioni(question){
+  for(let i=0;i<domande.length;i++){
+    if(domande[i].domanda===question.domanda){
+      return true
+    }
+  }
+  return false
 }
