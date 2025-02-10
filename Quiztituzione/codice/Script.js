@@ -211,16 +211,18 @@ function contatti() {
 }
 
 function cambiatema() {
-  let a = document.getElementById("tema");
-  if (!a.style.backgroundColor) {
+  let elements = document.querySelectorAll(".tema");
+  elements.forEach((a) => {
+    if (!a.style.backgroundColor) {
       a.style.backgroundColor = "rgb(219, 219, 219)";
-  }
-  let currentColor = window.getComputedStyle(a).backgroundColor;
-  if (currentColor === "rgb(219, 219, 219)") {
-      a.style.backgroundColor = "rgb(27, 27, 27)";
-  } else {
+    }
+    let currentColor = window.getComputedStyle(a).backgroundColor;
+    if (currentColor === "rgb(219, 219, 219)") {
+      a.style.backgroundColor = "rgb(33, 33, 33)";
+    } else {
       a.style.backgroundColor = "rgb(219, 219, 219)";
-  }
+    }
+  });
 }
 
 
