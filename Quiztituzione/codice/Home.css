@@ -469,30 +469,30 @@ button{
     }
 
     .PrimaParte {
-        height: 10rem;
+        height: 12rem;
     }
 
     .PrimaParte img {
-        width: 6rem;
+        width: 9rem;
         margin-bottom: 1rem;
     }
 
     .container h1 {
-        font-size: 2rem;
+        font-size: 3.5rem;
     }
 
     .container p {
-        font-size: 0.9rem;
+        font-size: 1.rem;
     }
 
     .flag-container button {
-        font-size: 1.2rem;
+        font-size: 1.4rem;
         padding: 0.6rem;
         margin: 0.3rem 0;
     }
 
     .navbar {
-        padding: 0.5rem;
+        padding: 0.7rem;
     }
 
     .nav-item img {
@@ -512,5 +512,8 @@ button{
     .sezione-con-img .testo {
         text-align: center;
     }
-}
 
+    .barra2 {
+        height: 5rem; /* Altezza ridotta della barra blu */
+    }
+}
