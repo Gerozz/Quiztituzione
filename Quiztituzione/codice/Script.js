@@ -425,3 +425,22 @@ function finalTest(){
   domandaQuiz(domande[0])
   toSlide('Quiz')
 }
+
+
+function indietro() {
+  const visibleSlides = document.querySelectorAll(".slide.visible");
+  if (visibleSlides.length > 0) {
+    const currentSlide = visibleSlides[0];
+    const previousSlide = currentSlide.previousElementSibling;
+    if (previousSlide && previousSlide.classList.contains("slide")) {
+      currentSlide.classList.remove("visible");
+      currentSlide.querySelectorAll("*").forEach((x) => {
+        x.tabIndex = -1;
+      });
+      previousSlide.classList.add("visible");
+      previousSlide.querySelectorAll("*").forEach((x) => {
+        delete x.tabIndex;
+      });
+    }
+  }
+}
