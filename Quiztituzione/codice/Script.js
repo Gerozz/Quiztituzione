@@ -357,6 +357,59 @@ function caricaL(){
   xhr.send()
 }
 
+function caricaG(){
+  let xhr=new XMLHttpRequest()
+  xhr.onload=function(){
+      try{
+        let elenco = document.getElementById("cGra");
+        elenco.innerHTML = ""; // Svuota il contenuto prima di caricare nuovi dati
+        let dati = JSON.parse(xhr.responseText);
+        
+        dati.forEach((e) => {
+            let sezione = document.createElement("section");
+            sezione.className = "sezione-grammatica";
+
+            let titolo = document.createElement("h1");
+            titolo.innerText = e.argomento;
+            sezione.appendChild(titolo);
+
+            let descrizione = document.createElement("p");
+            descrizione.className = "descrizione";
+            descrizione.innerText = e.spiegazione;
+            sezione.appendChild(descrizione);
+
+            // parte per gli esempi
+            if (Array.isArray(e.esempio)) {
+                let listaEsempi = document.createElement("ul");
+                listaEsempi.className = "lista-esempi";
+
+                e.esempio.forEach((esempio) => {
+                    let item = document.createElement("li");
+                    item.innerText = esempio;
+                    listaEsempi.appendChild(item);
+                });
+
+                sezione.appendChild(listaEsempi);
+            } else {
+                let esempioSingolo = document.createElement("p");
+                esempioSingolo.className = "esempio-singolo";
+                esempioSingolo.innerText = `Esempio: ${e.esempio}`;
+                sezione.appendChild(esempioSingolo);
+            }
+
+            elenco.appendChild(sezione)
+          });
+      }catch(e){
+          document.getElementById("cGra").innerText="Caricamento fallito"
+      }
+  }
+  xhr.onerror=function(){
+      document.getElementById("cGra").innerText="Errore di comunicazione"
+  }
+  xhr.open("GET","../FJson/grammatica.json")
+  xhr.send()
+}
+
 function caricaS(){
   let xhr=new XMLHttpRequest()
   xhr.onload=function(){
@@ -394,6 +447,7 @@ function carica(){
   caricaDomandeCG();
   caricaL();
   caricaS();
+  caricaG();
   toSlide('principale')
 }
 
