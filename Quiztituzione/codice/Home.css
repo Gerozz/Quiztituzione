@@ -340,8 +340,8 @@ button{
     border-radius: 0.3rem;
     position: fixed; 
     font-size: 1rem;
-    padding-top: 20rem;
-    padding-bottom: 3rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
     overflow-y: auto;
     top: 0;
     bottom: 5rem; 
@@ -349,7 +349,8 @@ button{
 }
 
 #Impo button {
-    min-width: 5rem;
+    width: 20rem;
+    min-width: 15rem;
     font-size: 1.5rem;
     padding: 0.9rem;
     border: none;
@@ -359,8 +360,11 @@ button{
     color: black;
     font-weight: bold;
     margin: 0.5rem 0;
-    display: block;
-    justify-content: center;
+    display: flex; /* Use flexbox for centering */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 3rem; /* Altezza uguale agli altri bottoni */
+    text-align: center; /* Center text */
 }
 
 #Impo button:hover {
@@ -372,6 +376,8 @@ button{
     width: 2rem;
     height: 2rem;
     margin-right: 0.6rem;
+    display: inline-block; /* Ensure image is inline with text */
+    vertical-align: middle; /* Vertically align image with text */
 }
 
 /*-----css per i frame -----*/
