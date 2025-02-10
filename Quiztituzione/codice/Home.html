@@ -8,7 +8,7 @@
         <link rel="stylesheet" href="Home.css">
         <script type="text/javascript" src="Script.js"></script>
     </head>
-    <body onload="carica()">    <!--funzione che carica le domande e carica la pagina intro-->
+    <body onload="carica()"> <!--funzione che carica le domande e carica la pagina intro-->
         
         <!--header della pagina con logo e scritta-->
         <div class="PrimaParte" >
@@ -34,39 +34,19 @@
                 <p>Benvenuto nel test finale, schiacciando il tasto entrerai nel test, che una volta finito, 
                         se superato otterrai un badge*. Assicurati di essere pronto prima di procedere.</p>
             </div>
-            <button id="Accetto" onclick="toSlide('testF')">Procedi</button>
+            <button id="Accetto" onclick="finalTest()">Procedi</button>
             <div class="precisazione">
                 <p>*Questo badge non rilascia la cittadinanza, bensì riconosce il fatto che sei pronto/a per conseguirla</p>
             </div>
         </div>
 
-        <!--Slide del test finale-->
-        <div class="flag-container slide" id="testF">   
+        <!--slide per i quiz e test finale-->
+        <div class="flag-container slide" id="Quiz">   
             <div class="SecondaParte">
-
                 <div class="barriera"></div>
-                
-                <p>L’ unità d’Italia è stata proclamata il 17 Marzo del 1861</p>
+                <div id="domanda"></div>
             </div>
         </div>
-
-        <!--slide per i quiz -->
-        <div class="flag-container slide" id="QuizCG">   
-            <div class="SecondaParte">
-                <div class="barriera">
-                </div>
-                <p>L’ unità d’Italia è stata proclamata il 17 Marzo del 1861</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="flag-container slide" id="QuizC">   
-            <div class="SecondaParte">
-                <div class="barriera">
-                </div>
-                <p>L’italia è una repubblica democratica fondata sul lavoro</p>
-                </div>
-            </div>
 
         <!--slide opzioni cultura bottoni-->
         <div class="flag-container slide" id="Cultura">
@@ -82,6 +62,7 @@
             <button id="Elezioni">Elezioni</button>
             <button id="Votazione">Età votazione</button>
             <button id="Cittadinanza">Come avere la cittadinanza</button>
+            <button id="indietro" onclick="indietro()">indietro</button>
         </div>
 
         <!---slide di spiegazione di storia-->
@@ -124,9 +105,9 @@
             </div>
 
             <!-- lowbar per i quiz -->
-            <div class="lowslide" id="Quiz">
-                    <button class="true">Vero</button>
-                    <button class="false">Falso</button>
+            <div class="lowslide" id="vf">
+                    <button class="true" onclick="next()">Vero</button>
+                    <button class="false" onclick="next()">Falso</button>
             </div>
         </div>
         

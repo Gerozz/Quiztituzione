@@ -219,7 +219,7 @@ div.slide.visible{
     z-index:0;
 }
 
-#Quiz{
+#vf{
     position: fixed;
     bottom: 0.5rem;
     left: 5rem;
@@ -412,15 +412,10 @@ button{
     font-size: small;
 }
 
-/*-----css per quiz cultura generale-----*/
+/*-----css per slide quiz-----*/
 
 .SecondaParte {
     display: flex;
-    background: url("../Immagini/post-it.png");
-    background-size: 40% 65%;
-    background-attachment: fixed;
-    background-position: 50% 90%;
-    background-repeat: no-repeat;
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -448,8 +443,7 @@ button{
     text-align: justify;
 }
 
-/*------css per i bottoni del quiz------*/
-#Quiz button {
+#vf button {
     width: 10rem;
     min-width: 7rem;
     padding: 0.5rem;
@@ -464,7 +458,7 @@ button{
     justify-content: center;
 }
 
-#Quiz button:hover {
+#vf button:hover {
     background-color: rgb(255, 255, 255);
     color: rgb(0, 0, 0);
 }

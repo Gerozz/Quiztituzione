@@ -10,14 +10,14 @@ function toSlide(dest){
   dest.querySelectorAll("*").forEach((x)=>{
       delete(x.tabIndex)
   })
-  if(dest.id === "QuizC" || dest.id === "QuizCG"){
+  if(dest.id === "Quiz"){
     document.querySelectorAll(".lowslide.visible").forEach((e)=>{
       e.classList.remove("visible")
       e.querySelectorAll("*").forEach((x)=>{
           x.tabIndex=-1
       })
   })
-    dest=document.getElementById("Quiz")
+    dest=document.getElementById("vf")
     dest.classList.add("visible")
     dest.querySelectorAll("*").forEach((x)=>{
       delete(x.tabIndex)
@@ -98,9 +98,9 @@ function toggleSubButtons(container, parentButton) {
     });
     subButton1.addEventListener("click",()=>{
           if(parentButton.textContent==="Cultura Generale"){
-            toSlide('QuizCG')
+            preparazioneQuiz("Cultura Generale",miniQuiz)
           }else{
-            toSlide('QuizC')
+            preparazioneQuiz("Costituzione",miniQuiz)
           }
     });
 
@@ -210,6 +210,19 @@ function profilo() {
   }
 }
 
+//funzione che permette di scaricare un file
+function downloadFile() {
+  const fileUrl = "../certificato/certificato.pdf";
+  const fileName = "certificato.pdf";
+
+  const a = document.createElement("a");
+  a.href = fileUrl;
+  a.download = fileName;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+}
+
 //caricamento dei json
 let domandeC=[]
 let domandeCG = []
@@ -229,7 +242,6 @@ function caricaDomandeCG() {
                 });
             });
         }
-            console.log(domandeCG);
         } catch (e) {
             console.error("Caricamento fallito", e);
         }
@@ -260,7 +272,6 @@ function caricaDomandeC(){
             });
         }
 
-          console.log(domandeC);
       } catch (e) {
           console.error("Caricamento fallito", e);
       }
@@ -344,4 +355,112 @@ function carica(){
   caricaL();
   caricaS();
   toSlide('intro');
+}
+
+const miniQuiz=10;
+let quizCount=0;
+const QuizF=30;
+let final=false;
+let domande=[]
+
+function domandaQuiz(question){
+  let d=document.getElementById("domanda")
+  d.innerHTML=""
+  let p=document.createElement("p")
+  p.innerText=question.domanda
+  d.appendChild(p)
+}
+
+function preparazioneQuiz(categoria,limite){
+  let q
+  for(let i=0;i<limite;i++){
+    do{
+      q=domandaCasuale(categoria)
+      
+    }while(controlloDoppioni(q))
+    domande.push(q)
+  }
+  domandaQuiz(domande[0])
+  toSlide('Quiz')
+}
+
+function domandaCasuale(categoria) {
+  if(categoria==="Costituzione"){
+    return domandeC[Math.floor(Math.random() * domandeC.length)];
+  }else{
+    return domandeCG[Math.floor(Math.random() * domandeCG.length)];
+  }
+}
+
+function next(){
+  quizCount++
+  if(final){
+    if(quizCount<QuizF){
+      domandaQuiz(domande[quizCount])
+    }else{
+      quizCount=0
+      final=false
+      while (domande.length > 0) {
+        domande.pop();
+    }
+      toSlide("intro")
+    }
+  }else{
+    if(quizCount<miniQuiz){
+      domandaQuiz(domande[quizCount])
+    }else{
+      quizCount=0
+      while (domande.length > 0) {
+        domande.pop();
+    }
+      toSlide("intro")
+    }
+  }
+}
+
+function finalTest(){
+  let q
+  for(let i=0;i<QuizF;i++){
+    if(Math.random() < 0.5){
+      do{
+         q=domandaCasuale("Costituzione")
+      }while(controlloDoppioni(q))
+      domande.push(q)
+    }else{
+      do{
+         q=domandaCasuale("Cultura Generale")
+      }while(controlloDoppioni(q))
+      domande.push(q)
+    }
+  }
+  final=true
+  domandaQuiz(domande[0])
+  toSlide('Quiz')
+}
+
+
+function indietro() {
+  const visibleSlides = document.querySelectorAll(".slide.visible");
+  if (visibleSlides.length > 0) {
+    const currentSlide = visibleSlides[0];
+    const previousSlide = currentSlide.previousElementSibling;
+    if (previousSlide && previousSlide.classList.contains("slide")) {
+      currentSlide.classList.remove("visible");
+      currentSlide.querySelectorAll("*").forEach((x) => {
+        x.tabIndex = -1;
+      });
+      previousSlide.classList.add("visible");
+      previousSlide.querySelectorAll("*").forEach((x) => {
+        delete x.tabIndex;
+      });
+    }
+  }
+}
+function controlloDoppioni(question){
+  for(let i=0;i<domande.length;i++){
+    if(domande[i].domanda===question.domanda){
+      return true
+    }
+  }
+  return false
 }
