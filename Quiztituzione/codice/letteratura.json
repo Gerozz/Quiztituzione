@@ -1,4 +1,5 @@
-[
+{
+    "Letteratura": [
     {
         "autore": "Dante Alighieri",
         "descrizione": "Dante è considerato il 'padre della lingua italiana' per la sua opera La Divina Commedia. In questo poema, ha usato il volgare, cioè il linguaggio parlato dal popolo, anziché il latino. Raccontando un viaggio immaginario attraverso Inferno, Purgatorio e Paradiso, Dante ha reso accessibili a tutti temi come la fede, la giustizia e la ricerca di significato, fissando le basi della lingua e della cultura italiana."
@@ -14,5 +15,10 @@
     {
         "autore": "Giovanni Verga",
         "descrizione": "Verga è il maggiore rappresentante del Verismo, un movimento che voleva raccontare la realtà in modo autentico. Nel suo romanzo I Malavoglia, descrive le dure condizioni di vita dei pescatori siciliani, senza idealizzare la povertà e le difficoltà. Con la sua scrittura, Verga ha dato voce alle classi più umili, rappresentando la vita quotidiana con una crudezza e una dignità che hanno arricchito la letteratura italiana."
+    },
+    {
+        "autore": "Francesco d'Assisi",
+        "descrizione": "Francesco d'Assisi è uno dei santi più amati e venerati della Chiesa cattolica. Nato in una famiglia ricca, rinunciò a tutto per seguire una vita di povertà e umiltà, dedicandosi alla preghiera, alla predicazione e all'aiuto ai poveri. Fondò l'ordine dei Frati Minori, detti anche Francescani, che si distinsero per la loro semplicità, umiltà e dedizione ai più bisognosi. La sua figura ispirò molti artisti, poeti e scrittori, che lo celebrarono per la sua santità e la sua dedizione al prossimo."
     }
 ]
+}
