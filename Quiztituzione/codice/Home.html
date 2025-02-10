@@ -10,8 +10,16 @@
     </head>
     <body onload="carica()"> <!--funzione che carica le domande e carica la pagina intro-->
         
+        <!---header della prima pagina di accedi/registrati-->
+        <div class="PrimaParte" id="header1">
+            <img src="../Immagini/italia.png" class="logo">
+            <div class="container">
+                <h1>Quiztituzione</h1>
+                <p>Articoli in gioco</p>
+            </div>
+        </div>
         <!--header della pagina con logo e scritta-->
-        <div class="PrimaParte" >
+        <div class="PrimaParte" id="header2">
                 <img src="../Immagini/libro.png" class="logo">
                 <div class="container">
                     <h1>Quiztituzione</h1>
@@ -21,6 +29,12 @@
 
         <div class="barriera"></div>
 
+        <!--slide iniziale con solo immagine per accedere-->
+        <div class="flag-container slide" id="principale">   
+            <img src="../Immagini/libro.png">
+        </div>
+
+        
         <!--slide iniziale con bottoni-->
         <div class="flag-container slide" id="intro">   
             <button id="testFinale" onclick="toSlide('Pretest')">Test Finale</button>
@@ -62,7 +76,6 @@
             <button id="Elezioni">Elezioni</button>
             <button id="Votazione">Età votazione</button>
             <button id="Cittadinanza">Come avere la cittadinanza</button>
-            <button id="indietro" onclick="indietro()">indietro</button>
         </div>
 
         <!---slide di spiegazione di storia-->
@@ -78,17 +91,62 @@
          <!--slide per le impostazioni-->
         <div class="flag-container slide"  id="Impo">
             <div class="barriera"></div>
-            <button><img src="../Immagini/profilo.webp" alt="Profilo"> Profilo</button>
-            <button><img src="../Immagini/bandieraItalia.webp" alt="Lingua"> Lingua</button>
-            <button><img src="../Immagini/tema.webp" alt="Tema"> Tema</button>
+            <button onclick="profilo()"><img src="../Immagini/profilo.webp" alt="Profilo"> Profilo</button>
+            <button onclick="lingua()"><img src="../Immagini/bandieraItalia.webp" alt="Lingua"> Lingua</button>
+            <button onclick="OverTema()"><img src="../Immagini/tema.webp" alt="Tema" > Tema</button>
             <button><a href="https://www.senato.it/istituzione/la-costituzione" target="_blank"><img src="../Immagini/collegamento.webp" alt="Link costituzione"></a> Link costituzione</button>
-            <button><img src="../Immagini/assistenza.webp" alt="Assistenza"> Assistenza</button>
+            <button onclick="contatti()"><img src="../Immagini/assistenza.webp" alt="Assistenza"> Assistenza</button>
         </div>
-
+                <!--frame per cambiare tema-->
+                <div class="overlay" id="overlayT" onclick="OverTema()"></div>
+                <div class="frame" id="frameT">
+                <button onclick="cambiatema()">Cambia tema</button>
+                <img src="../Immagini/italia.png">
+            </div>
+            <!--frame per i contatti-->
+            <div class="overlay" id="overlayC" onclick="contatti()"></div>
+                <div class="frame" id="frameC">
+                <a href="mailto:teamquiztituzione@gmail.com"><button>teamquiztituzione</button></a>
+                <a href="mailto:teamquiztituzione@gmail.com"><button>Carrera Salomè</button></a>
+                <a href="mailto:teamquiztituzione@gmail.com"><button>Cicchetti Filippo</button></a>
+                <a href="mailto:teamquiztituzione@gmail.com"><button>Geroli Paolo</button></a>
+                <a href="mailto:teamquiztituzione@gmail.com"><button>Rodini Michele</button></a>
+                <a href="mailto:teamquiztituzione@gmail.com"><button>Mail Galilei</button></a>
+                <a href="mailto:teamquiztituzione@gmail.com"><button>Mail comune crema</button></a>
+            </div>
+            <!--frame per cambiare lingua-->
+            <div class="overlay" id="overlayL" onclick="lingua()"></div>
+                <div class="frame" id="frameL">
+                <button onclick="lingua()">Cambia lingua</button>
+                <p>Attualmente è disponibile sono la lingua italiana</p>
+                <img src="../Immagini/italia.png">
+            </div>
+    
+            <!--frame per il profilo-->
+            <div class="overlay" id="overlayP" onclick="profilo()"></div>
+                <div class="frame" id="frameP">
+                <img src="../immagini/utenteRM.png" width="10%" height="30%">
+                <button>Nome utente</button>
+                <button>Cognome utente</button>
+                <button onclick="logout()">Logout</button>
+                
+            </div>
         <div class="barriera2"></div>
 
         <!---Barra in basso-->
         <div class="barra2">
+
+            <!---lowbar iniziale-->
+            <div class="lowslide visible" id="lowA">
+                <div class="navbar">
+                    <div class="nav-item">
+                        <button class="login" onclick="Accedi()">Accedi</button>
+                    </div>
+                    <div class="nav-item">
+                        <button class="signin" onclick="Registrati()">Registrati</button>
+                    </div>
+                </div>
+            </div>
 
             <!--lowbar di base-->
             <div class="lowslide visible" id="lowB">
@@ -110,6 +168,26 @@
                     <button class="true" onclick="next()">Vero</button>
                     <button class="false" onclick="next()">Falso</button>
             </div>
+        </div>
+        <!--frame per accedere-->
+        <div class="overlay" id="overlay" onclick="access()"></div>
+            <div class="frame" id="frame">
+                <img src="../Immagini/italia.png"><br>
+                <input type="text" placeholder="Inserire mail"><br>
+                <input type="password" placeholder="Inserire password">
+                <button onclick="access()">Accedi</button>
+                <p>Non hai un account? Registrati</p>
+        </div>
+
+        <!--frame per registrarsi-->
+        <div class="overlay" id="overlayR" onclick="registration()"></div>
+            <div class="frame" id="frameR">
+                <img src="../Immagini/italia.png"><br>
+                <input type="text" placeholder="Inserire mail"><br>
+                <input type="password" placeholder="Inserire password">
+                <input type="password" placeholder="Conferma password">
+                <button onclick="registration()">Registrati</button>
+                <p>Hai già un account? Accedi</p>
         </div>
         
     </body>

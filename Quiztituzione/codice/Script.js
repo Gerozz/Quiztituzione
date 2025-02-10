@@ -22,18 +22,56 @@ function toSlide(dest){
     dest.querySelectorAll("*").forEach((x)=>{
       delete(x.tabIndex)
   })
-  }else{
+  }else if(dest.id === "principale"){
+    document.querySelectorAll(".PrimaParte.visible").forEach((e)=>{
+      e.classList.remove("visible")
+      e.querySelectorAll("*").forEach((x)=>{
+          x.tabIndex=-1
+      })
+    })
+    dest=document.getElementById("header1")
+    dest.classList.add("visible")
+    dest.querySelectorAll("*").forEach((x)=>{
+        delete(x.tabIndex)
+    })
+
     document.querySelectorAll(".lowslide.visible").forEach((e)=>{
       e.classList.remove("visible")
       e.querySelectorAll("*").forEach((x)=>{
           x.tabIndex=-1
       })
-  })
+    })
+    dest=document.getElementById("lowA")
+    dest.classList.add("visible")
+    dest.querySelectorAll("*").forEach((x)=>{
+      delete(x.tabIndex)
+    })
+
+  }else{
+
+    document.querySelectorAll(".PrimaParte.visible").forEach((e)=>{
+      e.classList.remove("visible")
+      e.querySelectorAll("*").forEach((x)=>{
+          x.tabIndex=-1
+      })
+    })
+    dest=document.getElementById("header2")
+    dest.classList.add("visible")
+    dest.querySelectorAll("*").forEach((x)=>{
+        delete(x.tabIndex)
+    })
+
+   document.querySelectorAll(".lowslide.visible").forEach((e)=>{
+    e.classList.remove("visible")
+    e.querySelectorAll("*").forEach((x)=>{
+        x.tabIndex=-1
+    })
+    })
     dest=document.getElementById("lowB")
     dest.classList.add("visible")
     dest.querySelectorAll("*").forEach((x)=>{
       delete(x.tabIndex)
-  })
+    })
   }
 }
 
@@ -118,6 +156,7 @@ function toggleSubButtons(container, parentButton) {
 //PARTE PER I FRAME
 
 function Accedi() {
+
   let frame = document.getElementById("frame");
   let overlay = document.getElementById("overlay");
 
@@ -132,6 +171,7 @@ function Accedi() {
 
 
 function Registrati() {
+  
   let frame = document.getElementById("frameR");
   let overlay = document.getElementById("overlayR");
 
@@ -251,7 +291,7 @@ function caricaDomandeCG() {
         console.error("Errore di comunicazione");
     };
 
-    xhr.open("GET", "domandeCultura.json");
+    xhr.open("GET", "../FJson/domandeCultura.json");
     xhr.send();
 }
 
@@ -281,7 +321,7 @@ function caricaDomandeC(){
       console.error("Errore di comunicazione");
   };
 
-  xhr.open("GET", "domandeCostituzione.json");
+  xhr.open("GET", "../FJson/domandeCostituzione.json");
   xhr.send();
 }
 
@@ -313,7 +353,7 @@ function caricaL(){
   xhr.onerror=function(){
       document.getElementById("cLet").innerText="Errore di comunicazione"
   }
-  xhr.open("GET","letteratura.json")
+  xhr.open("GET","../FJson/letteratura.json")
   xhr.send()
 }
 
@@ -345,7 +385,7 @@ function caricaS(){
   xhr.onerror=function(){
       document.getElementById("cSto").innerText="Errore di comunicazione"
   }
-  xhr.open("GET","storia.json")
+  xhr.open("GET","../FJson/storia.json")
   xhr.send()
 }
 
@@ -354,7 +394,7 @@ function carica(){
   caricaDomandeCG();
   caricaL();
   caricaS();
-  toSlide('intro');
+  toSlide('principale')
 }
 
 const miniQuiz=10;
@@ -438,7 +478,6 @@ function finalTest(){
   toSlide('Quiz')
 }
 
-
 function indietro() {
   const visibleSlides = document.querySelectorAll(".slide.visible");
   if (visibleSlides.length > 0) {
@@ -456,6 +495,7 @@ function indietro() {
     }
   }
 }
+
 function controlloDoppioni(question){
   for(let i=0;i<domande.length;i++){
     if(domande[i].domanda===question.domanda){
@@ -463,4 +503,21 @@ function controlloDoppioni(question){
     }
   }
   return false
+}
+
+function access(){
+  let frame = document.getElementById("frame");
+  let overlay = document.getElementById("overlay");
+  frame.style.display = "none";
+  overlay.style.display = "none";
+  toSlide('intro')
+
+}
+
+function registration(){
+  let frame = document.getElementById("frameR");
+  let overlay = document.getElementById("overlayR");
+  frame.style.display = "none";
+  overlay.style.display = "none";
+  toSlide('intro')
 }

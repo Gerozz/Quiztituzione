@@ -4,13 +4,13 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Quiztituzione</title>
-        <link rel="icon" type="image/x-icon" href="libro.png">
+        <link rel="icon" type="image/x-icon" href="../Immagini/libro.png">
         <link rel="stylesheet" href="Principale.css">
     </head>
     <body>
         <div contenuto>
             <div class="PrimaParte">
-                <img src="italia.png" class="logo">
+                <img src="../Immagini/italia.png" class="logo">
                 <div class="container">
                     <h1>Quiztituzione</h1>
                     <p>Articoli in gioco</p>
@@ -19,7 +19,7 @@
             <div class="SecondaParte" id="tema">
                 <div class="barriera">
                 </div>
-                <img src="libro.png">
+                <img src="../Immagini/libro.png">
             </div>
         </div>
         <div class="TerzaParte">   
@@ -33,18 +33,18 @@
             <script src="script.js"></script>
         </div> 
         <!--frame per accedere-->
-        <div class="overlay" id="overlay" onclick="Accedi()"></div>
+        <div class="overlay" id="overlay" onclick="access()"></div>
             <div class="frame" id="frame">
-                <img src="/italia.png"><br>
+                <img src="../Immagini/italia.png"><br>
                 <input type="text" placeholder="Inserire mail"><br>
                 <input type="password" placeholder="Inserire password">
                 <button onclick="Accedi()">Accedi</button>
                 <p>Non hai un account? Registrati</p>
         </div>
         <!--frame per registrarsi-->
-        <div class="overlay" id="overlayR" onclick="Registrati()"></div>
+        <div class="overlay" id="overlayR" onclick="registration()"></div>
             <div class="frame" id="frameR">
-                <img src="/italia.png"><br>
+                <img src="../Immagini/italia.png"><br>
                 <input type="text" placeholder="Inserire mail"><br>
                 <input type="password" placeholder="Inserire password">
                 <input type="password" placeholder="Conferma password">
@@ -55,7 +55,7 @@
         <div class="overlay" id="overlayT" onclick="OverTema()"></div>
             <div class="frame" id="frameT">
             <button onclick="cambiatema()">Cambia tema</button>
-            <img src="italia.png">
+            <img src="../Immagini/italia.png">
         </div>
         <!--frame per i contatti-->
         <div class="overlay" id="overlayC" onclick="contatti()"></div>
@@ -73,13 +73,13 @@
             <div class="frame" id="frameL">
             <button onclick="lingua()">Cambia lingua</button>
             <p>Attualmente è disponibile sono la lingua italiana</p>
-            <img src="italia.png">
+            <img src="../Immagini/italia.png">
         </div>
 
         <!--frame per il profilo-->
         <div class="overlay" id="overlayP" onclick="profilo()"></div>
             <div class="frame" id="frameP">
-            <img src="utenteRM.png" width="10%" height="30%">
+            <img src="../immagini/utenteRM.png" width="10%" height="30%">
             <button>Nome utente</button>
             <button>Cognome utente</button>
             <button onclick="logout()">Logout</button>
