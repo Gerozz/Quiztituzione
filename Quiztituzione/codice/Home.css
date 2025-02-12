@@ -8,16 +8,15 @@ body {
 
 .PrimaParte {
     position: fixed;
-    top: 0;
-    left: 0;
+    top: 0;left: 0; right: 0;
     width: 100%;
     height: 13rem; /* Altezza totale della PrimaParte */
     background: #0066FF;
+    box-shadow: 0 0 0.75rem #000000;
     z-index: -1;
     flex-direction: column; /* Disposizione verticale: logo sopra, titolo sotto */
     justify-content: center; /* Centra verticalmente */
     align-items: center; /* Centra orizzontalmente */
-    padding: 0.5rem;
     display: none;
 }
 
@@ -86,7 +85,6 @@ body {
     margin: 7rem auto;
     padding: 0;
     min-width: min-content;
-
 }
 
 .container h1 {
@@ -140,6 +138,7 @@ div.slide.visible{
     z-index:0;
 }
 
+
 #Cultura{
     opacity:none;
 }
@@ -181,8 +180,8 @@ div.slide.visible{
     position: fixed;
     left: 0;right: 0;bottom:0;
     height: 6rem;
-    padding: 0;
     background: #0066ff;
+    box-shadow: 0 0 0.75rem #000000;
     padding-bottom: 0;
     align-items: center;
 }
@@ -333,14 +332,13 @@ button{
 
 /*------parte per la impostazione-----*/
 #Impo {
-    border-radius: 0.3rem;
     position: fixed; 
     font-size: 1rem;
     margin-top: 1rem;
     margin-bottom: 1rem;
     overflow-y: auto;
     top: 0;
-    bottom: 5rem; 
+    bottom: 4rem; 
     width: 100%; 
 }
 
@@ -537,7 +535,113 @@ button{
 }
 
 
-@media (max-width: 37.5rem) {
+@media (max-width: 48rem) {
+    body {
+        font-size: 1rem;
+    }
+
+    .PrimaParte {
+        height: 13rem;
+    }
+
+    .PrimaParte img {
+        width: 10rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .container h1 {
+        font-size: 4rem;
+    }
+
+    .container p {
+        font-size: 1.2rem;
+    }
+
+    .flag-container button {
+        font-size: 1.5rem;
+        padding: 0.7rem;
+        margin: 0.4rem 0;
+    }
+
+    .navbar {
+        padding: 0.8rem;
+    }
+
+    .nav-item img {
+        width: 1.3rem;
+        height: 1.3rem;
+    }
+
+    .contenitore {
+        margin: 3rem auto;
+        padding: 1.5rem;
+    }
+
+    .sezione-con-img {
+        flex-direction: column;
+    }
+
+    .sezione-con-img .testo {
+        text-align: center;
+    }
+
+    .barra2 {
+        position: fixed;
+        left: 0;right: 0;bottom:0;
+        height: 5.5rem;
+        padding-bottom: 0;
+    }
+
+    .SecondaParte {
+        width: 95%;
+        max-width: 40rem;
+        height: auto;
+        top: 12rem;
+        transform: translate(-50%, 0);
+    }
+
+    .SecondaParte p {
+        width: 95%;
+        max-width: 40rem;
+        margin-left: 0;
+    }
+
+    #vf button {
+        width: 12rem;
+        max-width: 40rem;
+        min-width: 0;
+    }
+
+    .frame {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        height: 50%; /* Occupa metà della pagina */
+        padding: 1rem;
+        box-sizing: border-box;
+        overflow-y: auto; /* Aggiunge lo scroll se il contenuto è troppo alto */
+    }
+
+    .frame input {
+        width: 15rem;
+        height: 2.5rem;
+        margin: 0.5rem;
+    }
+
+    .frame img {
+        width: 20%;
+        margin: 0.5rem;
+    }
+
+    .frame button:hover {
+        background-color: #0055cc;
+        color: white;
+    }
+}
+
+@media (max-width: 30rem) {
     body {
         font-size: 0.9rem;
     }
@@ -588,7 +692,10 @@ button{
     }
 
     .barra2 {
-        height: 5rem; /* Altezza ridotta della barra blu */
+        position: fixed;
+        left: 0;right: 0;bottom:0;
+        height: 5rem;
+        padding-bottom: 0;
     }
 
     .SecondaParte {
@@ -605,9 +712,48 @@ button{
         margin-left: 0;
     }
 
+    #vf {
+        position: fixed;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 0rem;
+        right: 5rem;
+        display: flex;
+        justify-content: space-around;
+        font-size: 2rem;
+    }
+
     #vf button {
-        width: 90%;
+        width: 10rem;
         max-width: 36rem;
         min-width: 0;
+    }
+
+    .frame {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        height: 50%;
+        padding-bottom: 0rem;
+        box-sizing: border-box;
+        overflow-y: auto;
+    }
+
+    .frame input {
+        width: 10rem;
+        height: 2rem;
+        margin: 0.5rem;
+    }
+
+    .frame img {
+        width: 70%;
+        margin: 0.5rem;
+    }
+
+    .frame button:hover {
+        background-color: #0044aa;
+        color: white;
     }
 }
