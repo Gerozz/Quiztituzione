@@ -151,6 +151,7 @@ div.slide.visible{
     display: inline-block;
 
 }
+
 #preparazione{
     right:0;
     width: 18rem;
@@ -159,21 +160,28 @@ div.slide.visible{
     display: inline-block;
 }
 
+#newButtons{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-height: 15.6rem; 
+}
+
 .new-button {
-      margin-left: 30px; 
+      margin-left: 1.8px; 
       display: block; 
 }
 
 .sub-button {
     margin-left: 5rem;
-    margin-top: 10px;
+    margin-top: 0.6rem;
     display: block;
 
   }
 
 .dynamic-move-up {
-    transform: translateY(+10%);
-    transition: all 0.5s ease; 
+    transition: transform 0.3s ease-in-out;
+    transform: translateY(-1.25rem); 
 }
 
 .barra2{
@@ -245,7 +253,7 @@ button{
 
 .barriera{
     clear: both;
-    height: 13rem;
+    height: 18rem;
 }
 
 .barriera2{
@@ -477,10 +485,15 @@ button{
     font-size: large;
 }
 
-#intro{
-    padding-top: 10rem;
-    height: calc(100vh - 15rem);
-    overflow-y: scroll;
+#intro {
+    justify-content: center;
+    top: calc(13rem + 0.5rem);
+    bottom: calc(6rem + 0.5rem); 
+    overflow-y: auto;
+    position: absolute;
+    width: 100%;
+    padding: 1rem;
+    box-sizing: border-box;
 }
 
 .precisazione{
@@ -499,7 +512,7 @@ button{
     flex-direction: column;
     position: absolute;
     height: 30rem;
-    top: 15rem; /* Alzato per centrare meglio */
+    top: 15rem; 
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 1rem;

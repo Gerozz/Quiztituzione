@@ -87,13 +87,13 @@ function showHide(){
         createButton(newButtonsContainer, "Costituzione");
         createButton(newButtonsContainer, "Cultura Generale");
         buttonsVisible = true;
-        testFinale.classList.add("dynamic-move-up");
-        preparazione.classList.add("dynamic-move-up");
+        testFinale.classList.remove("dynamic-move-up");
+        preparazione.classList.remove("dynamic-move-up");
     } else {
         newButtonsContainer.innerHTML = "";
         buttonsVisible = false;
-        testFinale.classList.remove("dynamic-move-up");
-        preparazione.classList.remove("dynamic-move-up");
+        testFinale.classList.add("dynamic-move-up");
+        preparazione.classList.add("dynamic-move-up");
     }
   }
 
@@ -124,8 +124,8 @@ function toggleSubButtons(container, parentButton) {
 
     subButton1.textContent = "Quiz";
     subButton2.textContent = "Spiegazione";
-    subButton1.className = "button sub-button";
-    subButton2.className = "button sub-button";
+    subButton1.className = "button sub-button ";
+    subButton2.className = "button sub-button ";
 
     subButton2.addEventListener("click",()=>{
           if(parentButton.textContent==="Cultura Generale"){
