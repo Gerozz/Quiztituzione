@@ -69,15 +69,6 @@
             <button id="Letteratura" onclick="toSlide('LetteraturaP')">Letteratura</button>
         </div>
 
-        <!--slide opzioni costituzione bottoni-->
-        <div class="flag-container slide tema" id="CostituzioneP">   
-            <button id="Costituzione">Costituzione (articoli)</button>
-            <button id="Suddivisione">Suddivisione camere</button>
-            <button id="Elezioni">Elezioni</button>
-            <button id="Votazione">Età votazione</button>
-            <button id="Cittadinanza">Come avere la cittadinanza</button>
-        </div>
-
         <!---slide di spiegazione di storia-->
         <div class="flag-container slide tema" id="StoriaP">
             <div id="cSto" class="contenitore"></div>
@@ -94,15 +85,32 @@
         </div>
 
         <!--slide opzioni costituzione bottoni-->
-        <div class="flag-container slide" id="CostituzioneP">   
-            <button id="Costituzione">Costituzione (articoli)</button>
-            <button id="Suddivisione">Suddivisione camere</button>
-            <button id="Elezioni">Elezioni</button>
-            <button id="Votazione">Età votazione</button>
-            <button id="Cittadinanza">Come avere la cittadinanza</button>
+        <div class="flag-container slide tema" id="CostituzioneP">   
+            <button id="Costituzione" onclick="toSlide('articoliP')">Costituzione (articoli)</button>
+            <button id="Suddivisione" onclick="toSlide('camereP')">Suddivisione camere</button>
+            <button id="Elezioni" onclick="toSlide('elezioniP')">Elezioni</button>
+            <button id="Cittadinanza" onclick="toSlide('cittadinanzaP')">Come avere la cittadinanza</button>
         </div>
 
-        <!----slide di spiegazione per -->
+        <!----slide di spiegazione per gli articoli-->
+        <div class="flag-container slide" id="articoliP">
+            <div id="cArt" class="contenitore"></div>
+        </div>
+
+        <!----slide di spiegazione per le camere-->
+        <div class="flag-container slide" id="camereP">
+            <div id="cSud" class="contenitore"></div>
+        </div>
+
+        <!---slide di spiegazione per le elezioni-->
+        <div class="flag-container slide" id="elezioniP">
+            <div id="cEle" class="contenitore"></div>
+        </div>
+
+        <!---slide di spiegazione per la cittadinanza-->
+        <div class="flag-container slide" id="cittadinanzaP">
+            <div id="cCit" class="contenitore"></div>
+        </div>
 
          <!--slide per le impostazioni-->
         <div class="flag-container slide tema"  id="Impo">

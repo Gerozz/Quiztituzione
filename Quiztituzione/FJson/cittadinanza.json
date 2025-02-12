@@ -1,0 +1,43 @@
+{
+    "requisiti": {
+      "economici": [
+        "Disponibilità dei mezzi economici di sostentamento",
+        "Adempimento degli obblighi fiscali"
+      ],
+      "linguistici": "Comprovata conoscenza della lingua italiana (livello B1 – QCER)",
+      "giuramento": "Prestare giuramento alla Repubblica"
+    },
+    "impedimenti": [
+      "Condanna per determinati delitti previsti dal codice penale",
+      "Condanna per reato non colposo con pena superiore a 3 anni",
+      "Motivi di sicurezza della Repubblica"
+    ],
+    "documenti": [
+      "Documento di riconoscimento",
+      "Certificato di nascita",
+      "Certificato di lingua italiana B1",
+      "Ricevuta di pagamento di € 250,00",
+      "Marca da bollo"
+    ],
+    "procedura": {
+      "sito": "Portale Servizi del Ministero dell'Interno",
+      "autenticazione": "SPID, CIE o CNS"
+    },
+    "categorie": {
+      "adozione": "Cittadino straniero adottato da cittadini italiani ottiene automaticamente la cittadinanza.",
+      "matrimonio": [
+        "2 anni di residenza legale in Italia",
+        "3 anni di residenza all'estero dal matrimonio",
+        "Riduzioni di tempi se ci sono figli"
+      ],
+      "residenza": {
+        "extraeuropei": "10 anni di residenza legale",
+        "rifugiati": "5 anni",
+        "maggiorenni adottati": "5 anni",
+        "ascendenti italiani": "3 anni"
+      },
+      "europei": "Residenza in Italia per almeno 4 anni"
+    },
+    "tempi_rilascio": "Da 24 a 36 mesi"
+ }
+  

@@ -1,0 +1,127 @@
+{
+    "principi_fondamentali": [
+      {
+        "articolo": 1,
+        "titolo": "Sovranità popolare",
+        "descrizione": "L'Italia è una Repubblica democratica, fondata sul lavoro. La sovranità appartiene al popolo, che la esercita nelle forme e nei limiti della Costituzione.",
+        "significato": "Il potere appartiene ai cittadini, che lo esercitano tramite il voto e le istituzioni. Il lavoro è un valore fondamentale per la società."
+      },
+      {
+        "articolo": 2,
+        "titolo": "Diritti inviolabili e doveri di solidarietà",
+        "descrizione": "La Repubblica riconosce e garantisce i diritti inviolabili dell'uomo e richiede l’adempimento dei doveri di solidarietà politica, economica e sociale.",
+        "significato": "Ogni individuo ha diritti che lo Stato deve proteggere, ma ha anche doveri verso la comunità."
+      },
+      {
+        "articolo": 3,
+        "titolo": "Uguaglianza e rimozione degli ostacoli sociali",
+        "descrizione": "Tutti i cittadini sono uguali davanti alla legge. La Repubblica deve rimuovere gli ostacoli che impediscono l’uguaglianza e lo sviluppo della persona.",
+        "significato": "Non basta dichiarare che tutti sono uguali, lo Stato deve agire per garantire pari opportunità."
+      },
+      {
+        "articolo": 4,
+        "titolo": "Diritto e dovere al lavoro",
+        "descrizione": "Lo Stato promuove il diritto al lavoro e ogni cittadino deve contribuire al progresso della società.",
+        "significato": "Il lavoro non è solo un diritto, ma anche un dovere per il bene collettivo."
+      },
+      {
+        "articolo": 5,
+        "titolo": "Autonomie locali",
+        "descrizione": "L'Italia è una Repubblica una e indivisibile, ma riconosce e promuove le autonomie locali.",
+        "significato": "Lo Stato garantisce l’unità del Paese, ma concede autonomia a Regioni, Comuni e Province."
+      },
+      {
+        "articolo": 6,
+        "titolo": "Tutela delle minoranze linguistiche",
+        "descrizione": "Lo Stato protegge le minoranze linguistiche con apposite leggi.",
+        "significato": "Chi parla una lingua diversa dall’italiano ha diritti specifici."
+      },
+      {
+        "articolo": 7,
+        "titolo": "Rapporti tra Stato e Chiesa",
+        "descrizione": "Lo Stato e la Chiesa cattolica sono indipendenti e sovrani.",
+        "significato": "L’Italia è uno Stato laico, ma riconosce la Chiesa cattolica attraverso i Patti Lateranensi."
+      },
+      {
+        "articolo": 8,
+        "titolo": "Libertà di religione",
+        "descrizione": "Tutte le religioni sono libere e possono organizzarsi autonomamente, purché rispettino la legge.",
+        "significato": "Lo Stato non favorisce nessuna religione e garantisce la libertà di culto."
+      },
+      {
+        "articolo": 9,
+        "titolo": "Cultura, paesaggio e ambiente",
+        "descrizione": "Lo Stato tutela la cultura, la ricerca scientifica, il paesaggio e l’ambiente.",
+        "significato": "Proteggere la cultura e la natura è un dovere dello Stato."
+      },
+      {
+        "articolo": 10,
+        "titolo": "Diritto internazionale e diritto d’asilo",
+        "descrizione": "L'Italia rispetta il diritto internazionale. Gli stranieri perseguitati nel loro Paese hanno diritto d’asilo.",
+        "significato": "L’Italia accoglie chi fugge da persecuzioni."
+      },
+      {
+        "articolo": 11,
+        "titolo": "Ripudio della guerra",
+        "descrizione": "L'Italia ripudia la guerra e promuove la pace.",
+        "significato": "L’Italia non può dichiarare guerra, ma può partecipare a missioni di pace."
+      },
+      {
+        "articolo": 12,
+        "titolo": "La bandiera italiana",
+        "descrizione": "Il tricolore italiano è verde, bianco e rosso, a bande verticali.",
+        "significato": "Simbolo ufficiale dello Stato italiano."
+      }
+    ],
+    "altri_articoli_importanti": [
+      {
+        "articolo": 13,
+        "titolo": "Libertà personale",
+        "descrizione": "La libertà personale è inviolabile. Nessuno può essere arrestato o perquisito senza un atto motivato dell’autorità giudiziaria.",
+        "significato": "Nessuno può essere privato della libertà senza un giusto processo."
+      },
+      {
+        "articolo": 21,
+        "titolo": "Libertà di pensiero e stampa",
+        "descrizione": "Tutti hanno diritto di manifestare liberamente il proprio pensiero con la parola, lo scritto e ogni altro mezzo di diffusione.",
+        "significato": "Ognuno può esprimere le proprie idee, anche tramite giornali e media."
+      },
+      {
+        "articolo": 29,
+        "titolo": "La famiglia",
+        "descrizione": "La Repubblica riconosce i diritti della famiglia fondata sul matrimonio.",
+        "significato": "La famiglia è tutelata dallo Stato."
+      },
+      {
+        "articolo": 34,
+        "titolo": "Diritto all’istruzione",
+        "descrizione": "La scuola è aperta a tutti ed è obbligatoria per almeno 8 anni.",
+        "significato": "Lo Stato deve garantire l’istruzione a tutti."
+      },
+      {
+        "articolo": 37,
+        "titolo": "Parità nel lavoro per le donne",
+        "descrizione": "Le donne hanno gli stessi diritti e la stessa retribuzione degli uomini.",
+        "significato": "Nessuna discriminazione tra uomini e donne nel mondo del lavoro."
+      },
+      {
+        "articolo": 48,
+        "titolo": "Suffragio universale",
+        "descrizione": "Il voto è un diritto e un dovere. È segreto e personale.",
+        "significato": "Ogni cittadino ha il diritto di votare senza pressioni."
+      },
+      {
+        "articolo": 51,
+        "titolo": "Accesso alle cariche pubbliche",
+        "descrizione": "Tutti i cittadini possono accedere alle cariche pubbliche in condizioni di uguaglianza.",
+        "significato": "Tutti possono candidarsi per lavorare nelle istituzioni pubbliche."
+      },
+      {
+        "articolo": 117,
+        "titolo": "Ripartizione dei poteri tra Stato e Regioni",
+        "descrizione": "Lo Stato e le Regioni hanno competenze diverse e devono rispettare la Costituzione.",
+        "significato": "Lo Stato decide su alcune materie, le Regioni su altre."
+      }
+    ]
+  }
+  

@@ -444,12 +444,412 @@ function caricaS(){
   xhr.send()
 }
 
+function caricaC(){
+  let xhr = new XMLHttpRequest();
+
+  xhr.onload = function () {
+      try {
+
+          let contenitore = document.getElementById("cSud");
+          contenitore.innerHTML = ""; 
+          let dati = JSON.parse(xhr.responseText);
+  
+          let titolo = document.createElement("h1");
+          titolo.innerText = dati.titolo;
+          contenitore.appendChild(titolo);
+  
+          let descrizione = document.createElement("p");
+          descrizione.innerText = dati.descrizione;
+          contenitore.appendChild(descrizione);
+  
+          let strutturaTitolo = document.createElement("h2");
+          strutturaTitolo.innerText = "Struttura";
+          contenitore.appendChild(strutturaTitolo);
+  
+          dati.struttura.forEach((elemento) => {
+              let sezione = document.createElement("div");
+              sezione.className = "sezione";
+  
+              let nome = document.createElement("h3");
+              nome.innerText = elemento.nome;
+              sezione.appendChild(nome);
+  
+              let membri = document.createElement("p");
+              membri.innerText = "Membri: " + elemento.membri;
+              sezione.appendChild(membri);
+  
+              let sede = document.createElement("p");
+              sede.innerText = "Sede: " + elemento.sede;
+              sezione.appendChild(sede);
+  
+              let presidente = document.createElement("p");
+              presidente.innerText = "Presidente: " + elemento.presidente;
+              sezione.appendChild(presidente);
+  
+              if (elemento.senatori_vita) {
+                  let senatori_vita = document.createElement("p");
+                  senatori_vita.innerText = "Senatori a vita: " + elemento.senatori_vita;
+                  sezione.appendChild(senatori_vita);
+              }
+  
+              contenitore.appendChild(sezione);
+          });
+  
+          let funzioniTitolo = document.createElement("h2");
+          funzioniTitolo.innerText = "Funzioni";
+          contenitore.appendChild(funzioniTitolo);
+  
+          dati.funzioni.forEach((elemento) => {
+              let funzione = document.createElement("div");
+              funzione.className = "sezione";
+  
+              let nomeFunzione = document.createElement("h3");
+              nomeFunzione.innerText = elemento.nome;
+              funzione.appendChild(nomeFunzione);
+  
+              let descrizioneFunzione = document.createElement("p");
+              descrizioneFunzione.innerText = elemento.descrizione;
+              funzione.appendChild(descrizioneFunzione);
+  
+              contenitore.appendChild(funzione); 
+          });
+  
+      } catch (e) {
+          document.getElementById("cSud").innerText = "Caricamento fallito";
+      }
+  };
+  
+  xhr.onerror = function () {
+      document.getElementById("cSud").innerText = "Errore di comunicazione";
+  };
+  
+  xhr.open("GET", "../FJson/camere.json"); 
+  xhr.send();  
+}
+
+function caricaA(){
+  let xhr = new XMLHttpRequest();
+  xhr.onload = function() {
+      try {
+          let elenco = document.getElementById("cArt");
+          elenco.innerHTML = "";  
+
+          let d = JSON.parse(xhr.responseText);
+          d.principi_fondamentali.forEach((e) => {
+              
+              let p = document.createElement("section");
+              p.className = "sezione-con-img";
+              
+              let t = document.createElement("div");
+              t.className = "testo";
+              p.appendChild(t);
+              
+              t = document.createElement("h1");
+              t.innerText = `Art. ${e.articolo} - ${e.titolo}`; 
+              p.appendChild(t);
+              
+              t = document.createElement("p");
+              t.innerText = e.descrizione; 
+              p.appendChild(t);
+              
+              t = document.createElement("p");
+              t.innerText = `Significato: ${e.significato}`; 
+              p.appendChild(t);
+              
+              elenco.appendChild(p);  
+          });
+
+          d.altri_articoli_importanti.forEach((e) => {
+              let p = document.createElement("section");
+              p.className = "sezione-con-img";
+              
+              let t = document.createElement("div");
+              t.className = "testo";
+              p.appendChild(t);
+              
+              t = document.createElement("h1");
+              t.innerText = `Art. ${e.articolo} - ${e.titolo}`; 
+              p.appendChild(t);
+              
+              t = document.createElement("p");
+              t.innerText = e.descrizione; 
+              p.appendChild(t);
+              
+              t = document.createElement("p");
+              t.innerText = `Significato: ${e.significato}`; 
+              p.appendChild(t);
+              
+              elenco.appendChild(p); 
+          });
+
+      } catch (e) {
+          document.getElementById("cArt").innerText = "Caricamento fallito";
+      }
+  };
+
+  xhr.onerror = function() {
+      document.getElementById("cArt").innerText = "Errore di comunicazione";
+  };
+
+  xhr.open("GET", "../FJson/articoli.json");
+  xhr.send();
+}
+
+function caricaCit() {
+    let xhr = new XMLHttpRequest();
+    xhr.onload = function () {
+        try {
+            let elenco = document.getElementById("cCit");
+            elenco.innerHTML = "";
+
+            let d = JSON.parse(xhr.responseText);
+
+            function creaSezione(titolo, contenuto) {
+                let sezione = document.createElement("section");
+                sezione.className = "sezione-con-img";
+
+                let titoloElem = document.createElement("h1");
+                titoloElem.innerText = titolo;
+                sezione.appendChild(titoloElem);
+
+                if (Array.isArray(contenuto)) {
+                    let lista = document.createElement("ul");
+                    contenuto.forEach((e) => {
+                        let li = document.createElement("li");
+                        li.innerText = e;
+                        lista.appendChild(li);
+                    });
+                    sezione.appendChild(lista);
+                } else if (typeof contenuto === "object") {
+                    let lista = document.createElement("ul");
+                    Object.keys(contenuto).forEach((key) => {
+                        let li = document.createElement("li");
+                        li.innerText = key + ": " + contenuto[key];
+                        lista.appendChild(li);
+                    });
+                    sezione.appendChild(lista);
+                } else {
+                    let p = document.createElement("p");
+                    p.innerText = contenuto;
+                    sezione.appendChild(p);
+                }
+
+                elenco.appendChild(sezione);
+            }
+
+            creaSezione("Requisiti per ottenere la cittadinanza", d.requisiti.economici);
+            creaSezione("Lingua richiesta", d.requisiti.linguistici);
+            creaSezione("Giuramento richiesto", d.requisiti.giuramento);
+            creaSezione("Cosa impedisce di ottenere la cittadinanza", d.impedimenti);
+            creaSezione("Documenti necessari", d.documenti);
+            creaSezione("Procedura per la domanda", `Il cittadino straniero dovrà presentare la domanda attraverso il sito: ${d.procedura.sito}. Autenticazione necessaria: ${d.procedura.autenticazione}`);
+            
+            let categorieSezione = document.createElement("section");
+            categorieSezione.className = "sezione-con-img";
+            let categorieTitle = document.createElement("h1");
+            categorieTitle.innerText = "Categorie di cittadinanza";
+            categorieSezione.appendChild(categorieTitle);
+            let categorieLista = document.createElement("ul");
+
+            Object.keys(d.categorie).forEach((key) => {
+                let li = document.createElement("li");
+                li.innerText = key;
+
+                let dettagli = d.categorie[key];
+
+                if (Array.isArray(dettagli)) {
+                    let subList = document.createElement("ul");
+                    dettagli.forEach((sub) => {
+                        let subLi = document.createElement("li");
+                        subLi.innerText = sub;
+                        subList.appendChild(subLi);
+                    });
+                    li.appendChild(subList);
+                } else if (typeof dettagli === "object") {
+                    let subList = document.createElement("ul");
+                    Object.keys(dettagli).forEach((subKey) => {
+                        let subLi = document.createElement("li");
+                        subLi.innerText = `${subKey}: ${dettagli[subKey]}`;
+                        subList.appendChild(subLi);
+                    });
+                    li.appendChild(subList);
+                } else {
+                    li.innerText += `: ${dettagli}`;
+                }
+
+                categorieLista.appendChild(li);
+            });
+
+            categorieSezione.appendChild(categorieLista);
+            elenco.appendChild(categorieSezione);
+
+            creaSezione("Tempi per il rilascio della cittadinanza", d.tempi_rilascio);
+
+        } catch (e) {
+            document.getElementById("cCit").innerText = "Caricamento fallito";
+        }
+    };
+
+    xhr.onerror = function () {
+        document.getElementById("cCit").innerText = "Errore di comunicazione";
+    };
+
+    xhr.open("GET", "../FJson/cittadinanza.json");
+    xhr.send();
+}
+
+function caricaEl(){
+  let xhr = new XMLHttpRequest();
+  xhr.onload = function() {
+      try {
+          let elenco = document.getElementById("cEle");
+          elenco.innerHTML = "";  
+
+          let d = JSON.parse(xhr.responseText);
+
+          let politiche = document.createElement("section");
+          politiche.className = "sezione-con-img";
+
+          let t = document.createElement("h1");
+          t.innerText = "Elezioni Politiche";
+          politiche.appendChild(t);
+
+          t = document.createElement("p");
+          t.innerText = `Camera dei Deputati: Voto da ${d.elezioni_italiane.elezioni_politiche.camera_dei_deputati.età_minima_voto} anni, candidabilità da ${d.elezioni_italiane.elezioni_politiche.camera_dei_deputati.età_minima_candidatura} anni.`;
+          politiche.appendChild(t);
+
+          t = document.createElement("p");
+          t.innerText = `Senato della Repubblica: Voto da ${d.elezioni_italiane.elezioni_politiche.senato_della_repubblica.età_minima_voto} anni, candidabilità da ${d.elezioni_italiane.elezioni_politiche.senato_della_repubblica.età_minima_candidatura} anni.`;
+          politiche.appendChild(t);
+
+          t = document.createElement("p");
+          t.innerText = `Sistema elettorale: ${d.elezioni_italiane.elezioni_politiche.sistema_elettorale.descrizione}`;
+          politiche.appendChild(t);
+
+          elenco.appendChild(politiche);
+
+          let amministrative = document.createElement("section");
+          amministrative.className = "sezione-con-img";
+
+          t = document.createElement("h1");
+          t.innerText = "Elezioni Amministrative";
+          amministrative.appendChild(t);
+
+          t = document.createElement("p");
+          t.innerText = `Regionali: Si vota per ${d.elezioni_italiane.elezioni_amministrative.regionali.oggetto_voto.join(", ")}.`;
+          amministrative.appendChild(t);
+
+          t = document.createElement("p");
+          t.innerText = `Sistema: ${d.elezioni_italiane.elezioni_amministrative.regionali.sistema}`;
+          amministrative.appendChild(t);
+
+          t = document.createElement("p");
+          t.innerText = `Comunali: Si vota per ${d.elezioni_italiane.elezioni_amministrative.comunali.oggetto_voto.join(", ")}.`;
+          amministrative.appendChild(t);
+
+          t = document.createElement("p");
+          t.innerText = `Sistema per Comuni con meno di 15.000 abitanti: ${d.elezioni_italiane.elezioni_amministrative.comunali.sistema.meno_15000_abitanti}`;
+          amministrative.appendChild(t);
+
+          t = document.createElement("p");
+          t.innerText = `Sistema per Comuni con più di 15.000 abitanti: ${d.elezioni_italiane.elezioni_amministrative.comunali.sistema.più_15000_abitanti}`;
+          amministrative.appendChild(t);
+
+          elenco.appendChild(amministrative);
+
+          let europee = document.createElement("section");
+          europee.className = "sezione-con-img";
+
+          t = document.createElement("h1");
+          t.innerText = "Elezioni Europee";
+          europee.appendChild(t);
+
+          t = document.createElement("p");
+          t.innerText = `Si svolgono ogni ${d.elezioni_italiane.elezioni_europee.frequenza}.`;
+          europee.appendChild(t);
+
+          t = document.createElement("p");
+          t.innerText = `Sistema elettorale: ${d.elezioni_italiane.elezioni_europee.sistema}.`;
+          europee.appendChild(t);
+
+          elenco.appendChild(europee);
+
+          let referendum = document.createElement("section");
+          referendum.className = "sezione-con-img";
+
+          t = document.createElement("h1");
+          t.innerText = "Referendum";
+          referendum.appendChild(t);
+
+          d.elezioni_italiane.referendum.tipologie.forEach((ref) => {
+              let refSec = document.createElement("section");
+              refSec.className = "sotto-sezione";
+
+              let h2 = document.createElement("h2");
+              h2.innerText = ref.nome;
+              refSec.appendChild(h2);
+
+              let p = document.createElement("p");
+              p.innerText = ref.descrizione;
+              refSec.appendChild(p);
+
+              let quorum = document.createElement("p");
+              quorum.innerText = `Quorum richiesto: ${ref.quorum}`;
+              refSec.appendChild(quorum);
+
+              referendum.appendChild(refSec);
+          });
+
+          elenco.appendChild(referendum);
+
+          let procedura = document.createElement("section");
+          procedura.className = "sezione-con-img";
+
+          t = document.createElement("h1");
+          t.innerText = "Procedura di Voto";
+          procedura.appendChild(t);
+
+          let requisiti = document.createElement("ul");
+          d.elezioni_italiane.procedura_voto.requisiti.forEach((req) => {
+              let li = document.createElement("li");
+              li.innerText = req;
+              requisiti.appendChild(li);
+          });
+          procedura.appendChild(requisiti);
+
+          let passaggi = document.createElement("ol");
+          d.elezioni_italiane.procedura_voto.passaggi.forEach((step) => {
+              let li = document.createElement("li");
+              li.innerText = step;
+              passaggi.appendChild(li);
+          });
+          procedura.appendChild(passaggi);
+
+          elenco.appendChild(procedura);
+
+      } catch (e) {
+          document.getElementById("cEle").innerText = "Caricamento fallito";
+      }
+  };
+
+  xhr.onerror = function() {
+      document.getElementById("cEle").innerText = "Errore di comunicazione";
+  };
+
+  xhr.open("GET", "../FJson/elezioni.json");
+  xhr.send();
+}
+
 function carica(){
   caricaDomandeC();
   caricaDomandeCG();
   caricaL();
   caricaS();
   caricaG();
+  caricaC();
+  caricaA();
+  caricaCit();
+  caricaEl();
   toSlide('principale')
 }
 

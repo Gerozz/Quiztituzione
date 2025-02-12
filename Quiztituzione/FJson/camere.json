@@ -1,38 +1,34 @@
 {
-    "Parlamento Italiano": {
-      "Descrizione": "Il Parlamento italiano è l’organo costituzionale che esercita il potere legislativo della Repubblica. È composto da due Camere con pari poteri e funzioni.",
-      "Struttura": {
-        "Camera dei deputati": {
-          "Numero membri": 400,
-          "Sede": "Palazzo Montecitorio, Roma",
-          "Ruolo del Presidente": "Dirige i lavori dell’Assemblea e garantisce il rispetto delle regole parlamentari."
-        },
-        "Senato della Repubblica": {
-          "Numero membri": 200,
-          "Senatori a vita": "Ex Presidenti della Repubblica o cittadini nominati per meriti straordinari.",
-          "Sede": "Palazzo Madama, Roma",
-          "Ruolo del Presidente": "Gestisce i lavori del Senato in modo analogo al Presidente della Camera."
-        }
+    "titolo": "Parlamento Italiano",
+    "descrizione": "Il Parlamento italiano è l’organo che esercita il potere legislativo ed è composto da due Camere con pari funzioni.",
+    "struttura": [
+      {
+        "nome": "Camera dei deputati",
+        "membri": 400,
+        "sede": "Palazzo Montecitorio, Roma",
+        "presidente": "Dirige i lavori dell’Assemblea e garantisce il rispetto delle regole parlamentari."
       },
-      "Funzioni": {
-        "Attività legislativa": "Discussione e approvazione delle leggi, che possono essere proposte dal Governo, dai parlamentari o da altri soggetti previsti dalla Costituzione.",
-        "Controllo sul Governo": "Il Parlamento può interrogare e sfiduciare il Governo se ritenuto non adeguato.",
-        "Approvazione del bilancio": "Gestione delle risorse pubbliche attraverso l’approvazione del bilancio dello Stato.",
-        "Revisione costituzionale": "Modifica della Costituzione seguendo un iter speciale con maggioranze qualificate.",
-        "Elezioni istituzionali": "Elezione del Presidente della Repubblica e di altre alte cariche dello Stato."
+      {
+        "nome": "Senato della Repubblica",
+        "membri": 200,
+        "sede": "Palazzo Madama, Roma",
+        "presidente": "Gestisce i lavori del Senato in modo analogo al Presidente della Camera.",
+        "senatori_vita": "Ex Presidenti della Repubblica o cittadini nominati per meriti straordinari."
+      }
+    ],
+    "funzioni": [
+      {
+        "nome": "Attività legislativa",
+        "descrizione": "Discussione e approvazione delle leggi."
       },
-      "Lavori parlamentari": {
-        "Sedute plenarie": "Discussione e votazione delle leggi da parte dell’intera assemblea.",
-        "Commissioni parlamentari": {
-          "Descrizione": "Organi ristretti che esaminano nel dettaglio le proposte di legge prima del voto.",
-          "Tipologie": {
-            "Permanenti": "Si occupano di settori specifici come giustizia, istruzione ed economia.",
-            "Speciali": "Istituite per situazioni particolari."
-          }
-        },
-        "Gruppi parlamentari": "Rappresentano i diversi partiti politici e orientano le scelte legislative."
+      {
+        "nome": "Controllo sul Governo",
+        "descrizione": "Il Parlamento può interrogare e sfiduciare il Governo."
       },
-      "Ruolo nella democrazia": "Il Parlamento è il fulcro della democrazia italiana, rappresentando il popolo e prendendo decisioni di interesse generale per il Paese."
-    }
-  }
+      {
+        "nome": "Approvazione del bilancio",
+        "descrizione": "Gestione delle risorse pubbliche tramite il bilancio dello Stato."
+      }
+    ]
+}
   
