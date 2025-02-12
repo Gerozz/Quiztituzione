@@ -1,0 +1,94 @@
+{
+    "elezioni_italiane": {
+      "tipologie": [
+        {
+          "nome": "Elezioni politiche",
+          "descrizione": "Servono per eleggere il Parlamento italiano: Camera dei Deputati e Senato della Repubblica."
+        },
+        {
+          "nome": "Elezioni amministrative",
+          "descrizione": "Servono per eleggere i rappresentanti locali: Sindaci, Consigli Comunali, Presidenti di Regione e Consigli Regionali."
+        },
+        {
+          "nome": "Elezioni europee",
+          "descrizione": "Permettono ai cittadini italiani di eleggere i propri rappresentanti nel Parlamento Europeo."
+        },
+        {
+          "nome": "Referendum",
+          "descrizione": "Uno strumento di democrazia diretta che consente ai cittadini di approvare o abrogare una legge."
+        }
+      ],
+      "elezioni_politiche": {
+        "camera_dei_deputati": {
+          "età_minima_voto": 18,
+          "età_minima_candidatura": 25
+        },
+        "senato_della_repubblica": {
+          "età_minima_voto": 18,
+          "età_minima_candidatura": 40
+        },
+        "sistema_elettorale": {
+          "tipo": "misto",
+          "descrizione": "Un terzo dei seggi è assegnato con sistema maggioritario, due terzi con sistema proporzionale."
+        },
+        "modalità_di_voto": [
+          "Si può votare solo il partito, e il voto va anche al candidato collegato.",
+          "Si può votare il candidato, e il voto va anche al partito associato."
+        ],
+        "assegnazione_seggi": "I seggi vengono distribuiti in base alla percentuale di voti ricevuti dai partiti.",
+        "formazione_governo": "Il Presidente della Repubblica incarica il leader del partito o coalizione con la maggioranza parlamentare."
+      },
+      "elezioni_amministrative": {
+        "regionali": {
+          "oggetto_voto": [
+            "Presidente della Regione",
+            "Consiglio Regionale"
+          ],
+          "sistema": "Vince il candidato Presidente con il maggior numero di voti (varia a seconda della Regione)."
+        },
+        "comunali": {
+          "oggetto_voto": [
+            "Sindaco",
+            "Consiglio Comunale"
+          ],
+          "sistema": {
+            "meno_15000_abitanti": "Vince il candidato con più voti.",
+            "più_15000_abitanti": "Se nessuno supera il 50%, si va al ballottaggio tra i due più votati."
+          }
+        }
+      },
+      "elezioni_europee": {
+        "frequenza": "Ogni 5 anni",
+        "sistema": "Proporzionale con preferenze",
+        "modalità_di_voto": "Gli elettori possono scegliere un partito e indicare preferenze per i candidati."
+      },
+      "referendum": {
+        "tipologie": [
+          {
+            "nome": "Referendum abrogativo",
+            "descrizione": "Permette ai cittadini di cancellare una legge esistente.",
+            "quorum": "Deve votare almeno il 50% + 1 degli aventi diritto per essere valido."
+          },
+          {
+            "nome": "Referendum costituzionale",
+            "descrizione": "Serve per modificare la Costituzione italiana.",
+            "quorum": "Non è richiesto un quorum per la validità."
+          }
+        ]
+      },
+      "procedura_voto": {
+        "requisiti": [
+          "Essere iscritti alle liste elettorali del proprio Comune.",
+          "Avere un documento d'identità valido.",
+          "Essere in possesso della tessera elettorale."
+        ],
+        "passaggi": [
+          "Recarsi al seggio elettorale.",
+          "Ritirare la scheda elettorale.",
+          "Compilare la scheda seguendo le istruzioni.",
+          "Inserire la scheda nell’urna e firmare il registro di voto."
+        ]
+      }
+    }
+}
+  
