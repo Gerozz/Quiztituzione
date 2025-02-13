@@ -9,7 +9,7 @@ function OverTema() {
         frame.style.display = "none";
         overlay.style.display = "none";
     }
-  }
+}
 
 function temaChiaro() {
     let a = document.getElementById("tema");
@@ -17,10 +17,10 @@ function temaChiaro() {
     let topBars = document.getElementsByClassName("PrimaParte");
     let bottomBars = document.getElementsByClassName("TerzaParte");
     for (let i = 0; i < topBars.length; i++) {
-        topBars[i].style.backgroundColor = "rgb(0, 102, 255)";
+        topBars[i].style.background = "rgb(0, 102, 255)";
     }
     for (let i = 0; i < bottomBars.length; i++) {
-        bottomBars[i].style.backgroundColor = "rgb(0, 102, 255)";
+        bottomBars[i].style.background = "rgb(0, 102, 255)";
     }
     let frames = document.getElementsByClassName("frame");
     for (let i = 0; i < frames.length; i++) {
@@ -34,10 +34,10 @@ function temaScuro() {
     let topBars = document.getElementsByClassName("PrimaParte");
     let bottomBars = document.getElementsByClassName("TerzaParte");
     for (let i = 0; i < topBars.length; i++) {
-        topBars[i].style.backgroundColor = "rgb(0, 102, 255)";
+        topBars[i].style.background = "rgb(0, 102, 255)";
     }
     for (let i = 0; i < bottomBars.length; i++) {
-        bottomBars[i].style.backgroundColor = "rgb(0, 102, 255)";
+        bottomBars[i].style.background = "rgb(0, 102, 255)";
     }
     let frames = document.getElementsByClassName("frame");
     for (let i = 0; i < frames.length; i++) {
@@ -49,18 +49,13 @@ function temaRosso() {
     let a = document.getElementById("tema");
     a.style.backgroundColor = "rgb(106, 0, 0)";
     
-    let blueElements = document.querySelectorAll("[style*='color: rgb(0, 102, 255)']");
-    blueElements.forEach(element => {
-        element.style.color = "rgb(106, 0, 0)";
-    });
-
     let topBars = document.getElementsByClassName("PrimaParte");
     let bottomBars = document.getElementsByClassName("TerzaParte");
     for (let i = 0; i < topBars.length; i++) {
-        topBars[i].style.backgroundColor = "rgb(90, 2, 2)";
+        topBars[i].style.background = "rgb(90, 2, 2)";
     }
     for (let i = 0; i < bottomBars.length; i++) {
-        bottomBars[i].style.backgroundColor = "rgb(90, 2, 2)";
+        bottomBars[i].style.background = "rgb(90, 2, 2)";
     }
     let frames = document.getElementsByClassName("frame");
     for (let i = 0; i < frames.length; i++) {
