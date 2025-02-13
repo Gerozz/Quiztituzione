@@ -127,7 +127,7 @@ body {
     margin-bottom:0.5rem;
     padding-top: 0; 
     overflow: auto;
-
+}
 
 div.slide.visible{
     opacity:1;
