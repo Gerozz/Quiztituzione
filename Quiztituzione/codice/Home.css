@@ -117,18 +117,20 @@ body {
 
 .flag-container{
     position:fixed;
-    top:0; left:0; bottom:0; right:0;
+    left:0; right:0;
     overflow-y:auto;
+    top: 13rem;
+    bottom: 6rem; 
     opacity:0;
     background-size: cover;
     background-attachment: fixed;
     width: 100%;
-    height: calc(100vh - barra2);
+    max-height: 30rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top:0rem;
+    margin-top:0;
     padding-top: 0; 
     overflow: auto;
 }
@@ -253,7 +255,7 @@ button{
 
 .barriera{
     clear: both;
-    height: 18rem;
+    height: 12rem;
 }
 
 .barriera2{
@@ -345,8 +347,6 @@ button{
     margin-top: 1rem;
     margin-bottom: 1rem;
     overflow-y: auto;
-    top: 0;
-    bottom: 4rem; 
     width: 100%; 
 }
 
@@ -487,8 +487,6 @@ button{
 
 #intro {
     justify-content: center;
-    top: calc(13rem + 0.5rem);
-    bottom: calc(6rem + 0.5rem); 
     overflow-y: auto;
     position: absolute;
     width: 100%;
