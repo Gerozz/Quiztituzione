@@ -797,13 +797,20 @@ button{
 
     .frame input {
         width: 10rem;
-        height: 2rem;
+        height: 2.5rem;
         margin: 0.5rem;
     }
 
     .frame img {
         width: 70%;
         margin: 0.5rem;
+    }
+
+    .frame button{
+        width: 10rem;
+        min-width: 4rem;
+        font-size: 1rem;
+        font-weight: bold;
     }
 
     .frame button:hover {
