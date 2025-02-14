@@ -343,7 +343,7 @@ function profilo() {
 
 //funzione che permette di scaricare un file
 function downloadFile() {
-  const fileUrl = "../certificato/certificato.pdf";
+  const fileUrl = "certificato/certificato.pdf";
   const fileName = "certificato.pdf";
 
   const a = document.createElement("a");
@@ -382,7 +382,7 @@ function caricaDomandeCG() {
         console.error("Errore di comunicazione");
     };
 
-    xhr.open("GET", "../FJson/domandeCultura.json");
+    xhr.open("GET", "FJson/domandeCultura.json");
     xhr.send();
 }
 
@@ -412,7 +412,7 @@ function caricaDomandeC(){
       console.error("Errore di comunicazione");
   };
 
-  xhr.open("GET", "../FJson/domandeCostituzione.json");
+  xhr.open("GET", "FJson/domandeCostituzione.json");
   xhr.send();
 }
 
@@ -444,7 +444,7 @@ function caricaL(){
   xhr.onerror=function(){
       document.getElementById("cLet").innerText="Errore di comunicazione"
   }
-  xhr.open("GET","../FJson/letteratura.json")
+  xhr.open("GET","FJson/letteratura.json")
   xhr.send()
 }
 
@@ -497,7 +497,7 @@ function caricaG(){
   xhr.onerror=function(){
       document.getElementById("cGra").innerText="Errore di comunicazione"
   }
-  xhr.open("GET","../FJson/grammatica.json")
+  xhr.open("GET","FJson/grammatica.json")
   xhr.send()
 }
 
@@ -529,7 +529,7 @@ function caricaS(){
   xhr.onerror=function(){
       document.getElementById("cSto").innerText="Errore di comunicazione"
   }
-  xhr.open("GET","../FJson/storia.json")
+  xhr.open("GET","FJson/storia.json")
   xhr.send()
 }
 
@@ -612,7 +612,7 @@ function caricaC(){
       document.getElementById("cSud").innerText = "Errore di comunicazione";
   };
   
-  xhr.open("GET", "../FJson/camere.json"); 
+  xhr.open("GET", "FJson/camere.json"); 
   xhr.send();  
 }
 
@@ -680,7 +680,7 @@ function caricaA(){
       document.getElementById("cArt").innerText = "Errore di comunicazione";
   };
 
-  xhr.open("GET", "../FJson/articoli.json");
+  xhr.open("GET", "FJson/articoli.json");
   xhr.send();
 }
 
@@ -783,7 +783,7 @@ function caricaCit() {
         document.getElementById("cCit").innerText = "Errore di comunicazione";
     };
 
-    xhr.open("GET", "../FJson/cittadinanza.json");
+    xhr.open("GET", "FJson/cittadinanza.json");
     xhr.send();
 }
 
@@ -925,7 +925,7 @@ function caricaEl(){
       document.getElementById("cEle").innerText = "Errore di comunicazione";
   };
 
-  xhr.open("GET", "../FJson/elezioni.json");
+  xhr.open("GET", "FJson/elezioni.json");
   xhr.send();
 }
 

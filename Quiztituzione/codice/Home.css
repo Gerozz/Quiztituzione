@@ -587,7 +587,7 @@ button{
 
 @font-face {
     font-family: "Semimono";
-    src: url('../Font/TitilliumWeb-Regular.ttf');
+    src: url('Font/TitilliumWeb-Regular.ttf')
 }
 
 
