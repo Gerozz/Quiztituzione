@@ -4,17 +4,17 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Quiztituzione</title>
-        <link rel="icon" type="image/x-icon" href="../Immagini/libro.png">
+        <link rel="icon" type="image/x-icon" href="Immagini/libro.png">
         <link rel="stylesheet" href="Home.css">
         <link rel="manifest" href="../manifest.json">
-        <link rel="icon" type="image/png" href="/Immagini/iconWebApp.png">
+        <link rel="icon" type="image/png" href="Immagini/iconWebApp.png">
         <script type="text/javascript" src="Script.js"></script>
     </head>
     <body onload="carica()"> <!--funzione che carica le domande e carica la pagina intro-->
         
         <!---header della prima pagina di accedi/registrati-->
         <div class="PrimaParte tema" id="header1">
-            <img src="../Immagini/italia.png" class="logo">
+            <img src="Immagini/italia.png" class="logo">
             <div class="container">
                 <h1>Quiztituzione</h1>
                 <p>Articoli in gioco</p>
@@ -23,7 +23,7 @@
 
         <!--header della pagina con logo e scritta-->
         <div class="PrimaParte tema" id="header2">
-                <img src="../Immagini/libro.png" class="logo">
+                <img src="Immagini/libro.png" class="logo">
                 <div class="container">
                     <h1>Quiztituzione</h1>
                     <p>Articoli in gioco</p>
@@ -33,7 +33,7 @@
         <!---header della schermata dei quiz-->
         <div class="PrimaParte tema" id="header3">
                 <div class="container3">
-                    <img src="../Immagini/italia.png" class="logo3">
+                    <img src="Immagini/italia.png" class="logo3">
                     <h1>Quiztituzione</h1>
                 </div>
                 <button class="termina">Termina</button>
@@ -43,7 +43,7 @@
 
         <!--slide iniziale con solo immagine per accedere-->
         <div class="flag-container slide tema" id="principale">   
-            <img src="../Immagini/libro.png">
+            <img src="Immagini/libro.png">
         </div>
 
         
@@ -126,11 +126,11 @@
          <!--slide per le impostazioni-->
         <div class="flag-container slide tema"  id="Impo">
             <div class="barriera tema"></div>
-            <button onclick="profilo()"><img src="../Immagini/profilo.webp" alt="Profilo"> Profilo</button>
-            <button onclick="lingua()"><img src="../Immagini/bandieraItalia.webp" alt="Lingua"> Lingua</button>
-            <button onclick="OverTema()"><img src="../Immagini/tema.webp" alt="Tema" > Tema</button>
-            <button><a href="https://www.senato.it/istituzione/la-costituzione" target="_blank"><img src="../Immagini/collegamento.webp" alt="Link costituzione"></a> Link costituzione</button>
-            <button onclick="contatti()"><img src="../Immagini/assistenza.webp" alt="Assistenza"> Assistenza</button>
+            <button onclick="profilo()"><img src="Immagini/profilo.webp" alt="Profilo"> Profilo</button>
+            <button onclick="lingua()"><img src="Immagini/bandieraItalia.webp" alt="Lingua"> Lingua</button>
+            <button onclick="OverTema()"><img src="Immagini/tema.webp" alt="Tema" > Tema</button>
+            <button><a href="https://www.senato.it/istituzione/la-costituzione" target="_blank"><img src="Immagini/collegamento.webp" alt="Link costituzione"></a> Link costituzione</button>
+            <button onclick="contatti()"><img src="Immagini/assistenza.webp" alt="Assistenza"> Assistenza</button>
         </div>
             <!--frame per cambiare tema-->
             <div class="overlay" id="overlayT" onclick="OverTema()"></div>
@@ -139,7 +139,7 @@
             <button onclick="temaChiaro()">Tema chiaro</button>
             <button onclick="temaRosso()">Tema rosso</button>
             <button onclick="temaTricolore()">Tema tricolore</button>
-            <img src="../Immagini/italia.png">
+            <img src="Immagini/italia.png">
             </div>
             <!--frame per i contatti-->
             <div class="overlay" id="overlayC" onclick="contatti()"></div>
@@ -157,13 +157,13 @@
                 <div class="frame tema" id="frameL">
                 <button onclick="lingua()">Cambia lingua</button>
                 <p>Attualmente è disponibile sono la lingua italiana</p>
-                <img src="../Immagini/italia.png">
+                <img src="Immagini/italia.png">
             </div>
     
             <!--frame per il profilo-->
             <div class="overlay" id="overlayP" onclick="profilo()"></div>
                 <div class="frame tema" id="frameP">
-                <img src="../immagini/utenteRM.png" width="10%" height="30%">
+                <img src="immagini/utenteRM.png" width="10%" height="30%">
                 <button>Nome utente</button>
                 <button>Cognome utente</button>
                 <button onclick="logout()">Logout</button>
@@ -190,13 +190,13 @@
             <div class="lowslide visible" id="lowB">
                 <div class="navbar">
                     <div class="nav-item">
-                    <button onclick="indietro()"><img src="../Immagini/indietro.png" alt="Tasto Indietro"></a></button>
+                    <button onclick="indietro()"><img src="Immagini/indietro.png" alt="Tasto Indietro"></a></button>
                     </div>
                     <div class="nav-item">
-                       <button onclick="toSlide('intro')"><img src="../Immagini/home.webp" alt="Home"></button>
+                       <button onclick="toSlide('intro')"><img src="Immagini/home.webp" alt="Home"></button>
                     </div>
                     <div class="nav-item">
-                        <button onclick="toSlide('Impo')"><img src="../Immagini/impostazioni.webp" alt="Impostazioni"></button>
+                        <button onclick="toSlide('Impo')"><img src="Immagini/impostazioni.webp" alt="Impostazioni"></button>
                     </div>
                 </div>
             </div>
@@ -210,7 +210,7 @@
         <!--frame per accedere-->
         <div class="overlay" id="overlay" onclick="access()"></div>
             <div class="frame tema" id="frame">
-                <img src="../Immagini/italia.png"><br>
+                <img src="Immagini/italia.png"><br>
                 <input type="text" placeholder="Inserire mail"><br>
                 <input type="password" placeholder="Inserire password">
                 <button onclick="access()">Accedi</button>
@@ -220,7 +220,7 @@
         <!--frame per registrarsi-->
         <div class="overlay" id="overlayR" onclick="registration()"></div>
             <div class="frame tema" id="frameR">
-                <img src="../Immagini/italia.png"><br>
+                <img src="Immagini/italia.png"><br>
                 <input type="text" placeholder="Inserire nome">
                 <input type="text" placeholder="Inserire cognome"><br>
                 <input type="text" placeholder="Inserire mail"><br>
