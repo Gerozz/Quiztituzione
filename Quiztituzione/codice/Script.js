@@ -212,72 +212,79 @@ function OverTema() {
 }
 
 function temaChiaro() {
-  let a = document.getElementsByClassName("tema");
-  a.style.backgroundColor = "rgb(219, 219, 219)";
-  let topBars = document.getElementsByClassName("PrimaParte");
-  let bottomBars = document.getElementsByClassName("TerzaParte");
-  for (let i = 0; i < topBars.length; i++) {
-      topBars[i].style.background = "rgb(0, 102, 255)";
-  }
-  for (let i = 0; i < bottomBars.length; i++) {
-      bottomBars[i].style.background = "rgb(0, 102, 255)";
-  }
-  let frames = document.getElementsByClassName("frame");
-  for (let i = 0; i < frames.length; i++) {
-      frames[i].style.backgroundColor = "rgb(150, 150, 150)";
-  }
+    let elements = document.querySelectorAll(".tema");
+    elements.forEach((a) => {
+        a.style.backgroundColor = "rgb(219, 219, 219)";
+    });
+    let topBars = document.getElementsByClassName("PrimaParte");
+    let bottomBars = document.getElementsByClassName("barra2");
+    for (let i = 0; i < topBars.length; i++) {
+        topBars[i].style.background = "rgb(0, 102, 255)";
+    }
+    for (let i = 0; i < bottomBars.length; i++) {
+        bottomBars[i].style.background = "rgb(0, 102, 255)";
+    }
+    let frames = document.getElementsByClassName("frame");
+    for (let i = 0; i < frames.length; i++) {
+        frames[i].style.backgroundColor = "rgb(150, 150, 150)";
+    }
 }
 
 function temaScuro() {
-  let a = document.getElementsByClassName("tema");
-  a.style.backgroundColor = "rgb(27, 27, 27)";
-  let topBars = document.getElementsByClassName("PrimaParte");
-  let bottomBars = document.getElementsByClassName("TerzaParte");
-  for (let i = 0; i < topBars.length; i++) {
-      topBars[i].style.background = "rgb(0, 102, 255)";
-  }
-  for (let i = 0; i < bottomBars.length; i++) {
-      bottomBars[i].style.background = "rgb(0, 102, 255)";
-  }
-  let frames = document.getElementsByClassName("frame");
-  for (let i = 0; i < frames.length; i++) {
-      frames[i].style.backgroundColor = "rgb(50, 50, 50)";
-  }
+    let elements = document.querySelectorAll(".tema");
+    elements.forEach((a) => {
+        a.style.backgroundColor = "rgb(27, 27, 27)";
+    });
+    let topBars = document.getElementsByClassName("PrimaParte");
+    let bottomBars = document.getElementsByClassName("barra2");
+    for (let i = 0; i < topBars.length; i++) {
+        topBars[i].style.background = "rgb(0, 102, 255)";
+    }
+    for (let i = 0; i < bottomBars.length; i++) {
+        bottomBars[i].style.background = "rgb(0, 102, 255)";
+    }
+    let frames = document.getElementsByClassName("frame");
+    for (let i = 0; i < frames.length; i++) {
+        frames[i].style.backgroundColor = "rgb(50, 50, 50)";
+    }
 }
 
 function temaRosso() {
-  let a = document.document.querySelectorAll(".tema");
-  a.style.backgroundColor = "rgb(106, 0, 0)";
-  
-  let topBars = document.getElementsByClassName("PrimaParte");
-  let bottomBars = document.getElementsByClassName("barra2");
-  for (let i = 0; i < topBars.length; i++) {
-      topBars[i].style.background = "rgb(90, 2, 2)";
-  }
-  for (let i = 0; i < bottomBars.length; i++) {
-      bottomBars[i].style.background = "rgb(90, 2, 2)";
-  }
-  let frames = document.getElementsByClassName("frame");
-  for (let i = 0; i < frames.length; i++) {
-      frames[i].style.backgroundColor = "rgb(150, 150, 150)";
-  }
+    let elements = document.querySelectorAll(".tema");
+    elements.forEach((a) => {
+        a.style.backgroundColor = "rgb(106, 0, 0)";
+    });
+    let topBars = document.getElementsByClassName("PrimaParte");
+    let bottomBars = document.getElementsByClassName("barra2");
+    for (let i = 0; i < topBars.length; i++) {
+        topBars[i].style.background = "rgb(106, 0, 0)";
+    }
+    for (let i = 0; i < bottomBars.length; i++) {
+        bottomBars[i].style.background = "rgb(106, 0, 0)";
+    }
+    let frames = document.getElementsByClassName("frame");
+    for (let i = 0; i < frames.length; i++) {
+        frames[i].style.backgroundColor = "rgb(150, 150, 150)";
+    }
 }
 
 function temaTricolore() {
-  let a =document.getElementsByClassName("tema");
-  a.style.backgroundColor = "rgb(219, 219, 219)";
-  let topBars = document.getElementsByClassName("PrimaParte");
-  let bottomBars = document.getElementsByClassName("TerzaParte");
-  for (let i = 0; i < topBars.length; i++) {
-      topBars[i].style.background = "linear-gradient(to right, rgb(2, 67, 22), white, rgb(104, 0, 0))";
-  }
-  for (let i = 0; i < bottomBars.length; i++) {
-      bottomBars[i].style.background = "linear-gradient(to right, rgb(2, 67, 22), white, rgb(104, 0, 0))";
-  }
-  let frames = document.getElementsByClassName("frame");
-  for (let i = 0; i < frames.length; i++) {
-      frames[i].style.backgroundColor = "rgb(150, 150, 150)";
-  }
+    let elements = document.querySelectorAll(".tema");
+    elements.forEach((a) => {
+        a.style.backgroundColor = "rgb(219, 219, 219)";
+    });
+    let topBars = document.getElementsByClassName("PrimaParte");
+    let bottomBars = document.getElementsByClassName("barra2");
+    for (let i = 0; i < topBars.length; i++) {
+        topBars[i].style.background = "linear-gradient(to right, rgb(2, 67, 22), white, rgb(104, 0, 0))";
+    }
+    for (let i = 0; i < bottomBars.length; i++) {
+        bottomBars[i].style.background = "linear-gradient(to right, rgb(2, 67, 22), white, rgb(104, 0, 0))";
+    }
+    let frames = document.getElementsByClassName("frame");
+    for (let i = 0; i < frames.length; i++) {
+        frames[i].style.backgroundColor = "rgb(150, 150, 150)";
+    }
 }
 
 function contatti() {
