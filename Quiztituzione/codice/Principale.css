@@ -4,8 +4,6 @@ body {
     background-color: rgb(219, 219, 219);
     color: black;
     display: flex;
-    justify-content: center;
-    align-items: center;
     height: 100vh;
 }
 
@@ -37,8 +35,7 @@ body {
 }
 
 .PrimaParte img {
-    width: 10rem;
-    
+    width: 10rem;    
 }
 
 .container {

@@ -6,25 +6,37 @@
         <title>Quiztituzione</title>
         <link rel="icon" type="image/x-icon" href="../Immagini/libro.png">
         <link rel="stylesheet" href="Home.css">
+        <link rel="manifest" href="manifest.json">
+        <link rel="icon" type="image/png" href="/Immagini/iconWebApp.png">
         <script type="text/javascript" src="Script.js"></script>
     </head>
     <body onload="carica()"> <!--funzione che carica le domande e carica la pagina intro-->
         
         <!---header della prima pagina di accedi/registrati-->
-        <div class="PrimaParte" id="header1">
+        <div class="PrimaParte tema" id="header1">
             <img src="../Immagini/italia.png" class="logo">
             <div class="container">
                 <h1>Quiztituzione</h1>
                 <p>Articoli in gioco</p>
             </div>
         </div>
+
         <!--header della pagina con logo e scritta-->
-        <div class="PrimaParte" id="header2">
+        <div class="PrimaParte tema" id="header2">
                 <img src="../Immagini/libro.png" class="logo">
                 <div class="container">
                     <h1>Quiztituzione</h1>
                     <p>Articoli in gioco</p>
                 </div>
+        </div>
+
+        <!---header della schermata dei quiz-->
+        <div class="PrimaParte tema" id="header3">
+                <div class="container3">
+                    <img src="../Immagini/italia.png" class="logo3">
+                    <h1>Quiztituzione</h1>
+                </div>
+                <button class="termina">Termina</button>
         </div>
 
         <div class="barriera"></div>
@@ -57,7 +69,6 @@
         <!--slide per i quiz e test finale-->
         <div class="flag-container slide tema" id="Quiz">   
             <div class="SecondaParte">
-                <div class="barriera"></div>
                 <div id="domanda"></div>
             </div>
         </div>
@@ -70,12 +81,12 @@
         </div>
 
         <!---slide di spiegazione di storia-->
-        <div class="flag-container slide tema" id="StoriaP">
+        <div class="flag-container slide " id="StoriaP">
                 <div id="cSto" class="contenitore"></div>
         </div>
 
         <!---parte di letteratura--->
-        <div class="flag-container slide tema" id="LetteraturaP" >
+        <div class="flag-container slide " id="LetteraturaP" >
             <div id="cLet" class="contenitore"></div>
         </div>
 
@@ -121,15 +132,18 @@
             <button><a href="https://www.senato.it/istituzione/la-costituzione" target="_blank"><img src="../Immagini/collegamento.webp" alt="Link costituzione"></a> Link costituzione</button>
             <button onclick="contatti()"><img src="../Immagini/assistenza.webp" alt="Assistenza"> Assistenza</button>
         </div>
-                <!--frame per cambiare tema-->
-                <div class="overlay" id="overlayT" onclick="OverTema()"></div>
-                <div class="frame" id="frameT">
-                <button onclick="cambiatema()">Cambia tema</button>
-                <img src="../Immagini/italia.png">
+            <!--frame per cambiare tema-->
+            <div class="overlay" id="overlayT" onclick="OverTema()"></div>
+            <div class="frame tema" id="frameT">
+            <button onclick="temaScuro()">Tema scuro</button>
+            <button onclick="temaChiaro()">Tema chiaro</button>
+            <button onclick="temaRosso()">Tema rosso</button>
+            <button onclick="temaTricolore()">Tema tricolore</button>
+            <img src="../Immagini/italia.png">
             </div>
             <!--frame per i contatti-->
             <div class="overlay" id="overlayC" onclick="contatti()"></div>
-                <div class="frame" id="frameC">
+                <div class="frame tema" id="frameC">
                 <a href="mailto:teamquiztituzione@gmail.com"><button>teamquiztituzione</button></a>
                 <a href="mailto:salome.carrerawilliams@galileo.galileicrema.it"><button>Carrera Salomè</button></a>
                 <a href="mailto:filippo.cicchetti@galileo.galileicrema.it"><button>Cicchetti Filippo</button></a>
@@ -140,7 +154,7 @@
             </div>
             <!--frame per cambiare lingua-->
             <div class="overlay" id="overlayL" onclick="lingua()"></div>
-                <div class="frame" id="frameL">
+                <div class="frame tema" id="frameL">
                 <button onclick="lingua()">Cambia lingua</button>
                 <p>Attualmente è disponibile sono la lingua italiana</p>
                 <img src="../Immagini/italia.png">
@@ -148,7 +162,7 @@
     
             <!--frame per il profilo-->
             <div class="overlay" id="overlayP" onclick="profilo()"></div>
-                <div class="frame" id="frameP">
+                <div class="frame tema" id="frameP">
                 <img src="../immagini/utenteRM.png" width="10%" height="30%">
                 <button>Nome utente</button>
                 <button>Cognome utente</button>
@@ -158,7 +172,7 @@
         <div class="barriera2"></div>
 
         <!---Barra in basso-->
-        <div class="barra2">
+        <div class="barra2 tema">
 
             <!---lowbar iniziale-->
             <div class="lowslide visible" id="lowA">
@@ -195,7 +209,7 @@
         </div>
         <!--frame per accedere-->
         <div class="overlay" id="overlay" onclick="access()"></div>
-            <div class="frame" id="frame">
+            <div class="frame tema" id="frame">
                 <img src="../Immagini/italia.png"><br>
                 <input type="text" placeholder="Inserire mail"><br>
                 <input type="password" placeholder="Inserire password">
@@ -205,7 +219,7 @@
 
         <!--frame per registrarsi-->
         <div class="overlay" id="overlayR" onclick="registration()"></div>
-            <div class="frame" id="frameR">
+            <div class="frame tema" id="frameR">
                 <img src="../Immagini/italia.png"><br>
                 <input type="text" placeholder="Inserire mail"><br>
                 <input type="password" placeholder="Inserire password"><br>
