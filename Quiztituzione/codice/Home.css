@@ -187,7 +187,6 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-bottom:0.5rem;
     padding-top: 0; 
     overflow: auto;
 }
@@ -318,7 +317,6 @@ button{
 .barriera2{
     clear: both;
     height:6rem;
-    color: white;
 }
 
 /* ----- da qui css per la pagina costituzione---*/
@@ -401,7 +399,6 @@ button{
     position: fixed; 
     font-size: 1rem;
     margin-top: 1rem;
-    margin-bottom: 1rem;
     overflow-y: auto;
     width: 100%; 
 }
@@ -455,16 +452,6 @@ button{
     border-radius: 2rem;
 }
 
-/*frame registrati*/
-/*#frameR {
-    width: 40rem;
-    height: 35rem;
-}
-/*frame cambia tema*/
-/*#frameT {
-    width: 40rem;
-    height: 10rem;
-}*/
 
 .frame button {
     display: block;
