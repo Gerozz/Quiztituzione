@@ -1,42 +1,81 @@
 const CACHE_NAME = "quiztituzione";
-const urlsToCache = [
+const appFiles = [
     "/codice/Home.html",
     "/codice/Script.js",
     "/codice/home.css",
-    "/Immagini/",
+    "/Immagini/assistenza.webp",
+    "/Immagini/bandieraItalia.webp",
+    "/Immagini/bandieraRM.png",
+    "/Immagini/ollegamento.webp",
+    "/Immagini/Emblem_of_Italy.png",
+    "/Immagini/home.webp",
+    "/Immagini/iconWebApp.png",
+    "/Immagini/impostazioni.webp",
+    "/Immagini/indietro.png",
+    "/Immagini/italia.png",
+    "/Immagini/libro.png",
+    "/Immagini/logoCrema.png",
+    "/Immagini/logogalilei.png",
+    "/Immagini/logolungo.jpg",
+    "/Immagini/logoRM.png",
+    "/Immagini/logoSenzaScritte.webp",
+    "/Immagini/lunRM.png",
+    "/Immagini/mailRM.png",
+    "/Immagini/nome_articoliInGioco.png",
+    "/Immagini/nome_Quiztituzionr.png",
+    "/Immagini/nome_quiztituzione_capslock.png",
+    "/Immagini/profilo.webp",
+    "/Immagini/tellRM.png",
+    "/Immagini/tema.webp",
+    "/Immagini/utenteRM.png",
+    "/FJson/articoli.json",
+    "/FJson/camere.json",
+    "/FJson/cittadinanza.json",
+    "/FJson/cittadinanza.json",
+    "/FJson/domandeCostituzione.json",
+    "/FJson/domandeCultura.json",
+    "/FJson/elezioni.json",
+    "/FJson/grammatica.json",
+    "/FJson/letteratura.json",
+    "/FJson/storia.json",
+    "/certificato/certificato.pdf",
+    "/Font/TitilliumWeb-Regular.ttf",
+    "/Font/TitilliumWeb-Bold.ttf",
+    "/Font/TitilliumWeb-ExtraLight.ttf",
+    "/Font/TitilliumWeb-Light.ttf",
+    "/Font/TitilliumWeb-LightItalic.ttf",
+    "/Font/TitilliumWeb-SemiBold.ttf",
 ];
 
-// Installazione del Service Worker e caching delle risorse
 self.addEventListener("install", event => {
-    event.waitUntil(
-        caches.open(CACHE_NAME).then(cache => {
-            console.log("Caching delle risorse");
-            return cache.addAll(urlsToCache);
-        })
+    console.log('[serviceWorker] Install');
+    const filesUpdate = cache =>{
+        const stack=[];
+        appFiles.forEach(file=>stack.push(
+            cache.add(file).catch(_=>console.error("can't load ${file} to cache"))
+        ));
+        return Promise.all(stack);
+    };
+    e.waitUntil(caches.open(CACHE_NAME).then(filesUpdate));
+});
+
+self.addEventListener("fetch", (e) => {
+    e.respondWith(
+        (async()=>{
+            const r=await caches.match(e.request);
+            console.log(`[serviceWorker] Fetching resource: ${e.request.url}`);
+            if(r){
+                return r;
+            }
+            const response=await fetch(e.request);
+            const cache=await caches.open(CACHE_NAME);
+            console.log(`[serviceWorker] Caching new resource: ${e.request.url}`);
+            cache.put(e.request,response.clone());
+            return response;
+        })()
     );
 });
 
-// Intercettazione delle richieste di rete
-self.addEventListener("fetch", event => {
-    event.respondWith(
-        caches.match(event.request).then(response => {
-            return response || fetch(event.request);
-        })
-    );
-});
-
-// Aggiornamento del Service Worker
 self.addEventListener("activate", event => {
-    event.waitUntil(
-        caches.keys().then(cacheNames => {
-            return Promise.all(
-                cacheNames.map(cache => {
-                    if (cache !== CACHE_NAME) {
-                        console.log("Eliminazione vecchia cache", cache);
-                        return caches.delete(cache);
-                    }
-                })
-            );
-        })
-    );
+    console.log('[serviceWorker] Activate');
 });
