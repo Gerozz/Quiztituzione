@@ -45,7 +45,7 @@ const appFiles = [
     "Quiztituzione/Font/TitilliumWeb-ExtraLight.ttf",
     "Quiztituzione/Font/TitilliumWeb-Light.ttf",
     "Quiztituzione/Font/TitilliumWeb-LightItalic.ttf",
-    "Quiztituzione/Font/TitilliumWeb-SemiBold.ttf",
+    "Quiztituzione/Font/TitilliumWeb-SemiBold.ttf"
 ];
 
 self.addEventListener("install", event => {
