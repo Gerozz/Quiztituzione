@@ -627,7 +627,7 @@ function caricaA(){
           d.principi_fondamentali.forEach((e) => {
               
               let p = document.createElement("section");
-              p.className = "sezione-con-img";
+              p.className = "sezioneA";
               
               let t = document.createElement("div");
               t.className = "testo";
@@ -650,7 +650,7 @@ function caricaA(){
 
           d.altri_articoli_importanti.forEach((e) => {
               let p = document.createElement("section");
-              p.className = "sezione-con-img";
+              p.className = "sezioneA";
               
               let t = document.createElement("div");
               t.className = "testo";
@@ -695,7 +695,7 @@ function caricaCit() {
 
             function creaSezione(titolo, contenuto) {
                 let sezione = document.createElement("section");
-                sezione.className = "sezione-con-img";
+                sezione.className = "sezioneC";
 
                 let titoloElem = document.createElement("h1");
                 titoloElem.innerText = titolo;
@@ -734,7 +734,7 @@ function caricaCit() {
             creaSezione("Procedura per la domanda", `Il cittadino straniero dovrà presentare la domanda attraverso il sito: ${d.procedura.sito}. Autenticazione necessaria: ${d.procedura.autenticazione}`);
             
             let categorieSezione = document.createElement("section");
-            categorieSezione.className = "sezione-con-img";
+            categorieSezione.className = "sezioneC";
             let categorieTitle = document.createElement("h1");
             categorieTitle.innerText = "Categorie di cittadinanza";
             categorieSezione.appendChild(categorieTitle);
@@ -797,7 +797,7 @@ function caricaEl(){
           let d = JSON.parse(xhr.responseText);
 
           let politiche = document.createElement("section");
-          politiche.className = "sezione-con-img";
+          politiche.className = "sezioneE";
 
           let t = document.createElement("h1");
           t.innerText = "Elezioni Politiche";
@@ -818,7 +818,7 @@ function caricaEl(){
           elenco.appendChild(politiche);
 
           let amministrative = document.createElement("section");
-          amministrative.className = "sezione-con-img";
+          amministrative.className = "sezioneE";
 
           t = document.createElement("h1");
           t.innerText = "Elezioni Amministrative";
@@ -847,7 +847,7 @@ function caricaEl(){
           elenco.appendChild(amministrative);
 
           let europee = document.createElement("section");
-          europee.className = "sezione-con-img";
+          europee.className = "sezioneE";
 
           t = document.createElement("h1");
           t.innerText = "Elezioni Europee";
@@ -864,7 +864,7 @@ function caricaEl(){
           elenco.appendChild(europee);
 
           let referendum = document.createElement("section");
-          referendum.className = "sezione-con-img";
+          referendum.className = "sezioneE";
 
           t = document.createElement("h1");
           t.innerText = "Referendum";
@@ -892,7 +892,7 @@ function caricaEl(){
           elenco.appendChild(referendum);
 
           let procedura = document.createElement("section");
-          procedura.className = "sezione-con-img";
+          procedura.className = "sezioneE";
 
           t = document.createElement("h1");
           t.innerText = "Procedura di Voto";

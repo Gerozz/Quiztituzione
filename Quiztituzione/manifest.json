@@ -12,7 +12,7 @@
       }
     ],
     "start_url": "/home.html",
-    "scope": "/comune/webApp/",
+    "scope": "/Quiztituzione",
     "display": "standalone",
     "background_color": "#000000",
     "theme_color": "#000000"

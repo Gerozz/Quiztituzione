@@ -1,5 +1,6 @@
 const CACHE_NAME = "quiztituzione";
 const appFiles = [
+    "manifest.json",
     "/codice/Home.html",
     "/codice/Script.js",
     "/codice/home.css",
