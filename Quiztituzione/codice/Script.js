@@ -11,8 +11,35 @@ function toSlide(dest){
       delete(x.tabIndex)
   })
 
+  if(dest.id === "FineQuiz"){
+    //parte per l'header del finequiz
+    document.querySelectorAll(".PrimaParte.visible").forEach((e)=>{
+      e.classList.remove("visible")
+      e.querySelectorAll("*").forEach((x)=>{
+          x.tabIndex=-1
+      })
+    })
+    dest=document.getElementById("header4")
+    dest.classList.add("visible")
+    dest.querySelectorAll("*").forEach((x)=>{
+        delete(x.tabIndex)
+    })
 
-  if(dest.id === "Quiz"||dest.id==="FineQuiz"){
+    document.querySelectorAll(".lowslide.visible").forEach((e)=>{
+      e.classList.remove("visible")
+      e.querySelectorAll("*").forEach((x)=>{
+          x.tabIndex=-1
+      })
+    })
+    dest=document.getElementById("lowA")
+    dest.classList.add("visible")
+    dest.querySelectorAll("*").forEach((x)=>{
+      delete(x.tabIndex)
+    })
+
+  }
+
+  if(dest.id === "Quiz"){
     //parte per l'header del quiz
     document.querySelectorAll(".PrimaParte.visible").forEach((e)=>{
       e.classList.remove("visible")
@@ -25,11 +52,6 @@ function toSlide(dest){
     dest.querySelectorAll("*").forEach((x)=>{
         delete(x.tabIndex)
     })
-
-    if(dest.id==="FineQuiz"){
-      let b=document.getElementById('fine')
-      b.setAttribute("display","hidden")
-    }
 
     //parte della barra in basso del quiz
     document.querySelectorAll(".lowslide.visible").forEach((e)=>{
@@ -255,7 +277,7 @@ function register() {
   console.log("Registrazione...");
   let username = document.getElementById("nome").value;
   let password = document.getElementById("password").value;
-  let email = document.getElementById("email").value;
+  let email = document.getElementById("mail").value;
   let confermaPassword = document.getElementById("confermaPassword").value;
 
   if (password !== confermaPassword) {
@@ -1129,7 +1151,7 @@ function finalTest(){
   }
   final=true
   domandaQuiz(domande[0])
-  toSlide('Quiz')
+  toSlide('FineQuiz')
 }
 
 function indietro() {
