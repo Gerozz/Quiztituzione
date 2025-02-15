@@ -281,6 +281,7 @@ div.slide.visible{
     z-index:-1;
 }
 
+
 .lowslide.visible{
     opacity:1;
     z-index:0;
@@ -585,7 +586,7 @@ button{
 
 @font-face {
     font-family: "Semimono";
-    src: url('../Font/TitilliumWeb-Regular.ttf');
+    src: url('Font/TitilliumWeb-Regular.ttf')
 }
 
 
