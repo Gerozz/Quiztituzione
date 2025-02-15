@@ -19,15 +19,6 @@ try {
     
     echo "Connessione riuscita!";
     
-    // Esempio di query
-    $query = "SELECT * FROM utenti";
-    $stmt = $pdo->query($query);
-    $results = $stmt->fetchAll();
-    
-    foreach ($results as $row) {
-        echo "<pre>" . print_r($row, true) . "</pre>";
-    }
-
 } catch (PDOException $e) {
     // Gestisce gli errori di connessione
     echo "Errore di connessione: " . $e->getMessage();
