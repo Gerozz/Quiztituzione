@@ -642,6 +642,7 @@ button{
     }
 
     .flag-container{
+        top:13rem;
         bottom:5.5rem;
     }
 
@@ -653,19 +654,23 @@ button{
     }
 
     .SecondaParte {
-        max-width: 25rem;
+        max-width: 35rem;
         height: auto;
         text-align: justify;
         align-items: center;
         top: 12rem;
     }
 
-    .SecondaParte p {
+    .SecondaParte p{
         width: 95%;
         text-align: center;
-        max-width: 25rem;
+        max-width: 35rem;
         align-self: center;
         margin-left: 0;
+    }
+
+    #Quiz{
+        bottom:5.5rem;
     }
 
     #vf{
@@ -770,6 +775,10 @@ button{
         bottom:5rem;
     }
     
+    #Quiz{
+        bottom:5rem;
+    }
+
     .barra2 {
         position: fixed;
         left: 0;right: 0;bottom:0;
@@ -778,7 +787,7 @@ button{
     }
 
     .SecondaParte {
-        max-width: 15rem;
+        max-width: 20rem;
         height: auto;
     }
 

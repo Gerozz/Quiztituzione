@@ -10,6 +10,8 @@ function toSlide(dest){
   dest.querySelectorAll("*").forEach((x)=>{
       delete(x.tabIndex)
   })
+  
+
   if(dest.id === "Quiz"){
     //parte per l'header del quiz
     document.querySelectorAll(".PrimaParte.visible").forEach((e)=>{
