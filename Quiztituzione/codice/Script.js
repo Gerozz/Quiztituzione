@@ -25,6 +25,7 @@ function toSlide(dest){
         delete(x.tabIndex)
     })
 
+    /*lowslide per fine quiz*/
     document.querySelectorAll(".lowslide.visible").forEach((e)=>{
       e.classList.remove("visible")
       e.querySelectorAll("*").forEach((x)=>{
@@ -1151,7 +1152,7 @@ function finalTest(){
   }
   final=true
   domandaQuiz(domande[0])
-  toSlide('FineQuiz')
+  toSlide('Quiz')
 }
 
 function indietro() {
