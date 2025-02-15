@@ -10,7 +10,7 @@ function toSlide(dest){
   dest.querySelectorAll("*").forEach((x)=>{
       delete(x.tabIndex)
   })
-  
+
 
   if(dest.id === "Quiz"){
     //parte per l'header del quiz
@@ -512,7 +512,7 @@ function caricaS(){
           let d=JSON.parse(xhr.responseText)
           d.forEach((e)=>{
               let p=document.createElement("section")
-              p.className="sezione-con-img"
+              p.className="sezioneS"
               let t=document.createElement("div")
               t.className="testo"
               p.appendChild(t)
@@ -990,7 +990,7 @@ function next(){
       while (domande.length > 0) {
         domande.pop();
     }
-      toSlide("intro")
+      toSlide("FineQuiz")
     }
   }else{
     if(quizCount<miniQuiz){
@@ -1000,7 +1000,7 @@ function next(){
       while (domande.length > 0) {
         domande.pop();
     }
-      toSlide("intro")
+      toSlide("FineQuiz")
     }
   }
 }
@@ -1027,7 +1027,7 @@ function finalTest(){
 
 function indietro() {
   let slideVis=document.getElementsByClassName("slide visible")
-  if(slideVis[0].id==="fineQuiz"){
+  if(slideVis[0].id==="FineQuiz"){
     toSlide('intro')
   }else if(slideVis[0].id==="intro"){
     toSlide('principale')
