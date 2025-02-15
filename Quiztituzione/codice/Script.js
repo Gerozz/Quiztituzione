@@ -26,6 +26,11 @@ function toSlide(dest){
         delete(x.tabIndex)
     })
 
+    if(dest.id==="FineQuiz"){
+      let b=document.getElementById('fine')
+      b.setAttribute("display","hidden")
+    }
+
     //parte della barra in basso del quiz
     document.querySelectorAll(".lowslide.visible").forEach((e)=>{
       e.classList.remove("visible")
@@ -248,7 +253,7 @@ function login() {
 
 function register() {
   console.log("Registrazione...");
-  let username = document.getElementById("username").value;
+  let username = document.getElementById("nome").value;
   let password = document.getElementById("password").value;
   let email = document.getElementById("email").value;
   let confermaPassword = document.getElementById("confermaPassword").value;
