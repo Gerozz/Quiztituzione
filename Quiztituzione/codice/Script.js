@@ -12,7 +12,7 @@ function toSlide(dest){
   })
 
 
-  if(dest.id === "Quiz"){
+  if(dest.id === "Quiz"||dest.id==="FineQuiz"){
     //parte per l'header del quiz
     document.querySelectorAll(".PrimaParte.visible").forEach((e)=>{
       e.classList.remove("visible")
