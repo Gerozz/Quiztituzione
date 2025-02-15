@@ -200,6 +200,108 @@ function Registrati() {
   }
 }
 
+
+
+function login() {
+  console.log("Login...");
+  let usernameLog = document.getElementById("usernameLog").value;
+  let passwordLog = document.getElementById("passwordLog").value;
+
+  if (usernameLog == "" || passwordLog == "") {
+      document.getElementById("risultatiLog").innerText = "Inserisci username e password";
+      document.getElementById("risultatiLog").style.color = "red";
+      return;
+  }
+
+  let x = new XMLHttpRequest();
+  x.onload = function() {
+      try {
+          let j = JSON.parse(x.responseText);
+          if (j.error != 0) {
+              document.getElementById("risultatiLog").innerText = j.message;
+              document.getElementById("risultatiLog").style.color = "red";
+              return;
+          }
+          console.log("Login effettuato");
+          toSlide("principale");
+          document.getElementById("usernameLog").value = "";
+          document.getElementById("passwordLog").value = "";
+
+          console.log("Dati sessione:", j.session);
+      } catch (e) {
+          console.error("Errore:", e);
+          document.getElementById("risultatiLog").innerText = "Errore: " + e;
+          document.getElementById("risultatiLog").style.color = "red";
+      }
+  };
+  x.onerror = function() {
+      console.error("Errore di rete");
+      document.getElementById("risultatiLog").innerText = "Errore di rete";
+      document.getElementById("risultatiLog").style.color = "red";
+  };
+
+  let dati = "usernameLog=" + encodeURIComponent(usernameLog) + "&passwordLog=" + encodeURIComponent(passwordLog);
+  x.open("POST", "server.php?op=login");
+  x.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+  x.send(dati);
+}
+
+function register() {
+  console.log("Registrazione...");
+  let username = document.getElementById("username").value;
+  let password = document.getElementById("password").value;
+  let email = document.getElementById("email").value;
+  let confermaPassword = document.getElementById("confermaPassword").value;
+
+  if (password !== confermaPassword) {
+      document.getElementById("risultatiReg").innerText = "Le password non coincidono";
+      document.getElementById("risultatiReg").style.color = "red";
+      return;
+  }
+
+  if (username == "" || password == "" || email == "") {
+      document.getElementById("risultatiReg").innerText = "Inserisci username, password e email";
+      document.getElementById("risultatiReg").style.color = "red";
+      return;
+  }
+
+  let x = new XMLHttpRequest();
+  x.onload = function() {
+      try {
+          let j = JSON.parse(x.responseText);
+          if (j.error != 0) {
+              document.getElementById("risultatiReg").innerText = j.message;
+              document.getElementById("risultatiReg").style.color = "red";
+              return;
+          }
+          console.log("Registrazione effettuata");
+          toSlide("login");
+          document.getElementById("username").value = "";
+          document.getElementById("password").value = "";
+          document.getElementById("email").value = "";
+          document.getElementById("confermaPassword").value = "";
+      } catch (e) {
+          console.error("Errore:", e);
+          document.getElementById("risultatiReg").innerText = "Errore: " + e;
+          document.getElementById("risultatiReg").style.color = "red";
+      }
+  };
+  x.onerror = function() {
+      console.error("Errore di rete");
+      document.getElementById("risultatiReg").innerText = "Errore di rete";
+      document.getElementById("risultatiReg").style.color = "red";
+  };
+
+  let dati = "username=" + encodeURIComponent(username) +
+             "&password=" + encodeURIComponent(password) +
+             "&email=" + encodeURIComponent(email);
+  x.open("POST", "server.php?op=register");
+  x.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+  x.send(dati);
+}
+
+
+
 function OverTema() {
   let frame = document.getElementById("frameT");
   let overlay = document.getElementById("overlayT");
