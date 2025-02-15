@@ -462,13 +462,15 @@ button{
     left: 50%;
     transform: translate(-50%, -50%);
     width: 40rem;
-    height: 30rem;
+    height:auto;
     background: #969696;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
     padding: 1rem;
     text-align: center;
     border-radius: 2rem;
 }
+
+
 
 
 .frame button {
