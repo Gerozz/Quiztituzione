@@ -230,17 +230,18 @@
             </div>
         </div>
         <!--frame per accedere-->
-        <div class="overlay" id="overlay" onclick="access()"></div>
+        <div class="overlay" id="overlay">
             <div class="frame tema" id="frame">
                 <img src="Immagini/italia.png"><br>
                 <input type="text" id="mailLog" placeholder="Inserire mail"><br>
                 <input type="password" id="passwordLog" placeholder="Inserire password">
                 <button onclick="login()">Accedi</button>
                 <p>Non hai un account? Registrati</p>
+            </div>
         </div>
 
         <!--frame per registrarsi-->
-        <div class="overlay" id="overlayR" onclick="registration()"></div>
+        <div class="overlay" id="overlayR" >
             <div class="frame tema" id="frameR">
                 <img src="Immagini/italia.png"><br>
                 <input type="text" id="nome" placeholder="Inserire nome">
@@ -250,6 +251,7 @@
                 <input type="password" id="confermaPassword" placeholder="Conferma password"><br>
                 <button onclick="register()">Registrati</button>
                 <p>Hai già un account? Accedi</p>
+            </div>
         </div>
         
     </body>
