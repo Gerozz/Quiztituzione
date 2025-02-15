@@ -36,7 +36,7 @@
                     <img src="../Immagini/italia.png" class="logo3">
                     <h1>Quiztituzione</h1>
                 </div>
-                <button class="termina">Termina</button>
+                <button onclick="toSlide('intro')"  class="termina">Termina</button>
         </div>
 
         <div class="barriera tema"></div>
@@ -125,7 +125,6 @@
 
          <!--slide per le impostazioni-->
         <div class="flag-container slide tema"  id="Impo">
-            <div class="barriera tema"></div>
             <button onclick="profilo()"><img src="../Immagini/profilo.webp" alt="Profilo"> Profilo</button>
             <button onclick="lingua()"><img src="../Immagini/bandieraItalia.webp" alt="Lingua"> Lingua</button>
             <button onclick="OverTema()"><img src="../Immagini/tema.webp" alt="Tema" > Tema</button>
@@ -203,8 +202,8 @@
 
             <!-- lowbar per i quiz -->
             <div class="lowslide" id="vf">
-                    <button class="true" onclick="next()">Vero</button>
-                    <button class="false" onclick="next()">Falso</button>
+                    <button class="optButton" onclick="next()">Vero</button>
+                    <button class="optButton" onclick="next()">Falso</button>
             </div>
         </div>
         <!--frame per accedere-->

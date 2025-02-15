@@ -554,7 +554,6 @@ button{
     justify-content: center;
     text-align: center;
     width: 30rem;
-    min-width: 30rem;
 }
 
 .SecondaParte p{
@@ -653,23 +652,37 @@ button{
     }
 
     .SecondaParte {
-        width: 95%;
-        max-width: 40rem;
+        max-width: 25rem;
         height: auto;
+        text-align: justify;
+        align-items: center;
         top: 12rem;
-        transform: translate(-50%, 0);
     }
 
     .SecondaParte p {
         width: 95%;
-        max-width: 40rem;
+        text-align: center;
+        max-width: 25rem;
+        align-self: center;
         margin-left: 0;
     }
 
-    #vf button {
-        width: 12rem;
-        max-width: 40rem;
-        min-width: 0;
+    #vf{
+        position: fixed;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 0rem;
+        right: 5rem;
+        display: flex;
+        justify-content: space-around;
+        font-size: 2rem;
+    }
+
+    .optButton {
+        width: 15rem;
+        max-width: 20rem;
+        align-self: center;
+        transform: translateX(-60%);
     }
 
     .frame {
@@ -764,17 +777,14 @@ button{
     }
 
     .SecondaParte {
-        width: 90%;
-        max-width: 36rem;
+        max-width: 15rem;
         height: auto;
-        top: 10rem;
-        transform: translate(-50%, 0);
     }
 
     .SecondaParte p {
         width: 90%;
-        max-width: 36rem;
-        margin-left: 0;
+        text-align: center;
+        max-width: 15rem;
     }
 
     #vf {
@@ -788,8 +798,8 @@ button{
         font-size: 2rem;
     }
 
-    #vf button {
-        width: 10rem;
+    .optButton {
+        width: 15rem;
         max-width: 36rem;
         min-width: 0;
     }

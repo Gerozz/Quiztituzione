@@ -1024,20 +1024,17 @@ function finalTest(){
 }
 
 function indietro() {
-  const visibleSlides = document.querySelectorAll(".slide.visible");
-  if (visibleSlides.length > 0) {
-    const currentSlide = visibleSlides[0];
-    const previousSlide = currentSlide.previousElementSibling;
-    if (previousSlide && previousSlide.classList.contains("slide")) {
-      currentSlide.classList.remove("visible");
-      currentSlide.querySelectorAll("*").forEach((x) => {
-        x.tabIndex = -1;
-      });
-      previousSlide.classList.add("visible");
-      previousSlide.querySelectorAll("*").forEach((x) => {
-        delete x.tabIndex;
-      });
-    }
+  let slideVis=document.getElementsByClassName("slide visible")
+  if(slideVis[0].id==="fineQuiz"){
+    toSlide('intro')
+  }else if(slideVis[0].id==="intro"){
+    toSlide('principale')
+  }else if(slideVis[0].id==="CostituzioneP"||slideVis[0].id==="Cultura"){
+    toSlide('intro')
+  }else if(slideVis[0].id==="StoriaP"||slideVis[0].id==="LetteraturaP"||slideVis[0].id==="GrammaticaP"){
+    toSlide('Cultura')
+  }else if(slideVis[0].id==="ArticoliP"||slideVis[0].id==="CamereP"||slideVis[0].id==="CittadinanzaP"||slideVis[0].id==="ElezioniP"){
+    toSlide('CostituzioneP')
   }
 }
 
