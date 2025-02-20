@@ -12,7 +12,7 @@
         }
       ],
     "start_url": "/codice/index.html",
-    "scope": "Quiztituzione/codice/",
+    "scope": "./",
     "display": "standalone",
     "background_color": "#000000",
     "theme_color": "#000000"
