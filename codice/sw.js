@@ -1,12 +1,12 @@
 const CACHE_NAME = "quiztituzione";
 const appFiles = [
     "manifest.json",
-    "Quiztituzione/codice/Home.html",
-    "Quiztituzione/codice/Script.js",
-    "Quiztituzione/codice/home.css",
-    "Quiztituzione/codice/Immagini/assistenza.webp",
-    "Quiztituzione/codice/Immagini/bandieraItalia.webp",
-    "Quiztituzione/codice/Immagini/bandieraRM.png",
+    "Home.html",
+    "Script.js",
+    "home.css",
+    "Immagini/assistenza.webp",
+    "Immagini/bandieraItalia.webp",
+    "Immagini/bandieraRM.png",
     "Quiztituzione/codice/Immagini/collegamento.webp",
     "Quiztituzione/codice/Immagini/Emblem_of_Italy.png",
     "Quiztituzione/codice/Immagini/home.webp",
