@@ -1,3 +1,4 @@
+//funzione per il service worker pwa
 if('ServiceWorker' in navigator){
   navigator.serviceWorker.register('sw.js')
 }
