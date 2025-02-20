@@ -105,7 +105,7 @@ function toSlide(dest){
         delete(x.tabIndex)
     })
 
-   document.querySelectorAll(".lowslide.visible").forEach((e)=>{
+  document.querySelectorAll(".lowslide.visible").forEach((e)=>{
     e.classList.remove("visible")
     e.querySelectorAll("*").forEach((x)=>{
         x.tabIndex=-1
@@ -1122,12 +1122,12 @@ function finalTest(){
   for(let i=0;i<QuizF;i++){
     if(Math.random() < 0.5){
       do{
-         q=domandaCasuale("Costituzione")
+        q=domandaCasuale("Costituzione")
       }while(controlloDoppioni(q))
       domande.push(q)
     }else{
       do{
-         q=domandaCasuale("Cultura Generale")
+        q=domandaCasuale("Cultura Generale")
       }while(controlloDoppioni(q))
       domande.push(q)
     }

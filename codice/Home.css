@@ -257,16 +257,15 @@ div.slide.visible{
 }
 
 .new-button {
-      margin-left: 1.8px; 
-      display: block; 
+    margin-left: 1.8px; 
+    display: block; 
 }
 
 .sub-button {
     margin-left: 5rem;
     margin-top: 0.6rem;
     display: block;
-
-  }
+}
 
 .dynamic-move-up {
     transition: transform 0.3s ease-in-out;

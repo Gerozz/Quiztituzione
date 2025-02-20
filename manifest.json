@@ -3,7 +3,7 @@
     "short_name": "Quiztituzione",
     "id": "comuneQuiztituzione",
     "description": "L'app ufficiale sponsorizzata dal comune per rispondere a quesiti sulla cittadinanza e sulla cultura italiana",
-     "icons": [
+    "icons": [
         {
           "src": "/Quiztituzione/codice/Immagini/iconWebApp.png",
           "sizes": "192x192",
