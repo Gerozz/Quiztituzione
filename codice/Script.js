@@ -2,6 +2,10 @@
 if('ServiceWorker' in navigator){
   navigator.serviceWorker.register('sw.js')
 }
+//redirect
+if(location.protocol==="http:"){
+  location.protocol="https:"+location.href.substring(location.protocol.length)
+}
 
 function toSlide(dest){
   document.querySelectorAll(".slide.visible").forEach((e)=>{
