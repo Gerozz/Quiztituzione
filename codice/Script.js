@@ -1156,7 +1156,7 @@ function indietro() {
     toSlide('intro')
   }else if(slideVis[0].id==="StoriaP"||slideVis[0].id==="LetteraturaP"||slideVis[0].id==="GrammaticaP"){
     toSlide('Cultura')
-  }else if(slideVis[0].id==="ArticoliP"||slideVis[0].id==="CamereP"||slideVis[0].id==="CittadinanzaP"||slideVis[0].id==="ElezioniP"){
+  }else if(slideVis[0].id==="articoliP"||slideVis[0].id==="camereP"||slideVis[0].id==="cittadinanzaP"||slideVis[0].id==="elezioniP"){
     toSlide('CostituzioneP')
   }
 }
