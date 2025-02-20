@@ -1,3 +1,7 @@
+if('ServiceWorker' in navigator){
+  navigator.serviceWorker.register('sw.js')
+}
+
 function toSlide(dest){
   document.querySelectorAll(".slide.visible").forEach((e)=>{
       e.classList.remove("visible")
