@@ -5,14 +5,14 @@
     "description": "L'app ufficiale sponsorizzata dal comune per rispondere a quesiti sulla cittadinanza e sulla cultura italiana",
     "icons": [
         {
-          "src": "/Quiztituzione/Immagini/iconWebApp.png",
+          "src": "/Quiztituzione/codice/Immagini/iconWebApp.png",
           "sizes": "192x192",
           "type": "image/png",
           "purpose": "maskable any"
         }
       ],
-    "start_url": "/Quiztituzione/index.html",
-    "scope": "/Quiztituzione/",
+    "start_url": "/Quiztituzione/codice/index.html",
+    "scope": "/Quiztituzione/codice/",
     "display": "standalone",
     "background_color": "#000000",
     "theme_color": "#000000"
