@@ -11,8 +11,8 @@
           "purpose": "maskable any"
         }
       ],
-    "start_url": "/codice/index.html",
-    "scope": "./",
+    "start_url": "./index.html",
+    "scope": "/",
     "display": "standalone",
     "background_color": "#000000",
     "theme_color": "#000000"
