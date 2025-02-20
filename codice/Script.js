@@ -227,7 +227,7 @@ function Registrati() {
       overlay.style.display = "none";
   }
 }
-
+//funzione accesso per server
 function login() {
   console.log("Login...");
   let usernameLog = document.getElementById("usernameLog").value;
