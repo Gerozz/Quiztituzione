@@ -6,7 +6,7 @@
     "icons": [
         {
           "src": "Immagini/iconWebApp.png",
-          "sizes": "192x192",
+          "sizes": "256x256",
           "type": "image/png",
           "purpose": "maskable any"
         }
