@@ -1,3 +1,12 @@
+//funzione per il service worker pwa
+if('ServiceWorker' in navigator){
+  navigator.serviceWorker.register('sw.js')
+}
+//redirect
+if(location.protocol==="http:"){
+  location.protocol="https:"+location.href.substring(location.protocol.length)
+}
+
 function toSlide(dest){
   document.querySelectorAll(".slide.visible").forEach((e)=>{
       e.classList.remove("visible")
@@ -227,105 +236,87 @@ function Registrati() {
       overlay.style.display = "none";
   }
 }
-
-
-
+//funzione accesso per server
 function login() {
   console.log("Login...");
   let usernameLog = document.getElementById("usernameLog").value;
   let passwordLog = document.getElementById("passwordLog").value;
-
-  if (usernameLog == "" || passwordLog == "") {
-      document.getElementById("risultatiLog").innerText = "Inserisci username e password";
-      document.getElementById("risultatiLog").style.color = "red";
-      return;
-  }
 
   let x = new XMLHttpRequest();
   x.onload = function() {
       try {
           let j = JSON.parse(x.responseText);
           if (j.error != 0) {
-              document.getElementById("risultatiLog").innerText = j.message;
-              document.getElementById("risultatiLog").style.color = "red";
-              return;
+              alert(j.message);
+              return
           }
           console.log("Login effettuato");
-          toSlide("principale");
-          document.getElementById("usernameLog").value = "";
-          document.getElementById("passwordLog").value = "";
+
 
           console.log("Dati sessione:", j.session);
       } catch (e) {
-          console.error("Errore:", e);
-          document.getElementById("risultatiLog").innerText = "Errore: " + e;
-          document.getElementById("risultatiLog").style.color = "red";
+          console.log("Errore:", e);
       }
   };
   x.onerror = function() {
       console.error("Errore di rete");
-      document.getElementById("risultatiLog").innerText = "Errore di rete";
-      document.getElementById("risultatiLog").style.color = "red";
   };
 
   let dati = "usernameLog=" + encodeURIComponent(usernameLog) + "&passwordLog=" + encodeURIComponent(passwordLog);
   x.open("POST", "server.php?op=login");
   x.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
   x.send(dati);
+  let frame = document.getElementById("frame");
+  let overlay = document.getElementById("overlay");
+  frame.style.display = "none";
+  overlay.style.display = "none";
+  toSlide("intro");
+  document.getElementById("usernameLog").value = "";
+  document.getElementById("passwordLog").value = "";
 }
 
 function register() {
   console.log("Registrazione...");
   let username = document.getElementById("nome").value;
+  let cognome=document.getElementById("cognome").value;
   let password = document.getElementById("password").value;
   let email = document.getElementById("mail").value;
   let confermaPassword = document.getElementById("confermaPassword").value;
-
-  if (password !== confermaPassword) {
-      document.getElementById("risultatiReg").innerText = "Le password non coincidono";
-      document.getElementById("risultatiReg").style.color = "red";
-      return;
-  }
-
-  if (username == "" || password == "" || email == "") {
-      document.getElementById("risultatiReg").innerText = "Inserisci username, password e email";
-      document.getElementById("risultatiReg").style.color = "red";
-      return;
-  }
 
   let x = new XMLHttpRequest();
   x.onload = function() {
       try {
           let j = JSON.parse(x.responseText);
-          if (j.error != 0) {
-              document.getElementById("risultatiReg").innerText = j.message;
-              document.getElementById("risultatiReg").style.color = "red";
+          if (j.error !== 0) {
+             alert(j.message);
               return;
           }
           console.log("Registrazione effettuata");
-          toSlide("login");
-          document.getElementById("username").value = "";
-          document.getElementById("password").value = "";
-          document.getElementById("email").value = "";
-          document.getElementById("confermaPassword").value = "";
+
       } catch (e) {
-          console.error("Errore:", e);
-          document.getElementById("risultatiReg").innerText = "Errore: " + e;
-          document.getElementById("risultatiReg").style.color = "red";
+          console.error("Errore: " +e);
+          alert("Errore: connessione al server");
       }
   };
   x.onerror = function() {
       console.error("Errore di rete");
-      document.getElementById("risultatiReg").innerText = "Errore di rete";
-      document.getElementById("risultatiReg").style.color = "red";
+      alert("Errore di rete");
   };
-
-  let dati = "username=" + encodeURIComponent(username) +
-            "&password=" + encodeURIComponent(password) +
-            "&email=" + encodeURIComponent(email);
+  console.log("Dati:", username,cognome, password, email, confermaPassword);
+  let dati = "username=" + encodeURIComponent(username) +"&cognome="+encodeURIComponent(cognome)+"&mail=" + encodeURIComponent(email) +"&password=" + encodeURIComponent(password)+"&confermaPassword="  + encodeURIComponent(confermaPassword)
   x.open("POST", "server.php?op=register");
-  x.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+  x.setRequestHeader("Content-Type", "application/x-www-form-urlencoded")
   x.send(dati);
+  let frame = document.getElementById("frameR");
+  let overlay = document.getElementById("overlayR");
+  frame.style.display = "none";
+  overlay.style.display = "none";
+  toSlide("intro");
+  document.getElementById("nome").value = "";
+  document.getElementById("cognome").value = "";
+  document.getElementById("password").value = "";
+  document.getElementById("mail").value = "";
+  document.getElementById("confermaPassword").value = "";
 }
 
 
@@ -1169,7 +1160,7 @@ function indietro() {
     toSlide('intro')
   }else if(slideVis[0].id==="StoriaP"||slideVis[0].id==="LetteraturaP"||slideVis[0].id==="GrammaticaP"){
     toSlide('Cultura')
-  }else if(slideVis[0].id==="ArticoliP"||slideVis[0].id==="CamereP"||slideVis[0].id==="CittadinanzaP"||slideVis[0].id==="ElezioniP"){
+  }else if(slideVis[0].id==="articoliP"||slideVis[0].id==="camereP"||slideVis[0].id==="cittadinanzaP"||slideVis[0].id==="elezioniP"){
     toSlide('CostituzioneP')
   }
 }
