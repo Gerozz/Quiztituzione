@@ -2,9 +2,10 @@
 if('ServiceWorker' in navigator){
   navigator.serviceWorker.register('sw.js')
 }
+
 //redirect
 if(location.protocol==="http:"){
-  location.protocol="https:"+location.href.substring(location.protocol.length)
+  location.protocol="https:"+location.href.substring(4)
 }
 
 function toSlide(dest){
@@ -1170,19 +1171,27 @@ function controlloDoppioni(question){
   return false
 }
 
-function access(){
+function noFrame(){
   let frame = document.getElementById("frame");
-  let overlay = document.getElementById("overlay");
-  frame.style.display = "none";
-  overlay.style.display = "none";
-  toSlide('intro')
+  if(frame.style.display === "block" ){
+    let overlay = document.getElementById("overlay");
+    frame.style.display = "none";
+    overlay.style.display = "none";
+  }else{
+    let frame = document.getElementById("frameR");
+    let overlay = document.getElementById("overlayR");
+    frame.style.display = "none";
+    overlay.style.display = "none";
+  }
 
 }
 
+function access(){
+  noFrame()
+  toSlide('intro')
+}
+
 function registration(){
-  let frame = document.getElementById("frameR");
-  let overlay = document.getElementById("overlayR");
-  frame.style.display = "none";
-  overlay.style.display = "none";
+  noFrame()
   toSlide('intro')
 }
