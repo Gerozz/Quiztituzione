@@ -1091,9 +1091,9 @@ function preparazioneQuiz(categoria,limite){
   }
   domandaQuiz(domande[0])
   if(categoria==="Costituzione"){
-    toSlide('CostituzioneQuiz')
+    toSlide('Quiz')
   }else{
-    toSlide('CulturaQuiz')
+    toSlide('Quiz')
   }
 }
 
