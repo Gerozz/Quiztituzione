@@ -1098,7 +1098,11 @@ function preparazioneQuiz(categoria,limite){
     domande.push(q)
   }
   domandaQuiz(domande[0])
-  toSlide('Quiz')
+  if(categoria==="Costituzione"){
+    toSlide('CostituzioneQuiz')
+  }else{
+    toSlide('CulturaQuiz')
+  }
 }
 
 function domandaCasuale(categoria) {
