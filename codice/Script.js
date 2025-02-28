@@ -190,9 +190,9 @@ function toggleSubButtons(container, parentButton) {
     });
     subButton1.addEventListener("click",()=>{
           if(parentButton.textContent==="Cultura Generale"){
-            preparazioneQuiz("Cultura Generale",miniQuiz)
+            toSlide('CulturaQuiz')
           }else{
-            preparazioneQuiz("Costituzione",miniQuiz)
+            toSlide('CostituzioneQuiz')
           }
     });
 
@@ -1090,11 +1090,7 @@ function preparazioneQuiz(categoria,limite){
     domande.push(q)
   }
   domandaQuiz(domande[0])
-  if(categoria==="Costituzione"){
-    toSlide('Quiz')
-  }else{
-    toSlide('Quiz')
-  }
+  toSlide('Quiz')
 }
 
 function domandaCasuale(categoria) {
