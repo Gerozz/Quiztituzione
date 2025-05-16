@@ -237,90 +237,6 @@ function Registrati() {
       overlay.style.display = "none";
   }
 }
-//funzione accesso per server
-function login() {
-  console.log("Login...");
-  let usernameLog = document.getElementById("usernameLog").value;
-  let passwordLog = document.getElementById("passwordLog").value;
-
-  let x = new XMLHttpRequest();
-  x.onload = function() {
-      try {
-          let j = JSON.parse(x.responseText);
-          if (j.error != 0) {
-              alert(j.message);
-              return
-          }
-          console.log("Login effettuato");
-
-
-          console.log("Dati sessione:", j.session);
-      } catch (e) {
-          console.log("Errore:", e);
-      }
-  };
-  x.onerror = function() {
-      console.error("Errore di rete");
-  };
-
-  let dati = "usernameLog=" + encodeURIComponent(usernameLog) + "&passwordLog=" + encodeURIComponent(passwordLog);
-  x.open("POST", "server.php?op=login");
-  x.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-  x.send(dati);
-  let frame = document.getElementById("frame");
-  let overlay = document.getElementById("overlay");
-  frame.style.display = "none";
-  overlay.style.display = "none";
-  toSlide("intro");
-  document.getElementById("usernameLog").value = "";
-  document.getElementById("passwordLog").value = "";
-}
-
-function register() {
-  console.log("Registrazione...");
-  let username = document.getElementById("nome").value;
-  let cognome=document.getElementById("cognome").value;
-  let password = document.getElementById("password").value;
-  let email = document.getElementById("mail").value;
-  let confermaPassword = document.getElementById("confermaPassword").value;
-
-  let x = new XMLHttpRequest();
-  x.onload = function() {
-      try {
-          let j = JSON.parse(x.responseText);
-          if (j.error !== 0) {
-             alert(j.message);
-              return;
-          }
-          console.log("Registrazione effettuata");
-
-      } catch (e) {
-          console.error("Errore: " +e);
-          alert("Errore: connessione al server");
-      }
-  };
-  x.onerror = function() {
-      console.error("Errore di rete");
-      alert("Errore di rete");
-  };
-  console.log("Dati:", username,cognome, password, email, confermaPassword);
-  let dati = "username=" + encodeURIComponent(username) +"&cognome="+encodeURIComponent(cognome)+"&mail=" + encodeURIComponent(email) +"&password=" + encodeURIComponent(password)+"&confermaPassword="  + encodeURIComponent(confermaPassword)
-  x.open("POST", "server.php?op=register");
-  x.setRequestHeader("Content-Type", "application/x-www-form-urlencoded")
-  x.send(dati);
-  let frame = document.getElementById("frameR");
-  let overlay = document.getElementById("overlayR");
-  frame.style.display = "none";
-  overlay.style.display = "none";
-  toSlide("intro");
-  document.getElementById("nome").value = "";
-  document.getElementById("cognome").value = "";
-  document.getElementById("password").value = "";
-  document.getElementById("mail").value = "";
-  document.getElementById("confermaPassword").value = "";
-}
-
-
 
 function OverTema() {
   let frame = document.getElementById("frameT");
@@ -491,7 +407,8 @@ function caricaDomandeCG() {
           for (let categoria in dati) {
             dati[categoria].forEach(domandaObj => {
                 domandeCG.push({
-                    categoria: categoria,
+                    categoria: "Cultura",
+                    sottocategoria: categoria,
                     domanda: domandaObj.domanda,
                     risposta_corretta: domandaObj.risposta_corretta
                 });
@@ -520,7 +437,8 @@ function caricaDomandeC(){
           for (let categoria in dati) {
             dati[categoria].forEach(domandaObj => {
                 domandeC.push({
-                    categoria: categoria,
+                    categoria: "Costituzione",
+                    sottocategoria: categoria,
                     domanda: domandaObj.domanda,
                     risposta_corretta: domandaObj.risposta_corretta
                 });
@@ -1071,6 +989,7 @@ let quizCount=0;
 const QuizF=30;
 let final=false;
 let domande=[]
+let risposte=[]
 
 function domandaQuiz(question){
   let d=document.getElementById("domanda")
@@ -1105,6 +1024,12 @@ function next(){
   quizCount++
   if(final){
     if(quizCount<QuizF){
+      risposte.push({
+        domanda:domande[quizCount].domanda, 
+        categoria:domande[quizCount].categoria,
+        sottocategoria:domande[quizCount].sottocategoria,
+        risposta: document.getElementById("risposta").textContent
+      });
       domandaQuiz(domande[quizCount])
     }else{
       quizCount=0
@@ -1112,16 +1037,26 @@ function next(){
       while (domande.length > 0) {
         domande.pop();
     }
-      toSlide("FineQuiz")
+    invio_risposte(risposte)
+    //controllo_risposte()
+    toSlide("FineQuiz")
     }
   }else{
     if(quizCount<miniQuiz){
+      risposte.push({
+        domanda:domande[quizCount].domanda, 
+        categoria:domande[quizCount].categoria,
+        sottocategoria:domande[quizCount].sottocategoria,
+        risposta: document.getElementById("risposta").textContent
+      });
       domandaQuiz(domande[quizCount])
     }else{
       quizCount=0
       while (domande.length > 0) {
         domande.pop();
     }
+      invio_risposte(risposte)
+      //controllo_risposte()
       toSlide("FineQuiz")
     }
   }
@@ -1145,6 +1080,31 @@ function finalTest(){
   final=true
   domandaQuiz(domande[0])
   toSlide('Quiz')
+}
+
+function invio_risposte(risposte){
+  let x = new XMLHttpRequest();
+  x.onload = function() {
+      try {
+          let j = JSON.parse(x.responseText);
+          if (j.error != 0) {
+              alert(j.message);
+              return
+          }else{
+            console.log("Risposte inviate")
+          }
+      } catch (e) {
+          console.log("Errore:", e);
+      }
+  };
+  x.onerror = function() {
+      console.error("Errore di rete");
+  };
+
+  let dati = "risposte=" + encodeURIComponent(JSON.stringify(risposte));
+  x.open("POST", "server.php?op=carica_risposte");
+  x.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+  x.send(dati);
 }
 
 function indietro() {
@@ -1194,4 +1154,89 @@ function access(){
 function registration(){
   noFrame()
   toSlide('intro')
+}
+
+//funzione accesso per server
+function login() {
+  console.log("Login...");
+  let usernameLog = document.getElementById("usernameLog").value;
+  let passwordLog = document.getElementById("passwordLog").value;
+
+  let x = new XMLHttpRequest();
+  x.onload = function() {
+      try {
+          let j = JSON.parse(x.responseText);
+          if (j.error != 0) {
+              alert(j.message);
+              return
+          }else{
+          let nome=document.getElementById("user");
+          nome.textContent=j.username;
+          console.log("Login effettuato");
+          noFrame();
+          toSlide("intro")
+        }
+      } catch (e) {
+          console.log("Errore:", e);
+      }
+  };
+  x.onerror = function() {
+      console.error("Errore di rete");
+  };
+
+  let dati = "usernameLog=" + encodeURIComponent(usernameLog) + "&passwordLog=" + encodeURIComponent(passwordLog);
+  x.open("POST", "server.php?op=login");
+  x.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+  x.send(dati);
+  
+  document.getElementById("usernameLog").value = "";
+  document.getElementById("passwordLog").value = "";
+}
+
+function register() {
+  console.log("Registrazione...");
+  let username = document.getElementById("nome").value;
+  let cognome=document.getElementById("cognome").value;
+  let password = document.getElementById("password").value;
+  let email = document.getElementById("mail").value;
+  let confermaPassword = document.getElementById("confermaPassword").value;
+
+  let x = new XMLHttpRequest();
+  x.onload = function() {
+      try {
+          let j = JSON.parse(x.responseText);
+          if (j.error !== 0) {
+             alert(j.message);
+              return;
+          }
+          console.log("Registrazione effettuata");
+          let nome=document.getElementById("user");
+          nome.textContent=j.username;
+
+      } catch (e) {
+          console.error("Errore: " +e);
+          alert("Errore: connessione al server");
+      }
+  };
+  x.onerror = function() {
+      console.error("Errore di rete");
+
+      
+      alert("Errore di rete");
+  };
+  console.log("Dati:", username,cognome, password, email, confermaPassword);
+  let dati = "username=" + encodeURIComponent(username) +"&cognome="+encodeURIComponent(cognome)+"&mail=" + encodeURIComponent(email) +"&password=" + encodeURIComponent(password)+"&confermaPassword="  + encodeURIComponent(confermaPassword)
+  x.open("POST", "server.php?op=register");
+  x.setRequestHeader("Content-Type", "application/x-www-form-urlencoded")
+  x.send(dati);
+  let frame = document.getElementById("frameR");
+  let overlay = document.getElementById("overlayR");
+  frame.style.display = "none";
+  overlay.style.display = "none";
+  toSlide("intro");
+  document.getElementById("nome").value = "";
+  document.getElementById("cognome").value = "";
+  document.getElementById("password").value = "";
+  document.getElementById("mail").value = "";
+  document.getElementById("confermaPassword").value = "";
 }

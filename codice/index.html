@@ -210,7 +210,7 @@
             <div class="overlay" id="overlayP" onclick="profilo()"></div>
                 <div class="frame tema" id="frameP">
                 <img src="Immagini/utenteRM.png" width="10%" height="30%">
-                <button>Nome utente</button>
+                <button id="user" onclick="">Nome utente</button>
                 <button>Cognome utente</button>
                 <button onclick="logout()">Logout</button>
                 </div>
@@ -248,8 +248,8 @@
 
             <!-- lowbar per i quiz -->
             <div class="lowslide" id="vf">
-                    <button class="optButton" onclick="next()">Vero</button>
-                    <button class="optButton" onclick="next()">Falso</button>
+                    <button class="optButton" onclick="next()" id="risposta">Vero</button>
+                    <button class="optButton" onclick="next()" id="risposta">Falso</button>
             </div>
         </div>
         <!--frame per accedere-->
@@ -258,7 +258,7 @@
                 <img src="Immagini/italia.png"><br>
                 <input type="text" id="usernameLog" placeholder="Inserire mail"><br>
                 <input type="password" id="passwordLog" placeholder="Inserire password">
-                <button onclick="access()">Accedi</button>
+                <button onclick="login()">Accedi</button>
                 <p>Non hai un account? Registrati</p>
             </div>
         </div>
@@ -272,7 +272,7 @@
                 <input type="text" id="mail" placeholder="Inserire mail"><br>
                 <input type="password" id="password" placeholder="Inserire password"><br>
                 <input type="password" id="confermaPassword" placeholder="Conferma password"><br>
-                <button onclick="registration()">Registrati</button>
+                <button onclick="register()">Registrati</button>
                 <p>Hai già un account? Accedi</p>
             </div>
         </div>

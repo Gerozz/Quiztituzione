@@ -33,9 +33,9 @@
                     if($trovato){
                         $_SESSION["loggedIn"]=TRUE;
                         $_SESSION["mail"]=$username;
-                        $ret=["error"=>0, "status"=>"loggedIn","username"=>$_SESSION["mail"]];
+                        $ret=["error"=>0, "status"=>"loggedIn","username"=>$_SESSION["username"]];
                     }else{
-                        $ret=["error"=>1,"status"=>"loggedOut"];
+                        $ret=["error"=>1,"status"=>"loggedOut","message"=>"Parametri errati"];
                     }
                 }else{
                     $ret=["error"=>1,"message"=>"Parametri mancanti"];
@@ -59,18 +59,70 @@
                     try{
                         $q->execute();
                         $inserito=TRUE;
-                        $ret=["error"=>0,"message"=>"Utente registrato correttamente"];
                     }catch(Exception $e){
                     }
                     $conn->close();
                     if($inserito){
+                        $_SESSION["certificato"]=0;
                         $_SESSION["loggedIn"]=TRUE;
                         $_SESSION["username"]=$username;
-                        $ret=["error"=>0,"status"=>"loggedIn","username"=>$_SESSION["username"]];
+                        $_SESSION["mail"]=$mail;
+                        $ret=["error"=>0,"status"=>"loggedIn","message"=>"Utente registrato correttamente","username"=>$_SESSION["username"]];
                     }else{
                         $ret=["error"=>1,"message"=>"registrazione non effettuata","status"=>"loggedOut"];
                     }
                 }
+                }else{
+                    $ret=["error"=>1,"message"=>"Parametri mancanti"];
+                }
+                
+                break;
+            case "carica_risposte":
+                if (isset($_POST["risposte"])){
+                    $risposte = json_decode($_POST["risposte"], true);
+                    $q=$conn->prepare("insert into domandequiz(domanda,categoria,sottocategoria,risposta) values (?,?,?,?)");
+                    for($i=0;$i<count($risposte);$i++){
+                        $domanda = $risposte[$i]['domanda'];
+                        $categoria = $risposte[$i]['categoria'];
+                        $sottocategoria = $risposte[$i]['sottocategoria'];
+                        $risposta = $risposte[$i]['risposta'];
+                        
+                        $q->bind_param("ssss", $domanda, $categoria, $sottocategoria, $risposta);
+                        $q->execute();                   
+                    }
+                    $conn->close();
+                    if($q->affected_rows>0){
+                        $ret=["error"=>0,"status"=>"loggedIn","message"=>"Quiz caricato correttamente"];
+                    }else{
+                        $ret=["error"=>1,"message"=>"Quiz non caricato"];
+                    }
+                }else{
+                    $ret=["error"=>1,"message"=>"Parametri mancanti","status"=>"loggedOut"];
+                }
+                break;
+            case "controlloRisposte":
+                if (isset($_POST["risposte"])){
+                    $risposte=$_POST["risposte"];
+                    $q=$conn->prepare("select * from quiz where id=?");
+                    $q->bind_param("i",$risposte[0]);
+                    $q->execute();
+                    $q->store_result();
+                    if($q->num_rows==0){
+                        $ret=["error"=>1,"message"=>"ID quiz non valido"];
+                        break;
+                    }
+                    $q->bind_result($id,$domanda,$risposta,$corretta,$quiz,$certificato);
+                    $q->fetch();
+                    $conn->close();
+                    if($corretta==1){
+                        $_SESSION["certificato"]=1;
+                        $_SESSION["loggedIn"]=TRUE;
+                        $_SESSION["username"]=$username;
+                        $_SESSION["mail"]=$mail;
+                        $ret=["error"=>0,"status"=>"loggedIn","message"=>"Quiz superato, certificato rilasciato","username"=>$_SESSION["username"]];
+                    }else{
+                        $ret=["error"=>1,"message"=>"Quiz non superato","status"=>"loggedOut"];
+                    }
                 }else{
                     $ret=["error"=>1,"message"=>"Parametri mancanti"];
                 }
