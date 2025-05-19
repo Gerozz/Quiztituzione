@@ -77,57 +77,58 @@
                 }
                 
                 break;
-            case "carica_risposte":
-                if (isset($_POST["risposte"])){
-                    $risposte = json_decode($_POST["risposte"], true);
-                    $q=$conn->prepare("insert into domandequiz(domanda,categoria,sottocategoria,risposta) values (?,?,?,?)");
-                    for($i=0;$i<count($risposte);$i++){
-                        $domanda = $risposte[$i]['domanda'];
-                        $categoria = $risposte[$i]['categoria'];
-                        $sottocategoria = $risposte[$i]['sottocategoria'];
-                        $risposta = $risposte[$i]['risposta'];
-                        
-                        $q->bind_param("ssss", $domanda, $categoria, $sottocategoria, $risposta);
-                        $q->execute();                   
-                    }
+
+            case "controlloCertificato":
+                if($_SESSION["loggedIn"]||$_SESSION["certificato"]==0){
+                    $q=$conn->prepare("update utente set certificato=1 where mail=? ");
+                    $q->bind_param("s",$_SESSION["mail"]);
+                    $q->execute();
                     $conn->close();
                     if($q->affected_rows>0){
-                        $ret=["error"=>0,"status"=>"loggedIn","message"=>"Quiz caricato correttamente"];
-                    }else{
-                        $ret=["error"=>1,"message"=>"Quiz non caricato"];
-                    }
-                }else{
-                    $ret=["error"=>1,"message"=>"Parametri mancanti","status"=>"loggedOut"];
-                }
-                break;
-            case "controlloRisposte":
-                if (isset($_POST["risposte"])){
-                    $risposte=$_POST["risposte"];
-                    $q=$conn->prepare("select * from quiz where id=?");
-                    $q->bind_param("i",$risposte[0]);
-                    $q->execute();
-                    $q->store_result();
-                    if($q->num_rows==0){
-                        $ret=["error"=>1,"message"=>"ID quiz non valido"];
-                        break;
-                    }
-                    $q->bind_result($id,$domanda,$risposta,$corretta,$quiz,$certificato);
-                    $q->fetch();
-                    $conn->close();
-                    if($corretta==1){
                         $_SESSION["certificato"]=1;
-                        $_SESSION["loggedIn"]=TRUE;
-                        $_SESSION["username"]=$username;
-                        $_SESSION["mail"]=$mail;
-                        $ret=["error"=>0,"status"=>"loggedIn","message"=>"Quiz superato, certificato rilasciato","username"=>$_SESSION["username"]];
+                        $ret=["error"=>0, "certificato"=>1,"status"=>"nuovo"];
                     }else{
-                        $ret=["error"=>1,"message"=>"Quiz non superato","status"=>"loggedOut"];
+                        $ret=["error"=>2,"certificato"=>0,"status"=>"vecchio","message"=>"Hai già ottenuto il certificato"];
                     }
                 }else{
-                    $ret=["error"=>1,"message"=>"Parametri mancanti"];
+                    $ret=["error"=>1,"message"=>"Errore: utente non loggato"];
                 }
                 
                 break;
+            case "caricaDomandeC":
+                    $q=$conn->prepare("select domande.id as id,categoria.categoria as sottocategoria,domande.testo as domanda,domande.risposta as risposta from domande join categoria on domande.sottocategoria=categoria.id where domande.categoria=1");
+                try{
+                    $q->execute();
+                    $q = $q->get_result();
+                    $elenco = [];
+                    while ($r = $q->fetch_array()) {
+                    $p = ["id"=>$r["id"],"categoria" => "Costituzione", "sottocategoria" => $r["sottocategoria"], "domanda" => $r["domanda"], "risposta" => $r["risposta"]];
+                    array_push($elenco,$p);
+                    }
+                    $ret = ["error" => 0, "elenco" => $elenco];
+                }catch (Exception $e){
+                    $ret = ["error" => 1, "message" => "Errore di connessione al server"];
+                }
+                $q->close();
+                break;
+
+            case "caricaDomandeCG":
+                    $q=$conn->prepare("select domande.id as id,categoria.categoria as sottocategoria,domande.testo as domanda,domande.risposta as risposta from domande join categoria on domande.sottocategoria=categoria.id where domande.categoria=2");
+                try{
+                    $q->execute();
+                    $q = $q->get_result();
+                    $elenco = [];
+                    while ($r = $q->fetch_array()) {
+                    $p = ["id"=>$r["id"],"categoria" => "Cultura Generale", "sottocategoria" => $r["sottocategoria"], "domanda" => $r["domanda"], "risposta" => $r["risposta"]];
+                    array_push($elenco,$p);
+                    }
+                    $ret = ["error" => 0, "elenco" => $elenco];
+                }catch (Exception $e){
+                    $ret = ["error" => 1, "message" => "Errore di connessione al server"];
+                }
+                $q->close();
+                break;
+
             case "logout":
                 //logout: elimino la sessione e il cookie dell'utente
                 session_unset();

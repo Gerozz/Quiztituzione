@@ -381,6 +381,25 @@ function profilo() {
   }
 }
 
+function certificato(){
+  let x=new XMLHttpRequest()
+  x.onload=function(){
+      try{
+          let j=JSON.parse(x.responseText)
+          if(j.error!=0){
+              alert(j.message)
+              return
+          }else{
+              downloadFile()
+          }
+      }catch(e){
+          console.log("Errore:",e)
+      }
+  }
+  x.open("GET", "server.php?op=controlloCertificato");
+  x.send(); 
+}
+
 //funzione che permette di scaricare un file
 function downloadFile() {
   const fileUrl = "certificato/certificato.pdf";
@@ -394,68 +413,64 @@ function downloadFile() {
   document.body.removeChild(a);
 }
 
-//caricamento dei json
+
 let domandeC=[]
-let domandeCG = []
+let domandeCG =[]
 
-function caricaDomandeCG() {
-    let xhr = new XMLHttpRequest();
-    
-    xhr.onload = function () {
-        try {
-          let dati = JSON.parse(xhr.responseText);
-          for (let categoria in dati) {
-            dati[categoria].forEach(domandaObj => {
-                domandeCG.push({
-                    categoria: "Cultura",
-                    sottocategoria: categoria,
-                    domanda: domandaObj.domanda,
-                    risposta_corretta: domandaObj.risposta_corretta
-                });
-            });
-        }
-        } catch (e) {
-            console.error("Caricamento fallito", e);
-        }
-    };
-
-    xhr.onerror = function () {
-        console.error("Errore di comunicazione");
-    };
-
-    xhr.open("GET", "FJson/domandeCultura.json");
-    xhr.send();
-}
-
-function caricaDomandeC(){
-  let xhr = new XMLHttpRequest();
-    
-  xhr.onload = function () {
+async function caricaDomandeC(){
+  let x = new XMLHttpRequest();
+  x.onload = function() {
       try {
-          let dati = JSON.parse(xhr.responseText);
+          let j = JSON.parse(x.responseText);
+          if (j.error != 0) {
+              alert(j.message);
+              return
+          }else{
+                let dom = j.elenco;
+                domandeC.length = 0;
 
-          for (let categoria in dati) {
-            dati[categoria].forEach(domandaObj => {
-                domandeC.push({
-                    categoria: "Costituzione",
-                    sottocategoria: categoria,
-                    domanda: domandaObj.domanda,
-                    risposta_corretta: domandaObj.risposta_corretta
-                });
-            });
-        }
-
+                dom.forEach(domanda => {
+                  domandeC.push(domanda);
+                })
+          }
       } catch (e) {
-          console.error("Caricamento fallito", e);
+          console.log("Errore:", e);
       }
   };
-
-  xhr.onerror = function () {
-      console.error("Errore di comunicazione");
+  x.onerror = function() {
+      console.error("Errore di rete");
   };
 
-  xhr.open("GET", "FJson/domandeCostituzione.json");
-  xhr.send();
+  x.open("GET", "server.php?op=caricaDomandeC");
+  x.send(); 
+}
+
+async function caricaDomandeCG(){
+  let x = new XMLHttpRequest();
+  x.onload = function() {
+      try {
+          let j = JSON.parse(x.responseText);
+          if (j.error != 0) {
+              alert(j.message);
+              return
+          }else{
+                let dom = j.elenco;
+                domandeCG.length = 0;
+
+                dom.forEach(domanda => {
+                  domandeCG.push(domanda);
+                })
+          }
+      } catch (e) {
+          console.log("Errore:", e);
+      }
+  };
+  x.onerror = function() {
+      console.error("Errore di rete");
+  };
+
+  x.open("GET", "server.php?op=caricaDomandeCG");
+  x.send(); 
 }
 
 function caricaL(){
@@ -984,7 +999,7 @@ function carica(){
   toSlide('principale')
 }
 
-const miniQuiz=10;
+let miniQuiz=10;
 let quizCount=0;
 const QuizF=30;
 let final=false;
@@ -1012,6 +1027,58 @@ function preparazioneQuiz(categoria,limite){
   toSlide('Quiz')
 }
 
+function preparazioneQuizSpecifico(categoria,sottocategoria,limite){
+  let q
+  for(let i=0;i<limite;i++){
+    do{
+      q=domandaCasualeSpec(categoria,sottocategoria)
+      
+    }while(controlloDoppioni(q))
+    domande.push(q)
+  }
+  domandaQuiz(domande[0])
+  toSlide('Quiz')
+}
+
+
+function domandaCasualeSpec(categoria,sottocategoria){
+  let domanda;
+  if(categoria==="Costituzione"){
+    if(sottocategoria==="Articoli"){
+      do{
+        domanda=domandeC[Math.floor(Math.random() * domandeC.length)];
+      }while(domanda.sottocategoria!=="Informazioni Costituzione");
+    }else if(sottocategoria==="Camere"){
+      do{
+        domanda=domandeC[Math.floor(Math.random() * domandeC.length)];
+      }while(domanda.sottocategoria!=="Suddivisione Camere");
+    }else if(sottocategoria==="Cittadinanza"){
+      do{
+        domanda=domandeC[Math.floor(Math.random() * domandeC.length)];
+      }while(domanda.sottocategoria!=="Cittadinanza");
+    }else{
+      do{
+        domanda=domandeC[Math.floor(Math.random() * domandeC.length)];
+      }while(domanda.sottocategoria!=="Elezioni"||domanda.sottocategoria!=="Votazioni");
+    }
+  }else{
+    if(sottocategoria==="Storia"){
+      do{
+        domanda=domandeCG[Math.floor(Math.random() * domandeCG.length)];
+      }while(domanda.sottocategoria!=="Storia");
+    }else if(sottocategoria==="Letteratura"){
+      do{
+        domanda=domandeCG[Math.floor(Math.random() * domandeCG.length)];
+      }while(domanda.sottocategoria!=="Letteratura");
+    }else if(sottocategoria==="Grammatica"){
+      do{
+        domanda=domandeCG[Math.floor(Math.random() * domandeCG.length)];
+      }while(domanda.sottocategoria!=="Grammatica");
+    }
+  }
+  return domanda
+}
+
 function domandaCasuale(categoria) {
   if(categoria==="Costituzione"){
     return domandeC[Math.floor(Math.random() * domandeC.length)];
@@ -1020,26 +1087,47 @@ function domandaCasuale(categoria) {
   }
 }
 
-function next(){
+function nextV(){
+  next(1);
+}
+
+function nextF(){
+  next(0);
+}
+
+let tot=0
+
+function next(n){
   quizCount++
+  console.log(n)
   if(final){
     if(quizCount<QuizF){
       risposte.push({
         domanda:domande[quizCount].domanda, 
         categoria:domande[quizCount].categoria,
         sottocategoria:domande[quizCount].sottocategoria,
-        risposta: document.getElementById("risposta").textContent
+        risposta: n
       });
+      tot+=controllo_risposta(quizCount-1)
       domandaQuiz(domande[quizCount])
     }else{
       quizCount=0
       final=false
-      while (domande.length > 0) {
-        domande.pop();
-    }
-    invio_risposte(risposte)
-    //controllo_risposte()
+    let d=document.getElementById("corrette")
+      d.innerText=` ${tot}/${QuizF}`
+      d=document.getElementById("percentuale")
+      d.innerText=`${Math.round((tot/QuizF)*100)}%`
+      d=document.getElementById("sbagliate")
+      d.innerText=` ${QuizF-tot}/${QuizF}` 
     toSlide("FineQuiz")
+    let perc=Math.round((tot/QuizF)*100)
+    if(perc>=20){
+      certificato()
+    }
+      while (domande.length > 0) {
+          domande.pop();
+      }
+      tot=0
     }
   }else{
     if(quizCount<miniQuiz){
@@ -1047,18 +1135,32 @@ function next(){
         domanda:domande[quizCount].domanda, 
         categoria:domande[quizCount].categoria,
         sottocategoria:domande[quizCount].sottocategoria,
-        risposta: document.getElementById("risposta").textContent
+        risposta: n
       });
+      tot+=controllo_risposta(quizCount-1)
       domandaQuiz(domande[quizCount])
     }else{
       quizCount=0
       while (domande.length > 0) {
         domande.pop();
     }
-      invio_risposte(risposte)
-      //controllo_risposte()
+      let d=document.getElementById("corrette")
+      d.innerText=` ${tot}/${miniQuiz}`
+      d=document.getElementById("percentuale")
+      d.innerText=`${Math.round((tot/miniQuiz)*100)}%`
+      d=document.getElementById("sbagliate")
+      d.innerText=` ${miniQuiz-tot}/${miniQuiz}`
       toSlide("FineQuiz")
+      tot=0
     }
+  }
+}
+
+function controllo_risposta(posizione){
+  if(domande[posizione].risposta===risposte[posizione].risposta){
+    return 1  
+  }else{
+    return 0
   }
 }
 
@@ -1146,16 +1248,6 @@ function noFrame(){
 
 }
 
-function access(){
-  noFrame()
-  toSlide('intro')
-}
-
-function registration(){
-  noFrame()
-  toSlide('intro')
-}
-
 //funzione accesso per server
 function login() {
   console.log("Login...");
@@ -1209,6 +1301,7 @@ function register() {
              alert(j.message);
               return;
           }
+          toSlide("intro");
           console.log("Registrazione effettuata");
           let nome=document.getElementById("user");
           nome.textContent=j.username;
@@ -1233,10 +1326,5 @@ function register() {
   let overlay = document.getElementById("overlayR");
   frame.style.display = "none";
   overlay.style.display = "none";
-  toSlide("intro");
-  document.getElementById("nome").value = "";
-  document.getElementById("cognome").value = "";
-  document.getElementById("password").value = "";
-  document.getElementById("mail").value = "";
-  document.getElementById("confermaPassword").value = "";
+  
 }

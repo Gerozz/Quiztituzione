@@ -90,15 +90,15 @@
                 <div class="quiz-results">
                     <div class="result-item">
                         <span class="label correct">Risposte Corrette</span>
-                        <div class="value">X/20</div>
+                        <div class="value" id="corrette"> </div>
                     </div>
                     <div class="result-item">
                         <span class="label percentage">Percentuale Corrette</span>
-                        <div class="value">100%</div>
+                        <div class="value" id="percentuale"></div>
                     </div>
                     <div class="result-item">
                         <span class="label incorrect">Risposte Errate</span>
-                        <div class="value">X/20</div>
+                        <div class="value" id="sbagliate"></div>
                     </div>
                 </div>
                 
@@ -111,27 +111,41 @@
             <button id="Storia" onclick="toSlide('StoriaP')">Storia italiana</button>
             <button id="Grammatica" onclick="toSlide('GrammaticaP')">Grammatica italiana</button>
             <button id="Letteratura" onclick="toSlide('LetteraturaP')">Letteratura</button>
+            "
         </div>
 
         <!--slide opzioni cultura bottoni-->
         <div class="flag-container slide tema" id="CulturaQuiz">
-            <button id="Storia" onclick="preparazioneQuiz('Cultura Generale',10)">Storia italiana</button>
-            <button id="Grammatica" onclick="preparazioneQuiz('Cultura Generale',10)">Grammatica italiana</button>
-            <button id="Letteratura" onclick="preparazioneQuiz('Cultura Generale',10)">Letteratura</button>
+            <button id="Storia" onclick="preparazioneQuizSpecifico('Cultura Generale','Storia',10)">Storia italiana</button>
+            <button id="Grammatica" onclick="preparazioneQuizSpecifico('Cultura Generale','Grammatica',10)">Grammatica italiana</button>
+            <button id="Letteratura" onclick="preparazioneQuizSpecifico('Cultura Generale','Letteratura',10)">Letteratura</button>
+            <button id="quizTot" onclick="preparazioneQuiz('Cultura Generale',10)">Quiz</button>
         </div>
 
         <!---slide di spiegazione di storia-->
         <div class="flag-container slide tema " id="StoriaP">
+            <audio controls div="audio">
+                <source src="audio/cultura/storia.mp3" type="audio/mpeg">
+                your browser does not support the audio element.
+            </audio>
                 <div id="cSto" class="contenitore"></div>
         </div>
 
         <!---parte di letteratura--->
-        <div class="flag-container slide tema" id="LetteraturaP" >
+        <div class="flag-container slide tema" id="LetteraturaP">
+            <audio controls div="audio">
+                <source src="audio/cultura/letteratura.mp3" type="audio/mpeg">
+                your browser does not support the audio element.
+            </audio>
             <div id="cLet" class="contenitore"></div>
         </div>
 
         <!---slide di spiegazione per grammatica-->
         <div class="flag-container slide tema" id="GrammaticaP">
+            <audio controls div="audio">
+                <source src="audio/cultura/grammatica.mp3" type="audio/mpeg">
+                your browser does not support the audio element.
+            </audio>
             <div id="cGra" class="contenitore"></div>
         </div>
 
@@ -144,29 +158,46 @@
         </div>
 
         <div class="flag-container slide tema" id="CostituzioneQuiz">   
-            <button id="Costituzione" onclick="preparazioneQuiz('Costituzione',10)">Costituzione (articoli)</button>
-            <button id="Suddivisione" onclick="preparazioneQuiz('Costituzione',10)">Suddivisione camere</button>
-            <button id="Elezioni" onclick="preparazioneQuiz('Costituzione',10)">Elezioni</button>
-            <button id="Cittadinanza" onclick="preparazioneQuiz('Costituzione',10)">Come avere la cittadinanza</button>
+            <button id="Costituzione" onclick="preparazioneQuizSpecifico('Costituzione','Articoli',10)">Costituzione (articoli)</button>
+            <button id="Suddivisione" onclick="preparazioneQuizSpecifico('Costituzione','Camere',10)">Suddivisione camere</button>
+            <button id="Elezioni" onclick="preparazioneQuizSpecifico('Costituzione','Elezioni',10)">Elezioni</button>
+            <button id="Cittadinanza" onclick="preparazioneQuizSpecifico('Costituzione','Cittadinanza',10)">Come avere la cittadinanza</button>
+            <button id="quizTot" onclick="preparazioneQuiz('Costituzione',10)">Quiz</button>
         </div>
 
         <!----slide di spiegazione per gli articoli-->
         <div class="flag-container slide tema" id="articoliP">
+            <audio controls div="audio">
+                <source src="audio/costituzione/articoli.mp3" type="audio/mpeg">
+                your browser does not support the audio element.
+            </audio>
             <div id="cArt" class="contenitore"></div>
         </div>
 
         <!----slide di spiegazione per le camere-->
         <div class="flag-container slide tema" id="camereP">
+            <audio controls div="audio">
+                <source src="audio/costituzione/parlamento.mp3" type="audio/mpeg">
+                your browser does not support the audio element.
+            </audio>
             <div id="cSud" class="contenitore"></div>
         </div>
 
         <!---slide di spiegazione per le elezioni-->
         <div class="flag-container slide tema" id="elezioniP">
+            <audio controls div="audio">
+                <source src="audio/costituzione/elezioni.mp3" type="audio/mpeg">
+                your browser does not support the audio element.
+            </audio>
             <div id="cEle" class="contenitore"></div>
         </div>
 
         <!---slide di spiegazione per la cittadinanza-->
         <div class="flag-container slide tema" id="cittadinanzaP">
+            <audio controls div="audio">
+                <source src="audio/costituzione/cittadinanza.mp3" type="audio/mpeg">
+                your browser does not support the audio element.
+            </audio>
             <div id="cCit" class="contenitore"></div>
         </div>
 
@@ -248,8 +279,8 @@
 
             <!-- lowbar per i quiz -->
             <div class="lowslide" id="vf">
-                    <button class="optButton" onclick="next()" id="risposta">Vero</button>
-                    <button class="optButton" onclick="next()" id="risposta">Falso</button>
+                    <button class="optButton" onclick="nextV()" id="risposta" >Vero</button>
+                    <button class="optButton" onclick="nextF()" id="risposta" >Falso</button>
             </div>
         </div>
         <!--frame per accedere-->
