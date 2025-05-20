@@ -1280,9 +1280,6 @@ function login() {
   x.open("POST", "server.php?op=login");
   x.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
   x.send(dati);
-  
-  document.getElementById("usernameLog").value = "";
-  document.getElementById("passwordLog").value = "";
 }
 
 function register() {

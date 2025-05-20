@@ -10,7 +10,18 @@ if (!isset($_GET["op"])) {
     $ret = ["error" => 1];
 } else {
     try {
-        $conn = getDBConnection();
+        $conn = new mysqli($db_hostname, $db_username, $db_password, $db_name);
+
+        if ($conn->connect_error) {
+        echo json_encode(["error" => 1, "message" => "Errore di connessione al database"]);
+        exit;
+    }
+
+    if (!isset($_GET["op"])) {
+        echo json_encode(["error" => 1, "message" => "Operazione non specificata"]);
+        exit;
+    }
+
 
         switch ($_GET["op"]) {
             case "checkLogin":
@@ -36,9 +47,9 @@ if (!isset($_GET["op"])) {
                         $_SESSION["loggedIn"] = TRUE;
                         $_SESSION["mail"] = $username;
                         $_SESSION["username"] = $username;
-                        $ret = ["error" => 0, "status" => "loggedIn", "username" => $_SESSION["username"]];
+                        $ret = ["error" => 0, "status" => "loggedIn", "username" => $_SESSION["username"],$trovato];
                     } else {
-                        $ret = ["error" => 1, "status" => "loggedOut", "message" => "Parametri errati"];
+                        $ret = ["error" => 1, "status" => "loggedOut", "message" => "Parametri errati",$trovato];
                     }
                 } else {
                     $ret = ["error" => 1, "message" => "Parametri mancanti"];
@@ -134,7 +145,21 @@ if (!isset($_GET["op"])) {
                 $q->close();
                 break;
 
-
+            case "creaQuiz":
+                if (isset($_POST["categoria"])) {
+                    $domande = $_POST["domande"];
+                    $q = $conn->prepare("INSERT INTO quiz (utente, domande) VALUES (?, ?)");
+                    $q->bind_param("ss", $_SESSION["mail"], $domande);
+                    try {
+                        $q->execute();
+                        $ret = ["error" => 0, "message" => "Quiz creato con successo"];
+                    } catch (Exception $e) {
+                        $ret = ["error" => 1, "message" => "Errore durante la creazione del quiz"];
+                    }
+                } else {
+                    $ret = ["error" => 1, "message" => "Parametri mancanti"];
+                }
+                break;
             case "logout":
                 session_unset();
                 setcookie("PHPSESSID", "", 0, "/");
