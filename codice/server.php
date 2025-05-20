@@ -10,7 +10,17 @@ if (!isset($_GET["op"])) {
     $ret = ["error" => 1];
 } else {
     try {
-        $conn = getDBConnection();
+        $conn = new mysqli($db_hostname, $db_username, $db_password, $db_name);
+
+        if ($conn->connect_error) {
+        echo json_encode(["error" => 1, "message" => "Errore di connessione al database"]);
+        exit;
+    }
+
+    if (!isset($_GET["op"])) {
+        echo json_encode(["error" => 1, "message" => "Operazione non specificata"]);
+        exit;
+    }
 
         switch ($_GET["op"]) {
             case "checkLogin":
