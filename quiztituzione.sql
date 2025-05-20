@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Creato il: Mag 20, 2025 alle 01:43
+-- Creato il: Mag 20, 2025 alle 06:06
 -- Versione del server: 10.4.32-MariaDB
 -- Versione PHP: 8.2.12
 
@@ -163,6 +163,31 @@ INSERT INTO `domande` (`id`, `categoria`, `sottocategoria`, `testo`, `risposta`)
 -- --------------------------------------------------------
 
 --
+-- Struttura della tabella `quiz`
+--
+
+CREATE TABLE `quiz` (
+  `id` int(11) NOT NULL,
+  `categoria` int(11) NOT NULL,
+  `quantità` int(11) NOT NULL,
+  `esito` decimal(10,0) NOT NULL,
+  `id_utente` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Struttura della tabella `quiz_domande`
+--
+
+CREATE TABLE `quiz_domande` (
+  `id_quiz` int(11) NOT NULL,
+  `id_domanda` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Struttura della tabella `utente`
 --
 
@@ -207,6 +232,20 @@ ALTER TABLE `domande`
   ADD KEY `sottocategoria` (`sottocategoria`);
 
 --
+-- Indici per le tabelle `quiz`
+--
+ALTER TABLE `quiz`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `utente` (`id_utente`);
+
+--
+-- Indici per le tabelle `quiz_domande`
+--
+ALTER TABLE `quiz_domande`
+  ADD KEY `quiz` (`id_quiz`),
+  ADD KEY `domanda` (`id_domanda`);
+
+--
 -- Indici per le tabelle `utente`
 --
 ALTER TABLE `utente`
@@ -230,6 +269,12 @@ ALTER TABLE `domande`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=93;
 
 --
+-- AUTO_INCREMENT per la tabella `quiz`
+--
+ALTER TABLE `quiz`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT per la tabella `utente`
 --
 ALTER TABLE `utente`
@@ -245,6 +290,19 @@ ALTER TABLE `utente`
 ALTER TABLE `domande`
   ADD CONSTRAINT `macrocategoria` FOREIGN KEY (`categoria`) REFERENCES `categoria` (`id`),
   ADD CONSTRAINT `sottocategoria` FOREIGN KEY (`sottocategoria`) REFERENCES `categoria` (`id`);
+
+--
+-- Limiti per la tabella `quiz`
+--
+ALTER TABLE `quiz`
+  ADD CONSTRAINT `utente` FOREIGN KEY (`id_utente`) REFERENCES `utente` (`id`);
+
+--
+-- Limiti per la tabella `quiz_domande`
+--
+ALTER TABLE `quiz_domande`
+  ADD CONSTRAINT `domanda` FOREIGN KEY (`id_domanda`) REFERENCES `domande` (`id`),
+  ADD CONSTRAINT `quiz` FOREIGN KEY (`id_quiz`) REFERENCES `quiz` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
